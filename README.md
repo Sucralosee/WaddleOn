@@ -7,7 +7,7 @@
 
 ## Description
 
-
+WaddleOn is a pomodoro timer app that's meant to help keep users focused on tasks. You can create task lists and the app will summarize the your work at the end of a working session.
 
 wow factor based on the extra reasources
 - Implementation of a French language toggle in addition to English within our web app by writing code that will swap the base English text with pre-written French. 
