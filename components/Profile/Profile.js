@@ -1,14 +1,16 @@
 import { useState } from "react"
 import Image from "next/image"
 import styles from "./Profile.module.css"
+import data from "../../data/inventory/inventory.json"
 
 //Logic: pass profile visibility from navbar -> true and set visibility -> false from profileExit
 export default function Profile({
     name = "default",
     duckType = "Duck",
-    duckNumber = 0
+    duckNumber = 0,
+    profileState = false
 }) {
-    const [profileVisibility, setProfileVisibility] = useState(false);
+    const [profileVisibility, setProfileVisibility] = useState({ profileState });
 
     return (
         <>
@@ -26,12 +28,3 @@ export default function Profile({
         </>
     )
 }
-
-// {!mobileHeader ?
-//     <Image
-//         src="/images/bars.png"
-//         width={75}
-//         height={25}
-//         alt="image of bars"
-//         style={styles.headerBars}
-//         onClick={toggleMobile} /> : null}
