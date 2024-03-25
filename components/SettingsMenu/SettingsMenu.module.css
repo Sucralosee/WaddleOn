@@ -1,0 +1,19 @@
+.settingsContainer {
+    width: 308px;
+    height: 420px;
+    border-radius: 8px;
+    background-color: var(--seashell);
+    margin: auto;
+
+    grid-template-rows: repeat(6, auto);
+}
+
+.sliderContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+}
