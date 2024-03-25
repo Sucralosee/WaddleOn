@@ -1,1 +1,6 @@
- 
+ .profileContainer {
+     width: 422px;
+     height: 882px;
+     background-color: var(--seashell);
+     margin: auto;
+ }
