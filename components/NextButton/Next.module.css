@@ -1,0 +1,8 @@
+.buttonNext{
+    background-color:var(--arathi-highlands);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: var(--h5);
+}
