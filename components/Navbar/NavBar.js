@@ -6,10 +6,10 @@ import Profile from "../Profile/Profile"
 
 export default function NavBar() {
     const [settings, setSettings] = useState(false)
-    const [profile, setProfile] = useState(false)
+    const [profileState, setProfileState] = useState(false)
 
     const toggleProfile = () => {
-        setProfile(!profile)
+        setProfileState(!profileState)
         console.log("profile")
     }
     const toggleSettings = () => {
@@ -18,12 +18,16 @@ export default function NavBar() {
 
     }
 
+    const closeProfile = () => {
+        setProfileState(false);
+    };
+
     // Conditionally render settings and profile overlay components like the header in assessment 4
     return (
         <>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous"></link>
 
-            <Profile profileState={profile} />
+           {profileState ? <Profile profileVisibility={profileState} closeProfile={closeProfile}/> : null }
             <div className={styles.navBarContainer}>
                 <div className={styles.navBarItems}>
                     <div onClick={toggleProfile} className={styles.profile}>

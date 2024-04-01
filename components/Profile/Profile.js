@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import styles from "./Profile.module.css"
 import data from "../../data/inventory/inventory.js"
@@ -8,18 +8,13 @@ export default function Profile({
     name = "Default",
     duckType = "Duck",
     duckNumber = 0,
-    profileState
+    profileVisibility,
+    closeProfile 
 }) {
-    const [profileVisibility, setProfileVisibility] = useState(profileState);
-
-    const toggleProfileVisibility = () => {
-        profileState = false;
-        console.log("close")
-    }
+    const profileStateClose = false
 
     return (
         <>
-            {profileState ?
                 <div className={styles.profileContainer}>
                     <Image />
                     <p className={styles.profileName}>{name}</p>
@@ -29,8 +24,8 @@ export default function Profile({
                     <div className={styles.profileExit} onClick={() => setProfileVisibility(false)}>
                         <Image />
                     </div>
-                    <button onClick={() => toggleProfileVisibility}>Close</button>
-                </div> : null}
+                    <button onClick={closeProfile}>Close</button>
+                </div>
         </>
     )
 }
