@@ -1,8 +1,11 @@
  .profileContainer {
-     width: 422px;
-     height: 882px;
+     width: 100vw;
+     height: 100vh;
      background-color: var(--seashell);
      margin: auto;
+     position: absolute;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     z-index: 5;
  }
-
- 

@@ -5,16 +5,21 @@ import data from "../../data/inventory/inventory.js"
 
 //Logic: pass profile visibility from navbar -> true and set visibility -> false from profileExit
 export default function Profile({
-    name = "default",
+    name = "Default",
     duckType = "Duck",
     duckNumber = 0,
-    profileState = false
+    profileState
 }) {
-    const [profileVisibility, setProfileVisibility] = useState({ profileState });
+    const [profileVisibility, setProfileVisibility] = useState(profileState);
+
+    const toggleProfileVisibility = () => {
+        profileState = false;
+        console.log("close")
+    }
 
     return (
         <>
-            {profileVisibility ?
+            {profileState ?
                 <div className={styles.profileContainer}>
                     <Image />
                     <p className={styles.profileName}>{name}</p>
@@ -24,6 +29,7 @@ export default function Profile({
                     <div className={styles.profileExit} onClick={() => setProfileVisibility(false)}>
                         <Image />
                     </div>
+                    <button onClick={() => toggleProfileVisibility}>Close</button>
                 </div> : null}
         </>
     )
