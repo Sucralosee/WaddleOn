@@ -17,14 +17,18 @@ export default function NavBar() {
     }
 
     // Conditionally render settings and profile overlay components like the header in assessment 4
-    return(
+    return (
         <>
-        <Profile profileState={profile}/>
-        <div className={styles.navBarContainer}>
-            <Image onClick={() => toggleSettings}/>
-            <div>Pause/Play Component</div>
-            <Image onClick={() => toggleProfile}/>
-        </div>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous"></link>
+
+            {settings ? <Profile profileState={profile} /> : null}
+            <div className={styles.navBarContainer}>
+                <div className={styles.navBarItems}>
+                    <i onClick={() => toggleProfile} class="fa fa-user fa-4x" aria-hidden="true"></i>
+                    <div>Pause/Play Component</div>
+                    <i onClick={() => toggleSettings} class="fa fa-cog fa-4x" aria-hidden="true"></i>
+                </div>
+            </div>
         </>
     )
 }
