@@ -24,3 +24,11 @@
   height: 932px;
   --card-curve-small: 0.5rem;
 }
+
+p {
+  font-family: var(--paragraph-style);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--header-style);
+}

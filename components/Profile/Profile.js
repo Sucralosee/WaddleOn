@@ -5,7 +5,7 @@ import data from "../../data/inventory/inventory.js"
 
 //Logic: pass profile visibility from navbar -> true and set visibility -> false from profileExit
 export default function Profile({
-    name = "Default",
+    name = "Name",
     duckType = "Duck",
     duckNumber = 0,
     profileVisibility,
@@ -18,6 +18,7 @@ export default function Profile({
                 <div className={styles.profileContainer}>
                     <Image />
                     <p className={styles.profileName}>{name}</p>
+                    <p>You are a...</p>
                     <p className={styles.profileDuck}>{duckType}</p>
                     <h2 className={styles.profileHeading}>Total Amount Of Ducks Collected</h2>
                     <p className={styles.profileNumber}>{duckNumber}</p>
