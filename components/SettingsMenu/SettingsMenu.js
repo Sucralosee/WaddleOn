@@ -1,7 +1,9 @@
 import styles from './SettingsMenu.module.css'
 
 //Possible Reference for sliders https://codesandbox.io/p/sandbox/volume-slider-o44gf?file=%2Fsrc%2Findex.js%3A26%2C18-36%2C38
-export default function Settings() {
+export default function SettingsMenu({
+    closeSettings
+}) {
     return (
         <>
             <div className={styles.settingsContainer}>
@@ -41,6 +43,7 @@ export default function Settings() {
                     </h6>
                     <div className={styles.slider}></div>
                 </div>
+                <button onClick={closeSettings}>Close</button>
             </div>
         </>
     )
