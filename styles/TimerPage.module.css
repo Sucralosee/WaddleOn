@@ -4,6 +4,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 6rem;
-    min-height: 20vh;
+    width: 430px;
+    height: 932px;
+    margin: auto;
   }
   

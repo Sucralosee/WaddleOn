@@ -8,8 +8,8 @@ export default function TimerPage() {
     return (
         <>
             <main className={`${styles.main}`}>
-                <Timer/>
-                <NavBar/>
+                <Timer />
+                <NavBar />
             </main>
         </>
     )

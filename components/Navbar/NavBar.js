@@ -26,8 +26,7 @@ export default function NavBar() {
     return (
         <>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous"></link>
-
-           {profileState ? <Profile profileVisibility={profileState} closeProfile={closeProfile}/> : null }
+                {profileState ? <Profile profileVisibility={profileState} closeProfile={closeProfile} /> : null}
             <div className={styles.navBarContainer}>
                 <div className={styles.navBarItems}>
                     <div onClick={toggleProfile} className={styles.profile}>
