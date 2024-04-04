@@ -20,9 +20,9 @@
   --arathi-highlands: #8DA742;
 
   background-color: var(--seashell);
-  width: 430px;
-  height: 932px;
   --card-curve-small: 0.5rem;
+  width: 100vw;
+  height: 100vh;
 }
 
 p {
