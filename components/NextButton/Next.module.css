@@ -13,8 +13,3 @@
 .buttonNext:active{
     box-shadow: none;
 }
-
-.nextPressed{
-    background-color: var(--flush-orange);
-
-}
