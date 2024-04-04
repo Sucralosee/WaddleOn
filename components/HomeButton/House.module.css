@@ -1,0 +1,15 @@
+.buttonNext{
+    background-color:var(--flush-orange);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: var(--h5);
+    width: 67px;
+    height: 56px;
+    box-shadow: 0px 2px 3px 1px;
+}
+
+.buttonNext:active{
+    box-shadow: none;
+}

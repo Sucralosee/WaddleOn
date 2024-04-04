@@ -1,8 +1,8 @@
-import styles from "./Next.module.css";
+import styles from "./House.module.css";
 import React, { useState } from 'react';
 
 
-export default function Next() {
+export default function House() {
     const [isPressed, setIsPressed] = useState(false);
 
     const handleMouseDown = () => {
@@ -17,11 +17,11 @@ export default function Next() {
     <>
         <div>
             <button
-                className={styles.buttonNext}
+                className={`${styles.buttonNext}`}
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
                 onMouseLeave={handleMouseUp}>
-                    Continue
+                    H
             </button>
         </div>
     </>
