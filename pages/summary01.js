@@ -6,6 +6,7 @@ import House from "@/components/HomeButton";
 export default function Summary() {
   return (
     <>
+    <div className={styles.backgroundGrad}>
       <main className={`${styles.summaryOne}`}>
         <div className={styles.homeButton}>
           <House/>
@@ -15,10 +16,9 @@ export default function Summary() {
               <Back/>
                 <div className={styles.buttonSpacer}></div>
               <Next/>
-            </div>
-                <h1>testing</h1>    
+            </div> 
             <div className={styles.navBarDummy}></div>          
-      </main>
+      </main></div>
     </>
   );
 }

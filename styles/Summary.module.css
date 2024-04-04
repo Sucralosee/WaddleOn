@@ -5,7 +5,11 @@
     align-items: center;
     padding: 6rem;
     min-height: 100vh;
-    background: linear-gradient(var(--arathi-highlands)20%, var(--seashell)80%);
+  }
+
+  .backgroundGrad{
+    min-height:100vh;
+    background: linear-gradient(var(--arathi-highlands)10%, var(--seashell)90%);
   }
 
   .duckImage{
@@ -44,7 +48,7 @@
   }
 
 .navBarDummy{
-    position: absolute;
+    position: sticky;
     border:1px solid black;
     border-top-right-radius:10px;
     border-top-left-radius:10px;
