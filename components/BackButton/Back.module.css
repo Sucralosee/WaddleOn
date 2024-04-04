@@ -1,0 +1,15 @@
+.buttonNext{
+    background-color:transparent;
+    border: 3px solid var(--arathi-highlands);
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: var(--h5);
+    width: 386px;
+    height: 46px;
+}
+
+.nextPressed{
+    background-color: var(--arathi-highlands);
+
+}

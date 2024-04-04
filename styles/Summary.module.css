@@ -1,0 +1,46 @@
+.summaryOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+    background: linear-gradient(var(--arathi-highlands)20%, var(--seashell)80%);
+  }
+
+  .duckImage{
+    background-color: grey;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    width:100vw;
+    height: 382px;
+    position: absolute;
+    top:0;
+  }
+
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top:650px;
+}
+
+.buttonSpacer{
+    height:17px;
+}
+
+  .backButton{
+    position: relative;
+    bottom:30px;
+  }
+
+.navBarDummy{
+    position: absolute;
+    border:1px solid black;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    width: 414px;
+    height: 69px;
+    bottom:0;
+}

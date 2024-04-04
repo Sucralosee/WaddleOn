@@ -1,8 +1,8 @@
-import styles from "./Next.module.css";
+import styles from "./Back.module.css";
 import React, { useState } from 'react';
 
 
-export default function Next() {
+export default function Back() {
     const [isPressed, setIsPressed] = useState(false);
 
     const handleMouseDown = () => {
@@ -21,7 +21,7 @@ export default function Next() {
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
                 onMouseLeave={handleMouseUp}>
-                    Continue
+                    Back
             </button>
         </div>
     </>

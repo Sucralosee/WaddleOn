@@ -5,4 +5,16 @@
     padding: 10px 20px;
     cursor: pointer;
     font-size: var(--h5);
+    width: 386px;
+    height: 46px;
+    box-shadow: 0px 1px 2px 1px;
+}
+
+.buttonNext:active{
+    box-shadow: none;
+}
+
+.nextPressed{
+    background-color: var(--flush-orange);
+
 }
