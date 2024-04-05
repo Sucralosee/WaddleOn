@@ -10,6 +10,13 @@
     background-color: var(--seashell);
   }
 
+  .duck{
+    width:145px;
+    height:154px;
+    border:1px solid black;
+    border-radius: 50%;
+}
+
 .buttonContainer{
     display: flex;
     flex-direction: column;
@@ -21,11 +28,6 @@
 .buttonSpacer{
     height:17px;
 }
-
-  .backButton{
-    bottom:30px;
-  }
-
   .homeButton{
     position: absolute;
     top:10px;

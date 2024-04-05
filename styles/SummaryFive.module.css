@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lexend:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 .summaryOne {
     display: flex;
     flex-direction: column;
@@ -14,12 +16,11 @@
 
   .duckImage{
     background-color: grey;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
-    width:100vw;
-    height: 382px;
+    border-radius:21px;
+    width:316px;
+    height: 156px;
     position: absolute;
-    top:0;
+    top:130;
     text-align: center;
   }
 
