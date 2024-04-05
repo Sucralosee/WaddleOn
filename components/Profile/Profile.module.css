@@ -1,6 +1,6 @@
  .profileContainer {
-    width: 422px;
-    height: 882px;
+     width: 400px;
+     height: 882px;
      background-color: var(--seashell);
      position: absolute;
      display: flex;
@@ -9,4 +9,5 @@
      z-index: 6;
      filter: drop-shadow(0 0 1rem var(--gray5));
      border-radius: var(--card-curve-small);
+     margin-top: 1rem;
  }

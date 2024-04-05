@@ -4,6 +4,8 @@
     width: 100vw;
     bottom: 0;
     z-index: 5;
+    margin-top: auto;
+    grid-row: 4/5;
 }
 
 .navBarItems {

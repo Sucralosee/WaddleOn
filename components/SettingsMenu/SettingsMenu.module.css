@@ -1,14 +1,15 @@
 .settingsContainer {
-    width: 422px;
+    width: 400px;
     height: 882px;
-     background-color: var(--seashell);
-     position: absolute;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     z-index: 6;
-     filter: drop-shadow(0 0 1rem var(--gray5));
-     border-radius: var(--card-curve-small);
+    background-color: var(--seashell);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 6;
+    filter: drop-shadow(0 0 1rem var(--gray5));
+    border-radius: var(--card-curve-small);
+    margin-top: 1rem;
 }
 
 .sliderContainer {

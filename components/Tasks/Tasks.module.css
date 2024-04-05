@@ -1,0 +1,57 @@
+.tasks {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    margin: 6rem 0 0 0;
+}
+
+.addingTasks {
+    width: 308px;
+    height: 63px;
+    background-color: var(--arathi-highlands);
+    border-radius: var(--card-curve-small);
+}
+
+.addingTasksHighlight {
+    width: 55px;
+    height: 4px;
+    background-color: var(--seashell);
+    margin: 5px;
+    position: absolute;
+    border-radius: var(--card-curve-small);
+}
+
+.inputTask {
+    width: 275px;
+    height: 34px;
+    border-radius: var(--card-curve-small);  
+    margin-top: 0.8rem;
+    margin-left: 0.8rem;
+}
+
+.submittingTasks {
+    width: 96px;
+    height: 48px;
+    background-color: var(--flush-orange);
+    border-radius: var(--card-curve-small);
+    margin: 0 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submittingTasksIcon {
+    margin: auto;
+}
+
+.taskList {
+    width: 308px;
+    height: 68px;
+    background-color: var(--seashell);
+    box-shadow: 0px 1px 4.4px 0px rgba(14, 13, 13, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+.taskListTitle {
+    margin: 0 0 0 0.5rem;
+}
