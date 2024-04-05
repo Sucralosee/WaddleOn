@@ -8,8 +8,8 @@
   }
 
   .backgroundGrad{
-    min-height:100vh;
     background: linear-gradient(var(--arathi-highlands)10%, var(--seashell)90%);
+    width: 100vw;
   }
 
   .duckImage{
