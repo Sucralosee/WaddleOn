@@ -13,7 +13,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main}`}>
-      <Link href="/summary01">Summary</Link>
+      <Link href="/summary01">Summary1</Link>
+      <Link href="/summary02">Summary2</Link>
+      <Link href="/summary03">Summary3</Link>
+      <Link href="/summary04">Summary4</Link>
+      <Link href="/summaryMallard">Mallard</Link>
       </main>
     </>
   );

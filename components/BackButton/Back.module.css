@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lexend:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 .buttonNext{
     background-color:transparent;
     border: 3px solid var(--arathi-highlands);
     border-radius: 8px;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: var(--h5);
+    font-family: 'fredoka';
+    font-size: var(--h3);
     width: 388px;
     height: 46px;
+    text-align: center;
+    line-height: 10px;
 }
 
 .nextPressed{
