@@ -18,6 +18,8 @@ export default function Home() {
       <Link href="/summary03">Summary3</Link>
       <Link href="/summary04">Summary4</Link>
       <Link href="/summaryMallard">Mallard</Link>
+      <Link href="/summaryRuddy">Ruddy</Link>
+      <Link href="/summaryBlueBill">Blue-billed</Link>
       </main>
     </>
   );
