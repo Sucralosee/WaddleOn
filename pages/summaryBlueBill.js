@@ -1,6 +1,5 @@
 import styles from "@/styles/Bluebill.module.css";
 import Next from "@/components/NextButton";
-import Back from "@/components/BackButton";
 import House from "@/components/HomeButton";
 
 export default function BlueBill() {
@@ -27,8 +26,6 @@ export default function BlueBill() {
                                     <p className={styles.descriptionPar}>The Blue-billed Duck is a small Australian waterfowl species found in freshwater lakes and swamps throughout Australia.</p>
                 </div>
                     <div className={styles.buttonContainer}>
-                        <Back/>
-                            <div className={styles.buttonSpacer}></div>
                         <Next/>
                     </div> 
             <div className={styles.navBarDummy}></div>          

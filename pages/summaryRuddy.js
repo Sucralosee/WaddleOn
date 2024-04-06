@@ -1,6 +1,5 @@
 import styles from "@/styles/Ruddy.module.css";
 import Next from "@/components/NextButton";
-import Back from "@/components/BackButton";
 import House from "@/components/HomeButton";
 
 export default function Ruddy() {
@@ -27,8 +26,6 @@ export default function Ruddy() {
                                     <p className={styles.descriptionPar}>The Ruddy Shelduck is a species of waterfowl found in the wetlands and lakes of Europe, Asia, and North Africa.</p>
                 </div>
                     <div className={styles.buttonContainer}>
-                        <Back/>
-                            <div className={styles.buttonSpacer}></div>
                         <Next/>
                     </div> 
             <div className={styles.navBarDummy}></div>          

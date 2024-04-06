@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lexend:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+.quiz{
+    border:1px solid black;
+    width:400px;
+    height:191px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.questionContainer{
+    border:1px solid black;
+    width:350px;
+    height:90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.question{
+    font-family:'fredoka' ;
+    font-size: var(--h2);
+    font-weight: 500;
+}
+
+.options{
+    display:flex;
+    flex-direction: row;
+    gap:10px;
+    height:48px;
+    margin-bottom:54px;
+}
+
+.option{
+    width: 106px;
+    height:48px;
+}
