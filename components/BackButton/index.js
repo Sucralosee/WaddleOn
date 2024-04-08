@@ -17,10 +17,7 @@ export default function Back() {
     <>
         <div>
             <button
-                className={`${styles.buttonNext} ${isPressed ? styles.nextPressed : ''}`}
-                onMouseDown={handleMouseDown}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseUp}>
+                className={`${styles.buttonNext} ${isPressed ? styles.nextPressed : ''}`} onMouseDown={handleMouseDown}onMouseUp={handleMouseUp}onMouseLeave={handleMouseUp}>
                     Back
             </button>
         </div>

@@ -17,10 +17,7 @@ export default function Next() {
     <>
         <div>
             <button
-                className={styles.buttonNext}
-                onMouseDown={handleMouseDown}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseUp}>
+                className={styles.buttonNext} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp}>
                     Continue
             </button>
         </div>

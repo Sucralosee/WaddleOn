@@ -27,7 +27,7 @@ export default function Summary() {
       options: ["adequate", "moderate", "great"]
     },   
   ];
-  //array setting up data to use for the questions 
+  //setting up data array to use for the quiz component nnshiiiii
 
   const [answers, setAnswers] = useState([]);
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -39,7 +39,20 @@ export default function Summary() {
     setAnswers(newAnswers);
     setQuestionIndex(questionIndex + 1);
   }
-//
+
+  const calculateScore = () => {
+    let score = 0;
+    answers.forEach((answer) => {
+      if (answer === "adequate") {
+        score += 1;
+      } else if (answer === "moderate") {
+        score += 2;
+      } else if (answer === "great"){
+        score += 3;
+      }
+    });
+    return score;
+  }
 
   const handlePreviousQuestion = () => {
     setQuestionIndex(questionIndex - 1);
@@ -56,13 +69,13 @@ export default function Summary() {
           onAnswer={handleNextQuestion}/>
           <div className={styles.buttonCont}>
             {questionIndex > 0 && (
-              <Back onClick={handlePreviousQuestion} />
+              <Back className={styles.backButton} onClick={handlePreviousQuestion} />
             )}
           </div>
         </div>
       );
     } else {
-      const score = answers.reduce((acc, answer) => acc + parseInt(answer), 0);
+      const score = calculateScore();
       if (score >= 6) {
         router.push('/summaryMallard');
       } else if (score >= 3) {
@@ -72,6 +85,10 @@ export default function Summary() {
       }
     }
   };
+
+  if (answers.length > 0 && questionIndex >= questions.length){
+    renderCurrentPage();
+  }
 
   return (
     <div className={styles.backgroundGrad}>

@@ -2,8 +2,11 @@ import styles from "./Quiz.module.css";
 import React, { useState } from 'react';
 
 
-export default function Quiz({ questions, currentQuestion, onAnswer}) {
+export default function Quiz({ questions, currentQuestion, answers, onAnswer}) {
+    const [selectedOption, setSelectedOption] = useState(null);
+
     const handleAnswer = (answer) => {
+        setSelectedOption(answer);
         onAnswer(answer);
     };
 
@@ -14,7 +17,7 @@ export default function Quiz({ questions, currentQuestion, onAnswer}) {
             <h2 className={styles.question}>{questions[currentQuestion].question}</h2>
             <div className={styles.options}>
             {questions[currentQuestion].options.map((option, index) => (
-                <button className={styles.option} key={index} onClick={() => handleAnswer(option)}>{option}</button>))}
+                <button className={`${styles.optionButt} ${selectedOption === option ? styles.clicked : ''}`} key={index} onClick={() => handleAnswer(option)}>{option}</button>))}
                 </div>
             </div>
             {currentQuestion > 0 && (

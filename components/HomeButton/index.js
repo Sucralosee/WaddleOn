@@ -17,10 +17,7 @@ export default function House() {
     <>
         <div>
             <button
-                className={`${styles.buttonNext}`}
-                onMouseDown={handleMouseDown}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseUp}>
+                className={`${styles.buttonNext}`} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp}>
                     H
             </button>
         </div>
