@@ -10,7 +10,7 @@ export default function Mallard() {
     <div className={styles.contentContainer}>
     <div className={styles.titleContainer}>
         <h6 className={styles.title}>You are a...</h6>
-            <h4 className={styles.duckName}>Mallard!</h4>
+            <h4 className={styles.duckName}>Ruddy Shelduck!</h4>
     </div>
             <div className={styles.homeButton}>
                 <House/>

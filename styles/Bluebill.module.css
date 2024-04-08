@@ -40,10 +40,10 @@
     height:17px;
 }
 
-  .homeButton{
-        z-index: 1;
-        margin: 30px auto 0 10px;
-  }
+.homeButton{
+    z-index: 1;
+    margin: 30px auto 0 10px;
+}
 
 .duckInfo{
     border-top-right-radius:20px;
