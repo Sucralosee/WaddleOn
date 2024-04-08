@@ -1,6 +1,8 @@
 import styles from "@/styles/Mallard.module.css";
 import Next from "@/components/NextButton";
 import House from "@/components/HomeButton";
+import Image from "next/image"
+
 
 export default function Mallard() {
   return (
@@ -14,7 +16,7 @@ export default function Mallard() {
             <div className={styles.homeButton}>
                 <House/>
             </div>
-            <div className={styles.duck}></div>
+            <div className={styles.duck}><Image src="/images/mduck.png" width={200} height={200}/></div>
                 <div className={styles.duckInfo}>
                     <h1 className={styles.mallardName}>Mallard</h1>
                         <h4 className={styles.features}>Defining features</h4>
@@ -29,7 +31,7 @@ export default function Mallard() {
                     <div className={styles.buttonContainer}>
                         <Next/>
                     </div> 
-            <div className={styles.navBarDummy}></div></div>         
+            </div>         
       </main>
     
   );

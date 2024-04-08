@@ -45,16 +45,6 @@
         margin: 30px auto 0 10px;
   }
 
-.navBarDummy{
-    position: absolute;
-    border:1px solid black;
-    border-top-right-radius:10px;
-    border-top-left-radius:10px;
-    width: 414px;
-    height: 69px;
-    bottom:0;
-}
-
 .duckInfo{
     border-top-right-radius:20px;
     border-top-left-radius:20px;
