@@ -13,14 +13,14 @@ export default function House() {
         setIsPressed(false);
     };
 
-  return (
-    <>
-        <div>
-            <button
-                className={`${styles.buttonNext}`} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp}>
+    return (
+        <>
+            <div>
+                <button
+                    tabIndex={1} className={`${styles.buttonNext}`} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp}>
                     H
-            </button>
-        </div>
-    </>
-  );
+                </button>
+            </div>
+        </>
+    );
 }

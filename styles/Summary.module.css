@@ -1,78 +1,82 @@
 .summaryOne {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6rem;
-    min-height: 100vh;
-  }
-
-.backgroundGrad{
-    background: linear-gradient(var(--arathi-highlands)10%, var(--seashell)90%);
-    width: 100vw;
-  }
-
-.duckImage{
-    background-color: grey;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
-    width:100vw;
-    height: 382px;
-    position: absolute;
-    top:0;
-    text-align: center;
-  }
-
-.buttonContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top:680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.buttonSpacer{
-    height:17px;
+.summaryContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 430px;
+  height: 932px;
+  min-height: 100vh;
+  background: linear-gradient(var(--arathi-highlands)10%, var(--seashell)90%);
 }
 
-  .backButton{
-    position: relative;
-    bottom:30px;
-  }
-
-  .homeButton{
-    position: relative;
-    z-index: 1;
-    right:170px;
-    bottom:95px;
-  }
-
-.navBarDummy{
-    position: sticky;
-    border:1px solid black;
-    border-top-right-radius:10px;
-    border-top-left-radius:10px;
-    width: 414px;
-    height: 69px;
-    bottom:0;
+.duckImage {
+  background-color: grey;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 430px;
+  height: 382px;
+  position: absolute;
+  top: 0;
+  text-align: center;
 }
 
-.playButt{
-  width:93px;
-  height:93px;
-  border:1px solid black;
-  border-radius:50%;
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 680px;
+}
+
+.buttonSpacer {
+  height: 17px;
+}
+
+.backButton {
+  position: relative;
+  bottom: 30px;
+}
+
+.homeButton {
+  z-index: 1;
+  margin: 10px auto 0 10px;
+}
+
+.navBarDummy {
+  position: sticky;
+  border: 1px solid black;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 414px;
+  height: 69px;
+  bottom: 0;
+}
+
+.playButt {
+  width: 93px;
+  height: 93px;
+  border: 1px solid black;
+  border-radius: 50%;
   position: absolute;
   left: 160px;
-  bottom:23px;
+  bottom: 23px;
 }
 
-.buttonCont{
+.buttonCont {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 0px;
-  position:relative;
-  top:130px;
+  position: relative;
+  top: 255px;
 }

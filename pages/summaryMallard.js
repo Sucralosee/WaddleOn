@@ -6,6 +6,7 @@ export default function Mallard() {
   return (
 
 <main className={`${styles.summaryOne}`}>
+    <div className={styles.contentContainer}>
     <div className={styles.titleContainer}>
         <h6 className={styles.title}>You are a...</h6>
             <h4 className={styles.duckName}>Mallard!</h4>
@@ -28,7 +29,7 @@ export default function Mallard() {
                     <div className={styles.buttonContainer}>
                         <Next/>
                     </div> 
-            <div className={styles.navBarDummy}></div>          
+            <div className={styles.navBarDummy}></div></div>         
       </main>
     
   );

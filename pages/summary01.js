@@ -13,7 +13,7 @@ export default function Summary() {
     {
       question: "How are you feeling?",
       options: ["Adequate", "Moderate", "Great"]
-    }, 
+    },
     {
       question: "How much did you enjoy the work in the cycle?",
       options: ["Adequate", "Moderate", "Great"]
@@ -25,7 +25,7 @@ export default function Summary() {
     {
       question: "How satisfied are you with your work pace? ",
       options: ["Adequate", "Moderate", "Great"]
-    },   
+    },
   ];
   //setting up array to use for the quiz component nnshiiiii
 
@@ -47,26 +47,28 @@ export default function Summary() {
         score += 1;
       } else if (answer === "Moderate") {
         score += 2;
-      } else if (answer === "Great"){
+      } else if (answer === "Great") {
         score += 3;
       }
     });
     return score;
   }
+  //had to put return score so itll calculate the result; it didnt work when i didnt put it idk...
 
   const handlePreviousQuestion = () => {
     setQuestionIndex(questionIndex - 1);
   };
+  //back button still not functioning properly ** fix later
 
   const renderCurrentPage = () => {
     if (answers.length === 0 || questionIndex < questions.length) {
       return (
         <div>
-          <Quiz 
-          questions={questions}
-          currentQuestion={questionIndex}
-          answers={answers}
-          onAnswer={handleNextQuestion}/>
+          <Quiz
+            questions={questions}
+            currentQuestion={questionIndex}
+            answers={answers}
+            onAnswer={handleNextQuestion}/>
           <div className={styles.buttonCont}>
             {questionIndex > 0 && (
               <Back className={styles.backButton} onClick={handlePreviousQuestion} />
@@ -87,19 +89,18 @@ export default function Summary() {
   };
 
   return (
-    <div className={styles.backgroundGrad}>
-      <main className={styles.summaryOne}>
+    <main className={styles.summaryOne}>
+      <div className={styles.summaryContainer}>
         <div className={styles.homeButton}>
-          <House/>
+          <House />
         </div>
-          <div className={styles.duckImage}><h2>image placeholder</h2></div>
-              {renderCurrentPage()}
-            <div className={styles.buttonContainer}>
-            </div> 
-            <div className={styles.navBarDummy}>
-              <div className={styles.playButt}></div>
-            </div>          
-      </main></div>
-
+        <div className={styles.duckImage}><h2>image placeholder</h2></div>
+        {renderCurrentPage()}
+        <div className={styles.buttonContainer}></div>
+        <div className={styles.navBarDummy}>
+          <div className={styles.playButt}></div>
+        </div>
+      </div>
+    </main>
   );
 }

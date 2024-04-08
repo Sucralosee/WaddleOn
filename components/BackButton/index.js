@@ -13,14 +13,14 @@ export default function Back() {
         setIsPressed(false);
     };
 
-  return (
-    <>
-        <div>
-            <button
-                className={`${styles.buttonNext} ${isPressed ? styles.nextPressed : ''}`} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp}>
+    return (
+        <>
+            <div>
+                <button
+                    tabIndex={5} className={`${styles.buttonNext} ${isPressed ? styles.nextPressed : ''}`} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp}>
                     Back
-            </button>
-        </div>
-    </>
-  );
+                </button>
+            </div>
+        </>
+    );
 }

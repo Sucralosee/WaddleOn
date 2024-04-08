@@ -5,16 +5,27 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 6rem;
-    min-height: 100vh;
-    background-color: var(--seashell);
+    width: 100vw;
+    height: 100vh;
   }
 
-  .duck{
+.contentContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 430px;
+    height: 932px;
+    min-height: 100vh;
+}
+
+.duck{
     width:145px;
     height:154px;
     border:1px solid black;
     border-radius: 50%;
+    position:absolute;
+    top:100px;
 }
 
 .buttonContainer{
@@ -30,9 +41,8 @@
 }
 
   .homeButton{
-    position: absolute;
-    top:10px;
-    left:20px;
+        z-index: 1;
+        margin: 30px auto 0 10px;
   }
 
 .navBarDummy{
@@ -49,7 +59,7 @@
     border-top-right-radius:20px;
     border-top-left-radius:20px;
     background: linear-gradient(var(--arathi-highlands)20%,var(--seashell)100%);
-    width: 100vw;
+    width: 430px;
     height:634px;
     position:absolute;
     top:298px;
