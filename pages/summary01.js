@@ -27,7 +27,7 @@ export default function Summary() {
       options: ["Adequate", "Moderate", "Great"]
     },   
   ];
-  //setting up data array to use for the quiz component nnshiiiii
+  //setting up array to use for the quiz component nnshiiiii
 
   const [answers, setAnswers] = useState([]);
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -43,11 +43,11 @@ export default function Summary() {
   const calculateScore = () => {
     let score = 0;
     answers.forEach((answer) => {
-      if (answer === "adequate") {
+      if (answer === "Adequate") {
         score += 1;
-      } else if (answer === "moderate") {
+      } else if (answer === "Moderate") {
         score += 2;
-      } else if (answer === "great"){
+      } else if (answer === "Great"){
         score += 3;
       }
     });
@@ -76,19 +76,15 @@ export default function Summary() {
       );
     } else {
       const score = calculateScore();
-      if (score >= 6) {
+      if (score >= 9) {
         router.push('/summaryMallard');
-      } else if (score >= 3) {
+      } else if (score >= 5) {
         router.push('/summaryBlueBill');
       } else {
         router.push('/summaryRuddy');
       }
     }
   };
-
-  if (answers.length > 0 && questionIndex >= questions.length){
-    renderCurrentPage();
-  }
 
   return (
     <div className={styles.backgroundGrad}>
