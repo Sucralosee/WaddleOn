@@ -12,19 +12,19 @@ export default function Summary() {
   const questions = [
     {
       question: "How are you feeling?",
-      options: ["adequate", "moderate", "great"]
+      options: ["Adequate", "Moderate", "Great"]
     }, 
     {
       question: "How much did you enjoy the work in the cycle?",
-      options: ["adequate", "moderate", "great"]
+      options: ["Adequate", "Moderate", "Great"]
     },
     {
       question: "Rate the quality of your break(s)",
-      options: ["adequate", "moderate", "great"]
+      options: ["Adequate", "Moderate", "Great"]
     },
     {
       question: "How satisfied are you with your work pace? ",
-      options: ["adequate", "moderate", "great"]
+      options: ["Adequate", "Moderate", "Great"]
     },   
   ];
   //setting up data array to use for the quiz component nnshiiiii
