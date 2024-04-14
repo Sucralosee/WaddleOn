@@ -43,7 +43,7 @@ export default function TimerPage() {
                     {(typeof data.main != 'undefined') ? (
                         <Weather weatherData={data} />
                     ) : (
-                        <div>Loading...</div>
+                        <p className={styles.loading}>Loading Time & Weather...</p>
                     )}
                     <div className={styles.duckAnimationTimer}>
 

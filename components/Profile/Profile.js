@@ -13,13 +13,15 @@ export default function Profile({
     return (
         <>
             <div className={styles.profileContainer}>
-                <Image />
-                <p className={styles.profileName}>{name}</p>
-                <p>You are a...</p>
-                <p className={styles.profileDuck}>{duckType}</p>
-                <h2 className={styles.profileHeading}>Total Amount Of Ducks Collected</h2>
-                <p className={styles.profileNumber}>{duckNumber}</p>
-                <button onClick={closeProfile}>Close</button>
+                <div className={styles.profileContent}>
+                    <Image  />
+                    <h1 className={styles.profileName}>{name}</h1>
+                    <p>You are a...</p>
+                    <h2 className={styles.profileDuck}>{duckType}</h2>
+                    <h2 className={styles.profileHeading}>Total Amount Of Ducks Collected</h2>
+                    <h1 className={styles.profileNumber}>{duckNumber}</h1>
+                    <h1 className={styles.exit} onClick={closeProfile}>X</h1>
+                </div>
             </div>
         </>
     )

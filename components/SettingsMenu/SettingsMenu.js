@@ -7,43 +7,46 @@ export default function SettingsMenu({
     return (
         <>
             <div className={styles.settingsContainer}>
-                <h3>SETTINGS</h3>
-                <div className={styles.sliderContainer}>
-                    <h6>
-                        Text Size
-                    </h6>
-                    <div className={styles.slider}>
-                        <input type="range"/>
-                    </div>
-                </div>
+                <h1 className={styles.settingsHeader}>SETTINGS</h1>
 
                 <div className={styles.buttonContainer}>
-                    <h6>
+                    <h2>
                         Theme
-                    </h6>
+                    </h2>
                     <div className={styles.buttons}>
-                        <button>Default</button>
-                        <button>Dark</button>
+                        <button className={styles.btn}>Default</button>
+                        <button className={styles.btn}>Dark</button>
                     </div>
                 </div>
 
                 <div className={styles.buttonContainer}>
-                    <h6>
+                    <h2>
                         Languages
-                    </h6>
+                    </h2>
                     <div className={styles.buttons}>
-                        <button>English</button>
-                        <button>French</button>
+                        <button className={styles.btn}>English</button>
+                        <button className={styles.btn}>French</button>
                     </div>
                 </div>
 
                 <div className={styles.sliderContainer}>
-                    <h6>
+                    <h2>
                         Sound
-                    </h6>
-                    <div className={styles.slider}></div>
+                    </h2>
+                    <div className={styles.slider}>
+                        <input type="range" />
+                    </div>
                 </div>
-                <button onClick={closeSettings}>Close</button>
+                <div className={styles.sliderContainer}>
+                    <h2>
+                        Text Size
+                    </h2>
+                    <div className={styles.slider}>
+                        <input type="range" />
+                    </div>
+                </div>
+
+                <h1 className={styles.exit} onClick={closeSettings}>X</h1>
             </div>
         </>
     )

@@ -5,6 +5,8 @@
     grid-template-rows: 1fr;
     z-index: 5;
     width: 430px;
+
+    animation: fadeIn 0.2s;
 }
 
 .weather * {
@@ -19,6 +21,17 @@
 .weatherTemp {
     margin: 1rem 1rem 0 auto;
 }
+
 .weatherTime {
     margin: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1
+    }
 }
