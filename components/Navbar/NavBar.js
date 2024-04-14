@@ -33,7 +33,7 @@ export default function NavBar() {
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous"></link>
                 {profileState ? <Profile profileVisibility={profileState} closeProfile={closeProfile} /> : null}
                 {settingsState ? <SettingsMenu settingsVisiblilty={profileState} closeSettings={closeSettings} /> : null}
-            <footer className={styles.navBarContainer}>
+            <div className={styles.navBarContainer}>
                 <div className={styles.navBarItems}>
                     <div onClick={toggleProfile} className={styles.profile}>
                         <i class="fa fa-user fa-3x" aria-hidden="true" ></i>
@@ -43,7 +43,7 @@ export default function NavBar() {
                         <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
                     </div>
                 </div>
-            </footer>
+            </div>
         </>
     )
 }

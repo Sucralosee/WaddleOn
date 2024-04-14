@@ -39,20 +39,22 @@ export default function TimerPage() {
     return (
         <>
             <main className={`${styles.main}`}>
-                {(typeof data.main != 'undefined') ? (
-                    <Weather weatherData={data} />
-                ) : (
-                    <div>Loading...</div>
-                )}
-                <div className={styles.duckAnimationTimer}>
+                <div className={styles.phoneContainer}>
+                    {(typeof data.main != 'undefined') ? (
+                        <Weather weatherData={data} />
+                    ) : (
+                        <div>Loading...</div>
+                    )}
+                    <div className={styles.duckAnimationTimer}>
 
-                    <Image width={430} height={238} style={timerDuck} />
-                    <Timer />
+                        <Image width={430} height={238} style={timerDuck} />
+                        <Timer />
+                    </div>
+                    <div>
+                        <Tasks />
+                    </div>
+                    <NavBar />
                 </div>
-                <div>
-                    <Tasks />
-                </div>
-                <NavBar />
             </main>
         </>
     )

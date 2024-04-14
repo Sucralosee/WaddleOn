@@ -51,7 +51,7 @@ export default function Tasks() {
                 </div>
             </div>
 
-
+{/* 
             <div>
                 <div>
                     <input type="text" onChange={handleChange} />
@@ -62,7 +62,7 @@ export default function Tasks() {
                         <li style={{ color: "red" }} key={item.id}>{item.task} <button>Complete</button></li>
                     ))}
                 </ul>
-            </div>
+            </div> */}
         </>
     )
 }
