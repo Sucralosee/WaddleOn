@@ -16,4 +16,4 @@ wow factor based on the extra reasources
 
 
 ## Packages Installed
-- moment
+- react-moment
