@@ -1,0 +1,24 @@
+.main {
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loading {
+  position: absolute;
+  color: var(--seashell);
+  margin: 1rem;
+}
+
+.phoneContainer {
+  display: grid;
+  width: 430px;
+  height: 932px;
+  margin: auto;
+}
+
+.duckAnimationTimer {
+  display: flex;
+  justify-content: center;
+}

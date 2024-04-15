@@ -1,0 +1,37 @@
+.weather {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    z-index: 5;
+    width: 430px;
+
+    animation: fadeIn 0.2s;
+}
+
+.weather * {
+    margin: 0;
+    color: var(--seashell);
+}
+
+.weatherHeader {
+    margin: 0 0 1rem;
+}
+
+.weatherTemp {
+    margin: 1rem 1rem 0 auto;
+}
+
+.weatherTime {
+    margin: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1
+    }
+}

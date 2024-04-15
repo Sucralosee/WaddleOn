@@ -1,30 +1,28 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import styles from "./Profile.module.css"
-import data from "../../data/inventory/inventory.json"
+import data from "../../data/inventory/inventory.js"
 
 //Logic: pass profile visibility from navbar -> true and set visibility -> false from profileExit
 export default function Profile({
-    name = "default",
+    name = "Name",
     duckType = "Duck",
     duckNumber = 0,
-    profileState = false
+    closeProfile
 }) {
-    const [profileVisibility, setProfileVisibility] = useState({ profileState });
-
     return (
         <>
-            {profileVisibility ?
-                <div className={styles.profileContainer}>
-                    <Image />
-                    <p className={styles.profileName}>{name}</p>
-                    <p className={styles.profileDuck}>{duckType}</p>
+            <div className={styles.profileContainer}>
+                <div className={styles.profileContent}>
+                    <Image  />
+                    <h1 className={styles.profileName}>{name}</h1>
+                    <p>You are a...</p>
+                    <h2 className={styles.profileDuck}>{duckType}</h2>
                     <h2 className={styles.profileHeading}>Total Amount Of Ducks Collected</h2>
-                    <p className={styles.profileNumber}>{duckNumber}</p>
-                    <div className={styles.profileExit} onClick={() => setProfileVisibility(false)}>
-                        <Image />
-                    </div>
-                </div> : null}
+                    <h1 className={styles.profileNumber}>{duckNumber}</h1>
+                    <h1 className={styles.exit} onClick={closeProfile}>X</h1>
+                </div>
+            </div>
         </>
     )
 }
