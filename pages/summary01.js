@@ -3,6 +3,7 @@ import Back from "@/components/BackButton";
 import House from "@/components/HomeButton";
 import React, { useState } from 'react';
 import Quiz from "@/components/QuizFold";
+import Image from "next/image"
 import { useRouter } from 'next/router';
 //useRouter redirects to another file https://nextjs.org/docs/app/building-your-application/routing/redirecting#userouter-hook
 
@@ -12,19 +13,19 @@ export default function Summary() {
   const questions = [
     {
       question: "How are you feeling?",
-      options: ["Adequate", "Moderate", "Great"]
+      options: ["Fatigued", "Neutral", "Energized"]
     },
     {
       question: "How much did you enjoy the work in the cycle?",
-      options: ["Adequate", "Moderate", "Great"]
+      options: ["Barely", "Somewhat", "Fully"]
     },
     {
       question: "Rate the quality of your break(s)",
-      options: ["Adequate", "Moderate", "Great"]
+      options: ["Unsatisfactory", "Decent", "Refreshing"]
     },
     {
-      question: "How satisfied are you with your work pace? ",
-      options: ["Adequate", "Moderate", "Great"]
+      question: "Describe your work pace? ",
+      options: ["Slow and Frustrated", "Steady and Manageable", "Effecient and Productive"]
     },
   ];
   //setting up array to use for the quiz component nnshiiiii
@@ -43,11 +44,11 @@ export default function Summary() {
   const calculateScore = () => {
     let score = 0;
     answers.forEach((answer) => {
-      if (answer === "Adequate") {
+      if (answer === "Fatigued" || answer === "Barely" || answer === "Unsatisfactory" || answer === "Slow and Frustrated") {
         score += 1;
-      } else if (answer === "Moderate") {
+      } else if (answer === "Neutral" || answer === "Somewhat" || answer === "Decent" || answer === "Steady and Manageable") {
         score += 2;
-      } else if (answer === "Great") {
+      } else if (answer === "Energized" || answer === "Fully" || answer === "Refreshing" || answer === "Effecient and Productive") {
         score += 3;
       }
     });
@@ -60,10 +61,17 @@ export default function Summary() {
   };
   //back button still not functioning properly ** fix later
 
+  const renderProgressIndicator = () => {
+    return (
+      <div className={styles.progressIndicator}>
+         {questionIndex + 1} of {questions.length}</div>
+    )
+  }
+
   const renderCurrentPage = () => {
     if (answers.length === 0 || questionIndex < questions.length) {
       return (
-        <div>
+        <div class={styles.quizBox}>
           <Quiz
             questions={questions}
             currentQuestion={questionIndex}
@@ -74,6 +82,9 @@ export default function Summary() {
               <Back className={styles.backButton} onClick={handlePreviousQuestion} />
             )}
           </div>
+            <div className={styles.progressContainer}>
+                {renderProgressIndicator()}
+            </div>
         </div>
       );
     } else {
@@ -94,7 +105,7 @@ export default function Summary() {
         <div className={styles.homeButton}>
           <House />
         </div>
-        <div className={styles.duckImage}><h2>image placeholder</h2></div>
+        <div className={styles.duckImage}><Image src="/images/ducksswim.png" width={430} height={470}/></div>
         {renderCurrentPage()}
         <div className={styles.buttonContainer}></div>
         <div className={styles.navBarDummy}>

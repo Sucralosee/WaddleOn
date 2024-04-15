@@ -17,7 +17,7 @@ export default function Mallard() {
             </div>
             <div className={styles.duck}><Image src="/images/bbduck.png" width={200} height={200}/></div>
                 <div className={styles.duckInfo}>
-                    <h1 className={styles.mallardName}>Ruddy Shelduck</h1>
+                    <h1 className={styles.mallardName}>Blue-billed Duck!</h1>
                         <h4 className={styles.features}>Defining features</h4>
                             <ul className={styles.featuresList}>
                                 <li>Friendly</li>
