@@ -10,7 +10,7 @@ import Weather from "@/components/Weather/Weather"
 export default function TimerPage() {
     const timerDuck = { backgroundColor: "grey", margin: "0 auto" }
 
-    //API Integration
+    //API Integration: free code camp guide
     const [lat, setLat] = useState([]);
     const [long, setLong] = useState([]);
     const [data, setData] = useState([]);
