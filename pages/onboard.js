@@ -1,6 +1,7 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/onboard.module.css";
 import Landing from "@/components/Landing";
+import Progress from "@/components/Progress/Progress";
 
 export default function Home() {
     return (
@@ -12,8 +13,8 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <div>
-                    <Landing/>
+                <div className={styles.onboardContainer}>
+                    <Progress/>
                 </div>
             </main>
         </>
