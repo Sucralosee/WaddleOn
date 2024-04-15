@@ -1,18 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lexend:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-
 .quiz{
-    width:400px;
-    height:191px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .questionContainer{
-
-    width:350px;
-    height:90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,16 +18,14 @@
     font-family:'fredoka' ;
     font-size: var(--h2);
     font-weight: 500;
-    margin-bottom: -80px;
+    height: 8rem;
+    width: 16rem;
 }
 
 .options{
     display:flex;
     flex-direction: column;
     gap:10px;
-    height:308px;
-    position:absolute;
-    top:670px;
     align-items: center;
 }
 

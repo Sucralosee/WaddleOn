@@ -10,7 +10,6 @@
 .summaryContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   width: 430px;
   height: 932px;
@@ -33,19 +32,11 @@
   position: absolute;
 }
 
-.buttonCont{
-  display: flex;
-  flex-direction: row;
-  margin-right: auto;
-}
-
-.buttonSpacer {
-  height: 17px;
-}
-
 .homeButton {
   z-index: 1;
-  margin: 10px auto 0 10px;
+  position: absolute;
+  margin: 1rem 20rem 0 0;
+  /*Temporary Fix, Fix the nesting of the button*/
 }
 
 .navBarDummy {
@@ -74,21 +65,24 @@
   justify-content: center;
   margin-top: 0px;
   position: relative;
-  top: 255px;
-}
 
-.quizBox{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin-right: auto;
 }
 
-.progressIndicator{
+.progressIndicator {
   font-family: fredoka;
   font-size: var(--h6);
   color: var(--gray5);
   position: relative;
-  top: 270px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.quizProgress {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0 1rem 0;
 }

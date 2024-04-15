@@ -64,28 +64,32 @@ export default function Summary() {
   const renderProgressIndicator = () => {
     return (
       <div className={styles.progressIndicator}>
-         {questionIndex + 1} of {questions.length}</div>
+        {questionIndex + 1} of {questions.length}</div>
     )
   }
 
   const renderCurrentPage = () => {
     if (answers.length === 0 || questionIndex < questions.length) {
       return (
-        <div class={styles.quizBox}>
+        <>
           <Quiz
             questions={questions}
             currentQuestion={questionIndex}
             answers={answers}
-            onAnswer={handleNextQuestion}/>
-          <div className={styles.buttonCont}>
-            {questionIndex > 0 && (
-              <Back className={styles.backButton} onClick={handlePreviousQuestion} />
-            )}
-          </div>
-            <div className={styles.progressContainer}>
-                {renderProgressIndicator()}
+            onAnswer={handleNextQuestion} />
+          <div className={styles.quizProgress}>
+            <div className={styles.buttonCont}>
+              {questionIndex > 0 && (
+                <Back className={styles.backButton} onClick={handlePreviousQuestion} />
+              )}
             </div>
-        </div>
+            <div className={styles.progressContainer}>
+              {renderProgressIndicator()}
+            </div>
+          </div>
+
+        </>
+
       );
     } else {
       const score = calculateScore();
@@ -105,12 +109,9 @@ export default function Summary() {
         <div className={styles.homeButton}>
           <House />
         </div>
-        <div className={styles.duckImage}><Image src="/images/ducksswim.png" width={430} height={470}/></div>
+        <Image src="/images/ducksswim.png" width={430} height={450} />
         {renderCurrentPage()}
         <div className={styles.buttonContainer}></div>
-        <div className={styles.navBarDummy}>
-          <div className={styles.playButt}></div>
-        </div>
       </div>
     </main>
   );
