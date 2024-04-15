@@ -6,13 +6,12 @@ import Image from "next/image"
 import Tasks from "@/components/Tasks/Tasks"
 import Weather from "@/components/Weather/Weather"
 
-
 export default function TimerPage() {
     const timerDuck = { backgroundColor: "grey", margin: "0 auto" }
 
     //API Integration: free code camp guide
-    const [lat, setLat] = useState([]);
-    const [long, setLong] = useState([]);
+    const [lat, setLat] = useState([49.104431]);
+    const [long, setLong] = useState([-122.801094]);
     const [data, setData] = useState([]);
 
     var apiKeyInfo = process.env.NEXT_PUBLIC_API_KEY;
