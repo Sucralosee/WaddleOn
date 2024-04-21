@@ -1,6 +1,7 @@
 import styles from "./Tasks.module.css"
 import { useState } from "react"
 import TaskItem from "../TaskItem/TaskItem"
+import Image from "next/image"
 
 
 //https://medium.com/@worachote/building-a-todo-list-app-with-reactjs-a-step-by-step-guide-2c58b9b6c0f5
@@ -35,20 +36,29 @@ export default function Tasks() {
 
     return (
         <>
-            <div className="todo-list">
-                {tasks.map(task => (
-                    <TaskItem
-                        key={task.id}
-                        task={task}
-                        deleteTask={deleteTask}
-                        toggleCompleted={toggleCompleted}
+            <div className={styles.tasks}>
+                <div className={styles.taskInput}>
+                    <div className={styles.inputHighlight}></div>
+                    <input
+                        value={text}
+                        onChange={e => setText(e.target.value)}
+                        className={styles.input}
+                        placeholder="Write A New Task"
                     />
-                ))}
-                <input
-                    value={text}
-                    onChange={e => setText(e.target.value)}
-                />
-                <button onClick={() => addTask(text)}>Add</button>
+                    <img/>
+                </div>
+                <button className={styles.tasksAdding} onClick={() => addTask(text)}><Image></Image></button>
+                <div className={styles.tasksContainer}>
+                    <h3>Current Task</h3>
+                    {tasks.map(task => (
+                        <TaskItem
+                            key={task.id}
+                            task={task}
+                            deleteTask={deleteTask}
+                            toggleCompleted={toggleCompleted}
+                        />
+                    ))}
+                </div>
             </div>
         </>
     )

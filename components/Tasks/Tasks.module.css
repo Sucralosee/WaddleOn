@@ -1,77 +1,63 @@
 .tasks {
-    display: grid;
-    grid-template-rows: 1fr 1fr auto;
-    justify-content: center;
-    margin: 6rem 0 0 0;
-    row-gap: 0.5rem;
-}
-
-.addingTasks {
-    width: 308px;
-    height: 63px;
-    background-color: var(--arathi-highlands);
-    border-radius: var(--card-curve-small);
-    z-index: -1;
     display: flex;
     flex-direction: column;
-}
-
-.addingTasksTitle {
-    margin: 0 0 0 auto;
-    z-index: 0;
-}
-
-.addingTasksHighlight {
-    width: 55px;
-    height: 4px;
-    margin: 4px;
-    background-color: var(--seashell);
-    position: absolute;
-    border-radius: var(--card-curve-small);
-}
-
-.addingTasksInputField {
-    display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    margin: auto 0;
-}
-
-.inputTask {
-    width: 233px;
-    height: 34px;
-    border-radius: var(--card-curve-small);
-    z-index: 100;
-    border: none;
-}
-
-.inputTask::placeholder {
-    font-family: var(--paragraph-style);
-    text-indent: 1rem;
-}
-
-.submittingTasks {
-    width: 96px;
-    height: 48px;
-    background-color: var(--flush-orange);
-    border-radius: var(--card-curve-small);
-    margin: 0 0 0 auto;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.submittingTasksIcon {
+    width: 300px;
     margin: auto;
 }
 
-.taskList {
-    background-color: var(--seashell);
-    box-shadow: 0px 1px 4.4px 0px rgba(14, 13, 13, 0.25);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.tasksContainer {
+    width: 300px;
+    height: 240px;
+    background-color: var(--button-blue);
+    border-radius: var(--card-curve-small);
+    overflow: scroll;
 }
 
-.taskListTitle {
-    margin: 0 0 0 0.5rem;
+.inputHighlight {
+    width: 100%;
+    height: 4px;
+    border-radius: var(--card-curve-small);
+    background-color: var(--seashell);
+    z-index: 0;
+}
+
+.taskInput {
+    width: 308px;
+    height: 63px;
+    border-radius: var(--card-curve-small);
+    background: var(--arathi-highlands);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input {
+    width: 233px;
+    height: 30px;
+    border-radius: var(--card-curve-small);
+    border: none;
+    z-index: 5;
+    position: absolute;
+    background: var(--seashell);
+}
+
+.input:focus {
+    text-indent: 1rem;
+}
+
+.input::placeholder {
+    color: var(--gray5);
+    text-indent: 1rem;
+}
+
+.tasksAdding {
+    width: 96.095px;
+    height: 48.523px;
+    border: none;
+    background: var(--flush-orange);
+    border-radius: var(--card-curve-small);
+    margin: 1rem 0 2rem auto;
 }

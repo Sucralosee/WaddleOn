@@ -19,7 +19,7 @@
     width: 118.345px;
     height: 5px;
     border-radius: var(--card-curve-small);
-    background-color: rgba(254, 251, 249, 0.50);
+    background-color: var(--seashell);
     mix-blend-mode: screen;
     z-index: 0;
     margin: 4px auto 4px 4px;

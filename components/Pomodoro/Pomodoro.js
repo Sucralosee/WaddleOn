@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Pomodoro.module.css"
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import paused from "../../public/images/paused.png"
+import Tasks from "../Tasks/Tasks";
 
 //Pomodoro timer base conceived from: https://www.youtube.com/watch?v=9z1qBcFwdXg
 export default function Pomodoro() {
@@ -71,7 +71,7 @@ export default function Pomodoro() {
                         <div className={styles.timer}>{timerMinutes}:{timerSeconds}</div>
                     </div>
                 </div>
-                <div>Task Component</div>
+                <Tasks/>
                 <div className={styles.playButton} onClick={toggleTimer}>
                     {!playState && <Image src="/images/paused.png" width={93} height={93} alt="paused" onClick={handlePlayButton} />}
                     {playState && <Image src="/images/play.png" width={93} height={93} alt="play" onClick={handlePlayButton} />}
