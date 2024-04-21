@@ -1,15 +1,17 @@
 import React from "react";
-import styles from "./pomodoro.module.css"
+import styles from "./Pomodoro.module.css"
 import { useState, useEffect } from "react";
-
+import Image from "next/image";
+import paused from "../../public/images/paused.png"
 
 //Pomodoro timer base conceived from: https://www.youtube.com/watch?v=9z1qBcFwdXg
 export default function Pomodoro() {
     const [minutes, setMinutes] = useState(25);
     const [seconds, setSeconds] = useState(0);
     const [displayMessage, setDisplayMessage] = useState(false)
-    const [startButton, setStartButton] = useState(true)
+    const [startButton, setStartButton] = useState(false)
     const [cycleNumber, setCycleNumber] = useState(0)
+    const [playState, setPlayState] = useState(false)
 
     useEffect(() => {
         let interval;
@@ -52,19 +54,34 @@ export default function Pomodoro() {
         setStartButton(!startButton)
     }
 
+    const handlePlayButton = () => {
+        setPlayState(!playState)
+        toggleTimer
+    }
+
     return (
         <>
             <div className={styles.pomodoro}>
-
-                    <div>
-                        <div className={styles.message}>
-                            {displayMessage && <div>Break time! New session starts in:</div>}
-                        </div>
-                        <div className={styles.timer}>{timerMinutes}:{timerSeconds}</div>
-                        <div>{cycleNumber}</div>
+                <div className={styles.highlight}></div>
+                <div>
+                    <div className={styles.message}>
+                        {displayMessage && <div>Break time! New session starts in:</div>}
                     </div>
-                <button onClick={toggleTimer}>Toggle</button>
+                    <div className={styles.timer}>{timerMinutes}:{timerSeconds}</div>
+                </div>
             </div>
+            <div className={styles.playButton}>
+                <button onClick={toggleTimer}>Toggle</button>
+                <button onClick={toggleTimer}>Toggle</button>
+
+                <div onClick={toggleTimer}>
+                    {!playState && <Image src="/images/paused.png" width={93} height={93} alt="paused" onClick={handlePlayButton}/>}
+                    {playState && <Image src="/images/play.png" width={93} height={93} alt="play" onClick={handlePlayButton}/>}
+                </div>
+
+            </div>
+            <div>{cycleNumber}</div>
+
         </>
     )
 }

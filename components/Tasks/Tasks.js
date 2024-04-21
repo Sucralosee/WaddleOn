@@ -37,7 +37,7 @@ export default function Tasks() {
         <>
             <div className="todo-list">
                 {tasks.map(task => (
-                    <TaskItemItem
+                    <TaskItem
                         key={task.id}
                         task={task}
                         deleteTask={deleteTask}
