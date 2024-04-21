@@ -16,10 +16,10 @@ export default function Progress() {
         <div className={styles.progressContainer}>
             <Image 
                 className={styles.pondImage}
-                src={`/images/Steps/step${stepNum}.png`}
+                src={`/images/Steps/step${stepNum}.svg`}
                 width={400}
                 height={400}
-                alt={`dark pond indicating step ${stepNum}`}                
+                alt={`pond indicating step ${stepNum}`}                
             />
             <button onClick={nextStep} className={styles.nextButton}>
                 Continue

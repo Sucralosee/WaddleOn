@@ -1,10 +1,8 @@
 import Head from "next/head";
-import styles from "@/styles/onboard.module.css";
-import Landing from "@/components/Landing";
-import Progress from "@/components/Progress";
+import StatsPie from "@/components/StatsPie";
 
-export default function Onboard() {
-    return (
+export default function Stats(){
+    return(
         <>
             <Head>
                 <title>Create Next App</title>
@@ -13,8 +11,8 @@ export default function Onboard() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <div className={styles.onboardContainer}>
-                    <Progress/>
+                <div>
+                    <StatsPie/>
                 </div>
             </main>
         </>

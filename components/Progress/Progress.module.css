@@ -6,7 +6,6 @@
 }
 
 .pondImage {
-    /* Add your styles for the image here */
     margin-bottom: 20px;
 }
 
@@ -14,14 +13,14 @@
 .nextButton {
     width: 203px;
     height: 37px;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: none;
+    font-size: var(--h4);
     background-color: var(--arathi-highlands);
     color: var(--seashell);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
 .nextButton:hover {
     background-color: var(--flush-orange);
