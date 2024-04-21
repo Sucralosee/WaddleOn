@@ -10,9 +10,9 @@ export default function SettingsMenu({
                 <h1 className={styles.settingsHeader}>SETTINGS</h1>
 
                 <div className={styles.buttonContainer}>
-                    <h2>
+                    <h3>
                         Theme
-                    </h2>
+                    </h3>
                     <div className={styles.buttons}>
                         <button className={styles.btn}>Default</button>
                         <button className={styles.btn}>Dark</button>
@@ -20,9 +20,9 @@ export default function SettingsMenu({
                 </div>
 
                 <div className={styles.buttonContainer}>
-                    <h2>
+                    <h3>
                         Languages
-                    </h2>
+                    </h3>
                     <div className={styles.buttons}>
                         <button className={styles.btn}>English</button>
                         <button className={styles.btn}>French</button>
@@ -30,23 +30,25 @@ export default function SettingsMenu({
                 </div>
 
                 <div className={styles.sliderContainer}>
-                    <h2>
+                    <h3>
                         Sound
-                    </h2>
+                    </h3>
                     <div className={styles.slider}>
                         <input type="range" />
                     </div>
                 </div>
                 <div className={styles.sliderContainer}>
-                    <h2>
+                    <h3>
                         Text Size
-                    </h2>
+                    </h3>
                     <div className={styles.slider}>
                         <input type="range" />
                     </div>
                 </div>
 
-                <h1 className={styles.exit} onClick={closeSettings}>X</h1>
+                <div className={styles.exit} onClick={closeSettings}>
+                    <h4>X</h4>
+                </div>
             </div>
         </>
     )

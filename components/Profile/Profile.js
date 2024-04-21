@@ -20,7 +20,9 @@ export default function Profile({
                     <h2 className={styles.profileDuck}>{duckType}</h2>
                     <h2 className={styles.profileHeading}>Total Amount Of Ducks Collected</h2>
                     <h1 className={styles.profileNumber}>{duckNumber}</h1>
-                    <h1 className={styles.exit} onClick={closeProfile}>X</h1>
+                    <div className={styles.exit} onClick={closeProfile}>
+                       <h4>X</h4>
+                    </div>
                 </div>
             </div>
         </>

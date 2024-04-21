@@ -1,68 +1,55 @@
 import styles from "./Tasks.module.css"
 import { useState } from "react"
+import TaskItem from "../TaskItem/TaskItem"
 
-const taskList = [
-    {
-        id: "a",
-        task: "Math",
-    },
-    {
-        id: "b",
-        task: "Science"
-    }
-]
 
+//https://medium.com/@worachote/building-a-todo-list-app-with-reactjs-a-step-by-step-guide-2c58b9b6c0f5
 export default function Tasks() {
-    const [list, setList] = useState(taskList)
-    const [name, setName] = useState('')
+    const [tasks, setTasks] = useState([])
 
-    function handleChange() {
-        //input
-        setName(event.target.value);
+    const [text, setText] = useState('')
+
+    function addTask(text) {
+        const newTask = {
+            id: Date.now(), // I don't understand this part yet
+            text,
+            completed: false
+        };
+        setTasks([...tasks, newTask]);
+        setText('');
     }
 
-    function handleAdd() {
-        // add
-        const Newlist = list.concat({ task });
+    function deleteTask(id) {
+        setTasks(tasks.filter(task => task.id !== id))
+    }
 
-        setList(Newlist)
+    function toggleCompleted(id) {
+        setTasks(tasks.map(task => {
+            if (task.id === id) {
+                return { ...task, completed: !task.completed };
+            } else {
+                return task;
+            }
+        }));
     }
 
     return (
         <>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous"></link>
-            <div className={styles.tasks}>
-                <div className={styles.addingTasks}>
-                    <div className={styles.addingTasksHighlight}></div>
-                    <div className={styles.addingTasksInputField}>
-                        <input className={styles.inputTask} type="text" placeholder="Add Tasks" />
-                        <div>
-                            <i class="fa fa-filter fa-2x" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.submittingTasks}>
-                    <span className={styles.submittingTasksIcon}>
-                        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div className={styles.taskList}>
-                    <h2 className={styles.taskListTitle}>Current <div>Task</div></h2>
-                </div>
+            <div className="todo-list">
+                {tasks.map(task => (
+                    <TaskItemItem
+                        key={task.id}
+                        task={task}
+                        deleteTask={deleteTask}
+                        toggleCompleted={toggleCompleted}
+                    />
+                ))}
+                <input
+                    value={text}
+                    onChange={e => setText(e.target.value)}
+                />
+                <button onClick={() => addTask(text)}>Add</button>
             </div>
-
-{/* 
-            <div>
-                <div>
-                    <input type="text" onChange={handleChange} />
-                    <button type="button" onChange={handleAdd}>Add</button>
-                </div>
-                <ul>
-                    {list.map((item) => (
-                        <li style={{ color: "red" }} key={item.id}>{item.task} <button>Complete</button></li>
-                    ))}
-                </ul>
-            </div> */}
         </>
     )
 }

@@ -18,6 +18,10 @@
     width: 300px;
 }
 
+.settingsContainer h3 {
+    margin: 0.5rem;
+}
+
 .settingsHeader {
     text-align: center;
 }
@@ -90,6 +94,10 @@
     color: var(--seashell);
     text-align: left;
     text-indent: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes fadeIn {
