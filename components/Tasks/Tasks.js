@@ -38,7 +38,6 @@ export default function Tasks() {
         <>
             <div className={styles.tasks}>
                 <div className={styles.taskInput}>
-                    <div className={styles.inputHighlight}></div>
                     <input
                         value={text}
                         onChange={e => setText(e.target.value)}
@@ -49,7 +48,7 @@ export default function Tasks() {
                 </div>
                 <button className={styles.tasksAdding} onClick={() => addTask(text)}><Image></Image></button>
                 <div className={styles.tasksContainer}>
-                    <h3>Current Task</h3>
+                    <p className={styles.taskListHeader}>Current Task</p>
                     {tasks.map(task => (
                         <TaskItem
                             key={task.id}

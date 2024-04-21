@@ -9,12 +9,12 @@ export default function TaskItem({ task, deleteTask, toggleCompleted }) {
     return (
         <>
             <div className={styles.listItem}>
+                <p className={styles.taskName}>{task.text}</p>
                 <input
                     type="checkbox"
                     checked={task.completed}
                     onChange={handleChange}
                 />
-                <p>{task.text}</p>
                 <button onClick={() => deleteTask(task.id)}>
                     X
                 </button>

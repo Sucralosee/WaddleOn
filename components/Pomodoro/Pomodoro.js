@@ -71,13 +71,12 @@ export default function Pomodoro() {
                         <div className={styles.timer}>{timerMinutes}:{timerSeconds}</div>
                     </div>
                 </div>
-                <Tasks/>
-                <div className={styles.playButton} onClick={toggleTimer}>
-                    {!playState && <Image src="/images/paused.png" width={93} height={93} alt="paused" onClick={handlePlayButton} />}
-                    {playState && <Image src="/images/play.png" width={93} height={93} alt="play" onClick={handlePlayButton} />}
-                </div>
+                <Tasks />
             </div>
-
+            <div className={styles.playButton} onClick={toggleTimer}>
+                {!playState && <Image src="/images/paused.png" width={93} height={93} alt="paused" onClick={handlePlayButton} className={styles.button} />}
+                {playState && <Image src="/images/play.png" width={93} height={93} alt="play" onClick={handlePlayButton} className={styles.button} />}
+            </div>
             {/* <p>Number of Ducks: {cycleNumber}</p> */}
 
         </>
