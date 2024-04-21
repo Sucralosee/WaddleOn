@@ -35,12 +35,15 @@ export default function NavBar() {
                 {settingsState ? <SettingsMenu settingsVisiblilty={profileState} closeSettings={closeSettings} /> : null}
             <div className={styles.navBarContainer}>
                 <div className={styles.navBarItems}>
+                    <div className={styles.navbarLogo}>WaddleOn</div>
                     <div onClick={toggleProfile} className={styles.profile}>
-                        <i class="fa fa-user fa-3x" aria-hidden="true" ></i>
+                        <i class="fa fa-question fa-2x" aria-hidden="true" ></i>
                     </div>
-                    <div>Pause/Play Component</div>
+                    <div onClick={toggleProfile} className={styles.profile}>
+                        <i class="fa fa-user fa-2x" aria-hidden="true" ></i>
+                    </div>
                     <div onClick={toggleSettings} className={styles.settings}>
-                        <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
+                        <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>

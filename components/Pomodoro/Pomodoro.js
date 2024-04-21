@@ -61,26 +61,24 @@ export default function Pomodoro() {
 
     return (
         <>
-            <div className={styles.pomodoro}>
-                <div className={styles.highlight}></div>
-                <div>
-                    <div className={styles.message}>
-                        {displayMessage && <div>Break time! New session starts in:</div>}
+            <div className={styles.pomodoroContainer}>
+                <div className={styles.pomodoro}>
+                    <div className={styles.highlight}></div>
+                    <div>
+                        <div className={styles.message}>
+                            {displayMessage && <div>Break time! New session starts in:</div>}
+                        </div>
+                        <div className={styles.timer}>{timerMinutes}:{timerSeconds}</div>
                     </div>
-                    <div className={styles.timer}>{timerMinutes}:{timerSeconds}</div>
+                </div>
+                <div>Task Component</div>
+                <div className={styles.playButton} onClick={toggleTimer}>
+                    {!playState && <Image src="/images/paused.png" width={93} height={93} alt="paused" onClick={handlePlayButton} />}
+                    {playState && <Image src="/images/play.png" width={93} height={93} alt="play" onClick={handlePlayButton} />}
                 </div>
             </div>
-            <div className={styles.playButton}>
-                <button onClick={toggleTimer}>Toggle</button>
-                <button onClick={toggleTimer}>Toggle</button>
 
-                <div onClick={toggleTimer}>
-                    {!playState && <Image src="/images/paused.png" width={93} height={93} alt="paused" onClick={handlePlayButton}/>}
-                    {playState && <Image src="/images/play.png" width={93} height={93} alt="play" onClick={handlePlayButton}/>}
-                </div>
-
-            </div>
-            <div>{cycleNumber}</div>
+            {/* <p>Number of Ducks: {cycleNumber}</p> */}
 
         </>
     )
