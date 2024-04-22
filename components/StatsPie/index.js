@@ -58,11 +58,19 @@ export default function StatsPie() {
 
     return (
         <>
-            <h1>The Effect of Pomodoro Technique</h1>
-            <p style={styles.descPara}>The Pomodoro technique is a timed-based strategy used in fighting procrastination and found to increase academic performance. However, its effect on academic learning in a synchronous remote learning modality has yet to be investigated. The study used a mixed triangulation semi-experimental design using a whole sample (N=46), following all ethical equivalence procedures. The genetics concept mastery of the students was tested using a researcher-made test. ANCOVA results revealed that students taught using Pomodoro yielded significantly better concept mastery in genetics than the lecture method. This study contributes to the evaluation of one science teaching strategy compatible with remote learning modality.</p>
-            <div>
-                <Pie data={chartData1} options={chartOptions} style={{ width: "300px", height: "200px" }} />
-                <Pie data={chartData2} options={chartOptions} style={{ width: "300px", height: "200px" }} />
+            <div className={styles.stats_container}>
+                <div className={styles.stats}>
+                    <h1>The Effect of Pomodoro Technique</h1>
+                    <p >The Pomodoro technique is a timed-based strategy used in fighting procrastination and found to increase academic performance. However, its effect on academic learning in a synchronous remote learning modality has yet to be investigated. The study used a mixed triangulation semi-experimental design using a whole sample (N=46), following all ethical equivalence procedures. The genetics concept mastery of the students was tested using a researcher-made test. ANCOVA results revealed that students taught using Pomodoro yielded significantly better concept mastery in genetics than the lecture method. This study contributes to the evaluation of one science teaching strategy compatible with remote learning modality.</p>
+                    <div>
+                        <h4>Using Pomodoro Technique</h4>
+                        <Pie data={chartData1} options={chartOptions} style={{ width: "300px", height: "200px" }} />
+                        <p>Notice that all students performed in the Mastered, Closely Approximating Mastery and the Moving Towards Mastery categories</p>
+                        <h4>Using Standard Lecture Techniques</h4>
+                        <Pie data={chartData2} options={chartOptions} style={{ width: "300px", height: "200px" }} />
+                        <p>Notice that there are no students who performed in the Mastered and Closely Approximating Mastery sections</p>
+                    </div>
+                </div>
             </div>
         </>
     );
