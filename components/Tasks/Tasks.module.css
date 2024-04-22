@@ -1,0 +1,62 @@
+.tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: auto;
+}
+
+.tasksContainer {
+    width: 300px;
+    max-height: 240px;
+    background-color: var(--button-blue);
+    border-radius: var(--card-curve-small);
+    overflow: scroll;
+}
+
+.taskInput {
+    width: 308px;
+    height: 63px;
+    border-radius: var(--card-curve-small);
+    background: var(--arathi-highlands);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input {
+    width: 233px;
+    height: 30px;
+    border-radius: var(--card-curve-small);
+    border: none;
+    z-index: 5;
+    position: absolute;
+    background: var(--seashell);
+}
+
+.input:focus {
+    text-indent: 1rem;
+}
+
+.input::placeholder {
+    color: var(--gray5);
+    text-indent: 1rem;
+}
+
+.tasksAdding {
+    width: 96.095px;
+    height: 48.523px;
+    border: none;
+    background: var(--flush-orange);
+    border-radius: var(--card-curve-small);
+    margin: 1rem 0 2rem auto;
+}
+
+.taskListHeader {
+    margin: 1rem;
+    width: 1rem;
+    font-weight: bold;
+    font-size: var(--h5);
+}

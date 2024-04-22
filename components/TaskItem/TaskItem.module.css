@@ -1,0 +1,19 @@
+.listItem {
+    width: 270px;
+    height: 32px;
+    background-color: var(--seashell);
+    border-radius: var(--card-curve-small);
+    margin: 1rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    filter: drop-shadow(0 0 0.3rem var(--gray5));}
+
+.listItem * {
+    margin: 0.3rem;
+}
+
+.taskName {
+    font-weight: bold;
+}
