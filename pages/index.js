@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
+import Link from 'next/link';
 import Landing from "@/components/Landing";
 
 
@@ -13,6 +14,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main}`}>
+      <Link href="/summary01">Summary1</Link>
+      <Link href="/summary02">Testing</Link>
+      <Link href="/summaryMallard">Mallard</Link>
+      <Link href="/summaryRuddy">Ruddy</Link>
+      <Link href="/summaryBlueBill">Blue-billed</Link>
           <div>
             <Landing/>
           </div>
