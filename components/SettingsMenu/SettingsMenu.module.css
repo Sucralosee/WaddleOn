@@ -1,0 +1,111 @@
+.settingsContainer {
+    width: 400px;
+    height: 700px;
+    background-color: var(--seashell);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    filter: drop-shadow(0 0 1rem var(--gray5));
+    border-radius: var(--card-curve-small);
+    margin: 5rem 1rem;
+
+    animation: fadeIn 0.2s;
+}
+
+.settingsContainer * {
+    width: 300px;
+}
+
+.settingsContainer h3 {
+    margin: 0.5rem;
+}
+
+.settingsHeader {
+    text-align: center;
+}
+
+.sliderContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sliderContainer input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--gray5);
+    border-radius: var(--card-curve-small);
+    cursor: pointer;
+}
+
+.sliderContainer input[type="range"]::-webkit-slider-runnable-track {
+    width: 221px;
+    height: 16px;
+}
+
+.sliderContainer input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 25px;
+    background: var(--button-blue);
+    cursor: pointer;
+    border-radius: var(--card-curve-small);
+    margin-top: -5px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.btn {
+    display: flex;
+    width: 123px;
+    height: 30px;
+    padding: 5px 34px;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--card-curve-small);
+    background-color: var(--arathi-highlands);
+    border: none;
+    font-family: var(--paragraph-style);
+    color: var(--seashell);
+    margin: 1rem;
+}
+
+.slider {
+    border: none;
+}
+
+
+.exit {
+    position: absolute;
+    bottom: 2rem;
+    right: 0;
+    margin: 0 0 0 auto;
+    width: 87px;
+    height: 38px;
+    border-radius: 8px 0px 0px 8px;
+    background-color: var(--arathi-highlands);
+    color: var(--seashell);
+    text-align: left;
+    text-indent: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}

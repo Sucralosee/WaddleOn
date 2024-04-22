@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Link from 'next/link';
+import Landing from "@/components/Landing";
 
 
 export default function Home() {
@@ -18,6 +19,9 @@ export default function Home() {
       <Link href="/summaryMallard">Mallard</Link>
       <Link href="/summaryRuddy">Ruddy</Link>
       <Link href="/summaryBlueBill">Blue-billed</Link>
+          <div>
+            <Landing/>
+          </div>
       </main>
     </>
   );

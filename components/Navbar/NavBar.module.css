@@ -1,0 +1,42 @@
+.navBarContainer {
+    margin: auto auto 0;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    grid-row: 4/5;
+}
+
+.navBarItems {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 414px;
+    height: 69px;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background-color: var(--arathi-highlands);
+    color: var(--seashell);
+}
+
+.navBarItems * {
+    margin: 0.5rem;
+}
+
+.navbarLogo {
+    font-family: var(--logo-style);
+    font-size: var(--h5);
+    font-weight: bold;
+    margin: 0 auto 0 1rem;
+}
+
+.profilePosition {
+    position: absolute;
+    z-index: 5;
+}
+
+.profile:hover {
+    cursor: pointer;
+}
+
+.settings:hover {
+    cursor: pointer;
+}

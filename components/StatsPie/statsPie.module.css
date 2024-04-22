@@ -1,0 +1,11 @@
+.stats_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100vw;
+}
+.stats{
+    width:430px;
+
+}
