@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 import styles from "../styles/TimerPage.module.css"
-import Timer from "@/components/Timer/Timer"
 import NavBar from "@/components/Navbar/NavBar"
 import Image from "next/image"
 import Tasks from "@/components/Tasks/Tasks"
 import Weather from "@/components/Weather/Weather"
+import Pomodoro from "@/components/Pomodoro/Pomodoro"
 
 export default function TimerPage() {
     const timerDuck = { backgroundColor: "grey", margin: "0 auto" }
@@ -45,12 +45,11 @@ export default function TimerPage() {
                         <p className={styles.loading}>Loading Time & Weather...</p>
                     )}
                     <div className={styles.duckAnimationTimer}>
-
                         <Image width={430} height={238} style={timerDuck} />
-                        <Timer />
+                        <Pomodoro/>
                     </div>
                     <div>
-                        <Tasks />
+                        {/* <Tasks /> */}
                     </div>
                     <NavBar />
                 </div>

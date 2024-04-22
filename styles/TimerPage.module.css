@@ -3,6 +3,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background: var(--seashell);
 }
 
 .loading {
@@ -13,12 +14,8 @@
 
 .phoneContainer {
   display: grid;
+  grid-template-rows: repeat(4, auto);
   width: 430px;
   height: 932px;
   margin: auto;
-}
-
-.duckAnimationTimer {
-  display: flex;
-  justify-content: center;
 }
