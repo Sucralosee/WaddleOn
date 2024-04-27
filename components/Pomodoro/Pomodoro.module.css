@@ -1,6 +1,6 @@
 .pomodoroContainer {
     display: grid;
-    grid-template-rows: repeat(2, 8rem);
+    grid-template-rows: repeat(10, auto);
 }
 
 .pomodoro {
@@ -31,14 +31,22 @@
     color: var(--seashell);
 }
 
-.playButton {
-    width: 430px;
-    z-index: 10;
+.cycleButton {
+    color: var(--seashell);
+    font-weight: bold;
     display: flex;
-    justify-content: center;
-    position: absolute;
-    margin-top: 20rem;
+    justify-content: space-around;
+    align-items: center;
+    width: 205.03px;
+    height: 36px;
+
+    background-color: var(--arathi-highlands);
+    border-radius: var(--card-curve-small);
+    box-shadow: 0px 1px 4.4px 0px var(--arathi-highlands);
+    margin: auto;
 }
+
+.playButton {}
 
 .button {
     animation: buttonTransition 0.5s;

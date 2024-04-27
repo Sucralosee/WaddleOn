@@ -3,6 +3,7 @@ import styles from "./Pomodoro.module.css"
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Tasks from "../Tasks/Tasks";
+import CycleComplete from "../CycleComplete/CycleComplete";
 
 //Pomodoro timer base conceived from: https://www.youtube.com/watch?v=9z1qBcFwdXg
 export default function Pomodoro() {
@@ -12,6 +13,7 @@ export default function Pomodoro() {
     const [startButton, setStartButton] = useState(false)
     const [cycleNumber, setCycleNumber] = useState(0)
     const [playState, setPlayState] = useState(false)
+    const [breakSession, setBreakSession] = useState(false)
 
     useEffect(() => {
         let interval;
@@ -71,14 +73,23 @@ export default function Pomodoro() {
                         <div className={styles.timer}>{timerMinutes}:{timerSeconds}</div>
                     </div>
                 </div>
+                <CycleComplete />
                 <Tasks />
+                <p className={styles.cycleButton}>
+                    End Timer
+                    <Image src="/images/Flag.svg" width={20} height={20} />
+                </p>
+                <p className={styles.cycleButton}>
+                    Finish Session
+                    <Image src="/images/Flag.svg" width={20} height={20} />
+                </p>
+                <div className={styles.playButton} onClick={toggleTimer}>
+                    {!playState && <Image src="/images/paused.png" width={93} height={93} alt="paused" onClick={handlePlayButton} className={styles.button} />}
+                    {playState && <Image src="/images/play.png" width={93} height={93} alt="play" onClick={handlePlayButton} className={styles.button} />}
+                </div>
             </div>
-            <div className={styles.playButton} onClick={toggleTimer}>
-                {!playState && <Image src="/images/paused.png" width={93} height={93} alt="paused" onClick={handlePlayButton} className={styles.button} />}
-                {playState && <Image src="/images/play.png" width={93} height={93} alt="play" onClick={handlePlayButton} className={styles.button} />}
-            </div>
-            {/* <p>Number of Ducks: {cycleNumber}</p> */}
 
+            {/* <p>Number of Ducks: {cycleNumber}</p> */}
         </>
     )
 }
