@@ -31,22 +31,25 @@ export default function NavBar() {
     return (
         <>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous"></link>
-                {profileState ? <Profile profileVisibility={profileState} closeProfile={closeProfile} /> : null}
-                {settingsState ? <SettingsMenu settingsVisiblilty={profileState} closeSettings={closeSettings} /> : null}
-            <div className={styles.navBarContainer}>
-                <div className={styles.navBarItems}>
-                    <div className={styles.navbarLogo}>WaddleOn</div>
-                    <div onClick={toggleProfile} className={styles.profile} tabIndex={8}>
-                        <i class="fa fa-question fa-2x" aria-hidden="true" ></i>
-                    </div>
-                    <div onClick={toggleProfile} className={styles.profile} tabIndex={9}>
-                        <i class="fa fa-user fa-2x" aria-hidden="true" ></i>
-                    </div>
-                    <div onClick={toggleSettings} className={styles.settings} tabIndex={10}>
-                        <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
+            {profileState ? <Profile profileVisibility={profileState} closeProfile={closeProfile} /> : null}
+            {settingsState ? <SettingsMenu settingsVisiblilty={profileState} closeSettings={closeSettings} /> : null}
+            <div className={styles.navBarPosition}>
+                <div className={styles.navBarContainer}>
+                    <div className={styles.navBarItems}>
+                        <div className={styles.navbarLogo}>WaddleOn</div>
+                        <div onClick={toggleProfile} className={styles.profile} tabIndex={8}>
+                            <i class="fa fa-question fa-2x" aria-hidden="true" ></i>
+                        </div>
+                        <div onClick={toggleProfile} className={styles.profile} tabIndex={9}>
+                            <i class="fa fa-user fa-2x" aria-hidden="true" ></i>
+                        </div>
+                        <div onClick={toggleSettings} className={styles.settings} tabIndex={10}>
+                            <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </>
     )
 }

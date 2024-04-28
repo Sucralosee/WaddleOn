@@ -1,3 +1,8 @@
+.navBarPosition {
+    height: 932px;
+    position: absolute;
+}
+
 .navBarContainer {
     display: flex;
     align-items: center;
@@ -5,6 +10,8 @@
     grid-row: 4/5;
     bottom: 0;
     width: 430px;
+    margin-top: auto;
+    position: absolute;
 }
 
 .navBarItems {

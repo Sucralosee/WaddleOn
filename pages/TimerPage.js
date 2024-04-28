@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, createRef } from "react"
 import styles from "../styles/TimerPage.module.css"
 import NavBar from "@/components/Navbar/NavBar"
-import Image from "next/image"
-import Tasks from "@/components/Tasks/Tasks"
 import Weather from "@/components/Weather/Weather"
 import Pomodoro from "@/components/Pomodoro/Pomodoro"
+import DucksAnim from "@/components/DucksAnim/DucksAnim"
 
 export default function TimerPage() {
-    const timerDuck = { backgroundColor: "grey", margin: "0 auto" }
 
     //API Integration: free code camp guide
     const [lat, setLat] = useState([49.104431]);
@@ -34,7 +32,6 @@ export default function TimerPage() {
         fetchData();
     }, [lat, long])
 
-
     return (
         <>
             <main className={`${styles.main}`}>
@@ -45,7 +42,7 @@ export default function TimerPage() {
                         <p className={styles.loading}>Loading Time & Weather...</p>
                     )}
                     <div className={styles.duckAnimationTimer}>
-                        <Image width={430} height={238} style={timerDuck} />
+                        <DucksAnim/>
                         <Pomodoro />
                     </div>
                     <NavBar />

@@ -26,6 +26,15 @@
     margin: 1rem;
 }
 
+.weatherTime * {
+    filter: drop-shadow(0 0.2rem 0.1rem var(--flush-orange));
+}
+
+.weatherTemp * {
+    filter: drop-shadow(0 0.2rem 0.1rem var(--flush-orange));
+}
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
