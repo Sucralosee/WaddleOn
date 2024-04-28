@@ -36,13 +36,13 @@ export default function NavBar() {
             <div className={styles.navBarContainer}>
                 <div className={styles.navBarItems}>
                     <div className={styles.navbarLogo}>WaddleOn</div>
-                    <div onClick={toggleProfile} className={styles.profile}>
+                    <div onClick={toggleProfile} className={styles.profile} tabIndex={8}>
                         <i class="fa fa-question fa-2x" aria-hidden="true" ></i>
                     </div>
-                    <div onClick={toggleProfile} className={styles.profile}>
+                    <div onClick={toggleProfile} className={styles.profile} tabIndex={9}>
                         <i class="fa fa-user fa-2x" aria-hidden="true" ></i>
                     </div>
-                    <div onClick={toggleSettings} className={styles.settings}>
+                    <div onClick={toggleSettings} className={styles.settings} tabIndex={10}>
                         <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
                     </div>
                 </div>

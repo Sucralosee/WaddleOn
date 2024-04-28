@@ -44,6 +44,14 @@
     border-radius: var(--card-curve-small);
     box-shadow: 0px 1px 4.4px 0px var(--arathi-highlands);
     margin: auto;
+
+    text-decoration: none;
+    font-family: var(--header-style);
+    transition: transform 0.5s;
+}
+
+.cycleButton:active {
+    transform: scale(110%);
 }
 
 .playButton {}

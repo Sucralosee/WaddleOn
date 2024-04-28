@@ -4,16 +4,18 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Tasks from "../Tasks/Tasks";
 import CycleComplete from "../CycleComplete/CycleComplete";
+import Link from "next/link";
 
 //Pomodoro timer base conceived from: https://www.youtube.com/watch?v=9z1qBcFwdXg
 export default function Pomodoro() {
-    const [minutes, setMinutes] = useState(25);
-    const [seconds, setSeconds] = useState(0);
+    const [minutes, setMinutes] = useState(0);
+    const [seconds, setSeconds] = useState(5);
     const [displayMessage, setDisplayMessage] = useState(false)
     const [startButton, setStartButton] = useState(false)
     const [cycleNumber, setCycleNumber] = useState(0)
     const [playState, setPlayState] = useState(false)
     const [breakSession, setBreakSession] = useState(false)
+    const nextPage = "a"
 
     useEffect(() => {
         let interval;
@@ -27,12 +29,13 @@ export default function Pomodoro() {
                         setSeconds(59);
                         setMinutes(minutes - 1);
                     } else {
-                        let minutes = displayMessage ? 24 : 4; //24 = Start of Studying, dont show message //4 = Start of break, show message
+                        let minutes = breakSession ? 24 : 4; //24 = Start of Studying, dont show message //4 = Start of break, show message
                         let seconds = 59;
 
                         setSeconds(seconds);
                         setMinutes(minutes);
                         setDisplayMessage(!displayMessage)
+                        setBreakSession(!breakSession)
                         setCycleNumber(cycleNumber + 1)
                     }
                 } else {
@@ -61,6 +64,11 @@ export default function Pomodoro() {
         toggleTimer
     }
 
+    const endTimer = () => {
+        setMinutes(0)
+        setSeconds(0)
+    }
+
     return (
         <>
             <div className={styles.pomodoroContainer}>
@@ -68,28 +76,28 @@ export default function Pomodoro() {
                     <div className={styles.highlight}></div>
                     <div>
                         <div className={styles.message}>
-                            {displayMessage && <div>Break time! New session starts in:</div>}
                         </div>
                         <div className={styles.timer}>{timerMinutes}:{timerSeconds}</div>
                     </div>
                 </div>
-                <CycleComplete />
-                <Tasks />
-                <p className={styles.cycleButton}>
+                {breakSession && <CycleComplete />}
+                {!breakSession && <Tasks />}
+                <p className={styles.cycleButton} onClick={endTimer} tabIndex={5}>
                     End Timer
                     <Image src="/images/Flag.svg" width={20} height={20} />
                 </p>
-                <p className={styles.cycleButton}>
+                <Link className={styles.cycleButton} href={nextPage} tabIndex={6}>
                     Finish Session
                     <Image src="/images/Flag.svg" width={20} height={20} />
-                </p>
-                <div className={styles.playButton} onClick={toggleTimer}>
+                </Link>
+
+                <div className={styles.playButton} onClick={toggleTimer} tabIndex={7}>
                     {!playState && <Image src="/images/paused.png" width={93} height={93} alt="paused" onClick={handlePlayButton} className={styles.button} />}
                     {playState && <Image src="/images/play.png" width={93} height={93} alt="play" onClick={handlePlayButton} className={styles.button} />}
                 </div>
             </div>
 
-            {/* <p>Number of Ducks: {cycleNumber}</p> */}
+            <p>Number of Ducks: {cycleNumber}</p>
         </>
     )
 }

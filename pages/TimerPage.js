@@ -46,10 +46,7 @@ export default function TimerPage() {
                     )}
                     <div className={styles.duckAnimationTimer}>
                         <Image width={430} height={238} style={timerDuck} />
-                        <Pomodoro/>
-                    </div>
-                    <div>
-                        {/* <Tasks /> */}
+                        <Pomodoro />
                     </div>
                     <NavBar />
                 </div>
