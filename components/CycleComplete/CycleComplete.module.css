@@ -8,9 +8,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
 }
 
 .cycleCompleteHeader {
     margin: 0;
     text-align: center;
+}
+
+.ducksAnim {
+    width: 269px;
+    height: 257px;
+    overflow: hidden;
 }

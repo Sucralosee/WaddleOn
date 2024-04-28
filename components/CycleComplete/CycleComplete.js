@@ -1,4 +1,5 @@
 import styles from "./CycleComplete.module.css"
+import DucksAnim from "../DucksAnim/DucksAnim"
 
 
 export default function CycleComplete() {
@@ -8,7 +9,17 @@ export default function CycleComplete() {
                 <h3 className={styles.cycleCompleteHeader}>
                     Waddle Cycle Complete!
                 </h3>
-                <p>Take a Break!</p>
+                {/* <p>Take a Break!</p> */}
+                <div className={styles.ducksAnim}>
+                    <DucksAnim 
+                       inlineSizing={{
+                        position: "relative",
+                        width: "269px",
+                        height: "257px",
+                        borderRadius: "8px",
+                    }}
+                    />
+                </div>
             </div>
         </>
     )

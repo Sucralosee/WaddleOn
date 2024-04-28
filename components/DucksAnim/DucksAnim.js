@@ -1,8 +1,10 @@
-import { useState, useEffect, createRef } from "react"
+import { useEffect, createRef } from "react"
 import styles from "./DucksAnim.module.css"
 import lottie from "lottie-web"
 
-export default function DucksAnim() {
+export default function DucksAnim({
+    inlineSizing = { }
+}) {
     let animationContainer = createRef();
 
     useEffect(() => {
@@ -19,7 +21,7 @@ export default function DucksAnim() {
 
     return (
         <>
-            <div className={styles.animationContainer} ref={animationContainer} />
+            <div className={styles.animationContainer} ref={animationContainer} style={inlineSizing} />
         </>
     )
 }

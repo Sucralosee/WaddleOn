@@ -42,7 +42,14 @@ export default function TimerPage() {
                         <p className={styles.loading}>Loading Time & Weather...</p>
                     )}
                     <div className={styles.duckAnimationTimer}>
-                        <DucksAnim/>
+                        <DucksAnim inlineSizing={{
+                            position: "relative",
+                            top: "-200px",
+                            marginBottom: "-200px",
+                            width: "430px",
+                            height: "470px",
+                            borderRadius: "0 0 8px 8px"
+                        }} />
                         <Pomodoro />
                     </div>
                     <NavBar />
