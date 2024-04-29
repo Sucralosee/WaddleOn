@@ -1,0 +1,88 @@
+.summaryOne {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.summaryContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 430px;
+  height: 932px;
+  min-height: 100vh;
+  background: linear-gradient(var(--arathi-highlands)10%, var(--seashell)90%);
+}
+
+.duckImage {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 430px;
+  height: 382px;
+  position: absolute;
+  top: 0;
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  position: absolute;
+}
+
+.homeButton {
+  z-index: 1;
+  position: absolute;
+  margin: 1rem 20rem 0 0;
+  /*Temporary Fix, Fix the nesting of the button*/
+}
+
+.navBarDummy {
+  position: sticky;
+  border: 1px solid black;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 414px;
+  height: 69px;
+  bottom: 0;
+}
+
+.playButt {
+  width: 93px;
+  height: 93px;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  left: 160px;
+  bottom: 23px;
+}
+
+.buttonCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0px;
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  margin-right: auto;
+}
+
+.progressIndicator {
+  font-family: fredoka;
+  font-size: var(--h6);
+  color: var(--gray5);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quizProgress {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0 1rem 0;
+}

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lexend:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.buttonNext{
+    background-color:var(--arathi-highlands);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'fredoka';
+    font-size: var(--h3);
+    width: 388px;
+    height: 46px;
+    box-shadow: 0px 1px 2px 1px;
+    text-align: center;
+    line-height: 10px;
+}
+
+.buttonNext:active{
+    box-shadow: none;
+}

@@ -1,0 +1,73 @@
+.progressContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pondImage {
+    margin-bottom: 20px;
+    margin-top: -150px;
+}
+
+
+.duckContainer{
+    display: flex;
+    margin-bottom: 4rem;
+}
+
+.duckImage{
+
+}
+
+.duckInstructions{
+    width: 150px;
+}
+
+.nameContainer{
+    width: 308px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* this will change when there is an enter button */
+
+    background-color: var(--button-blue);
+    border-radius: 8px;
+}
+.nameInput{
+    width: 222.723px;
+    height: 33px;
+    /* margin-left: 1rem; */
+    border-radius: 8px;
+    background: var(--Wireframe-White, #FFFDFA);
+}
+.instructionContainer{
+    margin-bottom: 4rem;
+}
+.placeholder{
+    width: 351px;
+    height: 220px;
+}
+
+.nextButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 203px;
+    height: 37px;
+    padding: none;
+    font-size: var(--h4);
+    background-color: var(--arathi-highlands);
+    color: var(--seashell);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    text-decoration: none;
+}
+
+.nextButton:hover {
+    background-color: var(--flush-orange);
+}
