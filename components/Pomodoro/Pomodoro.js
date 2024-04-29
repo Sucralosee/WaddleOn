@@ -8,8 +8,8 @@ import Link from "next/link";
 
 //Pomodoro timer base conceived from: https://www.youtube.com/watch?v=9z1qBcFwdXg
 export default function Pomodoro() {
-    const [minutes, setMinutes] = useState(0);
-    const [seconds, setSeconds] = useState(5);
+    const [minutes, setMinutes] = useState(25);
+    const [seconds, setSeconds] = useState(0);
     const [displayMessage, setDisplayMessage] = useState(false)
     const [startButton, setStartButton] = useState(false)
     const [cycleNumber, setCycleNumber] = useState(0)

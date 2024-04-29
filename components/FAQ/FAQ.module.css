@@ -28,6 +28,16 @@
     margin: 0.8rem;
 }
 
+.faqTutorial * {
+    font-family: var(--paragraph-style);
+    margin:0.2rem;
+    padding:0;
+}
+
+.faqTutorial ol {
+    padding: 0;
+}
+
 /*Exit Button*/
 .exit {
     position: absolute;
