@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    width: 430px;
 }
 
 .pondImage {
@@ -12,7 +14,7 @@
 
 .duckContainer{
     display: flex;
-    margin-bottom: 4rem;
+    /* margin-bottom: 4rem; */
 }
 
 .duckImage{
@@ -32,8 +34,11 @@
     justify-content: center;
     /* this will change when there is an enter button */
 
+    margin-top: 4rem;
+
     background-color: var(--button-blue);
     border-radius: 8px;
+    margin-bottom: 8rem;
 }
 .nameInput{
     width: 222.723px;
@@ -42,7 +47,7 @@
     background: var(--Wireframe-White, #FFFDFA);
 }
 .instructionContainer{
-    margin-bottom: 4rem;
+    /* margin-bottom: 4rem; */
 }
 
 .WaddleContainer{
@@ -60,6 +65,10 @@
 }
 
 .nextButton {
+    position: absolute;
+    top: 743px;
+    bottom: 132px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,16 +95,27 @@
 
 .skipContainer{
     text-decoration: none;
+
+    position: relative;
+    top: 100px;
+    /* left: 79px; */
 }
 
 .skipButton{
+
+
     width: 158px;
     height: 30px;
 
+    /* display: flex;
+    justify-content: center;
+     */
     margin-top: 20px;
+    margin-bottom: 1rem;
 
     background-color: none;
     border: 3px solid var(--arathi-highlands);
+    color: black;
     border-radius: 30px;
 
     text-decoration: none;
@@ -124,8 +144,8 @@
     width: 45px;
 
     position: relative;
-    top:20px;
-    right: 175px;
+    top: 134px;
+    right: 150px;
 
     border: 2px solid var(--button-blue);
     background-color: var(--seashell);

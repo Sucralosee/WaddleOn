@@ -3,6 +3,8 @@ import styles from "./Progress.module.css";
 import Image from "next/image";
 import Link from 'next/link';
 
+import Tasks from '../Tasks/Tasks';
+
 export default function Progress() {
     const [stepNum, setStepNum] = useState(1);
     const [stepDuck, setStepDuck] = useState(1);
@@ -121,16 +123,26 @@ export default function Progress() {
                 ):(
                     <div></div>
                 )}
-                {clickCount == 2 ? (
+                
+                {clickCount == 2 || clickCount == 3 ? (
+                    <div onClick={clickCount}>
+                        <Tasks/>
+                    </div>
+                ):(
+                    <div></div>
+                )}
+
+                {clickCount == 4 ? (
                     <div className={styles.WaddleContainer}>
-                        <h5>What is Waddle Pog?</h5>
+                        <h5>What is Waddle four?</h5>
                         <p>WaddleOn boosts productivity by breaking tasks into 25-minute intervals followed by short breaks, <span className={styles.wadBold}>preventing burnout and maintaining focus.</span> </p>
                         <p>We help <span className={styles.wadBold}>optimize work or study sessions,</span> helping you achieve more in less time.</p>
                     </div>
                 ):(
                     <div></div>
                 )}
-                {clickCount < 3 ? (
+
+                {clickCount < 5 ? (
                     <div></div>
                 ) : (
                     <Image
