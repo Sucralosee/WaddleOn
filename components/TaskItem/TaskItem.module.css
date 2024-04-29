@@ -1,19 +1,55 @@
 .listItem {
-    width: 270px;
-    height: 32px;
     background-color: var(--seashell);
     border-radius: var(--card-curve-small);
     margin: 1rem;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-
-    filter: drop-shadow(0 0 0.3rem var(--gray5));}
-
-.listItem * {
-    margin: 0.3rem;
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 0.1fr;
+    filter: drop-shadow(0 0.3rem 0.1rem var(--arathi-highlands));
+    padding: 0.2rem 0.5rem;
+    animation: fadeIn 0.5s;
 }
 
 .taskName {
     font-weight: bold;
+    text-align: left;
+    font-family: var(--paragraph-style);
+}
+
+.taskCheckBox[type="checkbox"] {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    /* -webkit-appearance: none; */
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 0.1rem;
+    border: 0.25rem solid var(--gray5);
+    border-radius: var(--card-curve-small);
+    margin: auto 0.5rem;
+    grid-column: 2/3;
+}
+
+.deleteButton {
+    width: 2rem;
+    height: 2rem;
+    margin: auto 0.5rem;
+
+    font-family: var(--paragraph-style);
+    background: var(--flush-orange);
+    color: var(--seashell);
+    border-radius: var(--card-curve-small);
+    border: none;
+    grid-column: 3/4;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
