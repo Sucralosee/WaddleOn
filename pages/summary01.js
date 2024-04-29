@@ -59,7 +59,6 @@ export default function Summary() {
   const handlePreviousQuestion = () => {
     setQuestionIndex(questionIndex - 1);
   };
-  //back button still not functioning properly ** fix later
 
   const renderProgressIndicator = () => {
     return (
@@ -79,9 +78,6 @@ export default function Summary() {
             onAnswer={handleNextQuestion} />
           <div className={styles.quizProgress}>
             <div className={styles.buttonCont}>
-              {questionIndex > 0 && (
-                <Back className={styles.backButton} onClick={handlePreviousQuestion} />
-              )}
             </div>
             <div className={styles.progressContainer}>
               {renderProgressIndicator()}

@@ -11,111 +11,77 @@
 
 .contentContainer{
     display: flex;
+    position: relative;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     width: 430px;
     height: 932px;
     min-height: 100vh;
+    border: 1px solid black;
 }
 
-.duck{
-    width:145px;
-    height:154px;
-    position:absolute;
-    top:100px;
+.infoContainer{
+    width:432px;
+    height:602px;
+    padding-top: 90px;
+    margin-right: 500px;
+    display: flex;
 }
 
 .buttonContainer{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: absolute;
-    top:670px;
+    padding-top: 0px;
+    padding-bottom: 38px;
 }
 
 .buttonSpacer{
     height:17px;
 }
 
-.homeButton{
-    z-index: 1;
-    margin: 30px auto 0 10px;
-}
+  .homeButton{
+        z-index: 1;
+        margin: 30px auto 0 10px;
+  }
+
 
 .duckInfo{
-    border-top-right-radius:20px;
-    border-top-left-radius:20px;
-    background: linear-gradient(var(--arathi-highlands)20%,var(--seashell)100%);
-    width: 430px;
-    height:634px;
-    position:absolute;
-    top:298px;
+    width: 148px;
+    height:167px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.mallardName{
-    font-family: 'fredoka';
-    font-size:var(--h1);
-    margin-bottom: 12px;
-    margin-top: 5px;
-    font-weight: 450;
+    align-items: left;
+    margin-top:200px;
 }
 
 .features{
-    font-family: 'fredoka';
+    font-family: 'lexend';
     font-size:var(--h4);
     margin-bottom: 10px;
     margin-top: 5px;
-    font-weight: 450;
+    text-align: left;
 }
 .featuresList{
-    font-family: 'fredoka';
-    font-size:16px;
+    width:70px;
+    font-family: 'lexend';
+    font-size:16pt;
     list-style: none;
-    text-align: center;
+    text-align: left;
     margin-top: 5px;
-    padding: 0; 
+    padding: 0;
 }
 
-.description{
-    font-family: 'fredoka';
-    font-size:var(--h3);
-    margin-bottom: 0;
-    margin-top: 5px;
-    font-weight: 450;
-}
-
-.descriptionPar{
-    font-family: 'fredoka';
-    font-size:16px;
-    margin-top: 0;
-    text-align: center;
-    width: 300px;
-    margin-top: 5px; 
-}
-
-
-.titleContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top:20px;
-}
 
 .title{
-    font-size: var(--h6);
+    font-size: var(--h2);
+    padding-top:30px;
     margin:0;
-    font-family: 'fredoka';
-    font-weight: 450;
+    font-family: 'lexend';
 }
 
 .duckName{
-    font-size: var(--h4);
-    font-family: 'fredoka';
-    margin:5px;
-    font-weight: 500;
+    font-size: var(--h2);
+    font-family: 'lexend';
+    margin-top:10px;
 }

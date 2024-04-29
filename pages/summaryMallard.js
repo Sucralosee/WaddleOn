@@ -10,28 +10,27 @@ export default function Mallard() {
 <main className={`${styles.summaryOne}`}>
     <div className={styles.contentContainer}>
     <div className={styles.titleContainer}>
-        <h6 className={styles.title}>You are a...</h6>
-            <h4 className={styles.duckName}>Mallard!</h4>
+        <h2 className={styles.title}>You are a...</h2>
+            <h2 className={styles.duckName}>Mallard!</h2>
     </div>
             <div className={styles.homeButton}>
                 <House/>
             </div>
-            <div className={styles.duck}><Image src="/images/mduck.png" width={200} height={200}/></div>
-                <div className={styles.duckInfo}>
-                    <h1 className={styles.mallardName}>Mallard</h1>
-                        <h4 className={styles.features}>Defining features</h4>
-                            <ul className={styles.featuresList}>
-                                <li>Hardworker</li>
-                                <li>Steady Studier</li>
-                                <li>Relaxed</li>
-                            </ul>
-                                <h3 className={styles.description}>Description</h3>
-                                    <p className={styles.descriptionPar}>The mallard or wild duck is a dabbling duck that breeds throughout the temperate and subtropical Americas, Eurasia, and North Africa.</p>
-                </div>
+            <div className={styles.infoContainer}>
+                <div className={styles.duck}><Image src="/images/Ducks/DuckMallard.png" width={512.62} height={545.42} alt="Mallard duck"/></div>
+                    <div className={styles.duckInfo}>
+                            <h4 className={styles.features}>Defining<br></br>features</h4>
+                                <ul className={styles.featuresList}>
+                                    <li>Hardworker</li>
+                                    <li>Steady Studier</li>
+                                    <li>Relaxed</li>
+                                </ul>
+                    </div></div> 
                     <div className={styles.buttonContainer}>
                         <Next/>
                     </div> 
-            </div>         
+            </div>
+                   
       </main>
     
   );
