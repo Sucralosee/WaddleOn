@@ -76,17 +76,15 @@
 .titleContainer{
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;    
 }
 
 .title{
     font-size: var(--h2);
-    margin:0;
     font-family: 'lexend';
 }
 
 .duckName{
     font-size: var(--h2);
     font-family: 'lexend';
-    margin:5px;
 }
