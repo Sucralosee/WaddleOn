@@ -14,7 +14,7 @@ export default function Mallard() {
             <h2 className={styles.duckName}>Ruddy Shelduck!</h2>
     </div>
             <div className={styles.homeButton}>
-                <House/>
+            <Link href='/'><House/></Link>
             </div>
             <div className={styles.infoContainer}>
                 <div className={styles.duck}><Image src="/images/Ducks/Duck3.svg" width={512.62} height={545.42} alt="ruddy-shellduck"/></div>
@@ -27,7 +27,7 @@ export default function Mallard() {
                                 </ul>
                     </div></div> 
                     <div className={styles.buttonContainer}>
-                    <Link href='/index.js'><Next/></Link>
+                    <Link href='/'><Next/></Link>
                     </div> 
             </div>
                    

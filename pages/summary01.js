@@ -56,10 +56,6 @@ export default function Summary() {
   }
   //had to put return score so itll calculate the result; it didnt work when i didnt put it idk...
 
-  const handlePreviousQuestion = () => {
-    setQuestionIndex(questionIndex - 1);
-  };
-
   const renderProgressIndicator = () => {
     return (
       <div className={styles.progressIndicator}>
