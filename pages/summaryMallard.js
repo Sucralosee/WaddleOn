@@ -2,7 +2,7 @@ import styles from "@/styles/Mallard.module.css";
 import Next from "@/components/NextButton";
 import House from "@/components/HomeButton";
 import Image from "next/image"
-
+import Link from "next/link";
 
 export default function Mallard() {
   return (
@@ -27,7 +27,7 @@ export default function Mallard() {
                                 </ul>
                     </div></div> 
                     <div className={styles.buttonContainer}>
-                        <Next/>
+                    <Link href='/index.js'><Next/></Link>
                     </div> 
             </div>
                    

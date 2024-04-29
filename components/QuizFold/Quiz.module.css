@@ -41,4 +41,5 @@
 }
  .clicked:active{
     box-shadow:none;
+    border:none;
  }
