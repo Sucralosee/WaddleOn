@@ -1,23 +1,17 @@
 import styles from "./CycleComplete.module.css"
 import DucksAnim from "../DucksAnim/DucksAnim"
+import Image from "next/image"
 
 
 export default function CycleComplete() {
     return (
         <>
             <div className={styles.cycleCompleteContainer}>
-                <h3 className={styles.cycleCompleteHeader}>
+                <h4 className={styles.cycleCompleteHeader}>
                     Waddle Cycle Complete!
-                </h3>
-                {/* <p>Take a Break!</p> */}
+                </h4>
                 <div className={styles.ducksAnim}>
-                    <DucksAnim 
-                       inlineSizing={{
-                        position: "relative",
-                        width: "269px",
-                        height: "257px",
-                        borderRadius: "8px",
-                    }}
+                    <Image src="/images/render_card.png" width={268} height={90} className={styles.ducksRender}
                     />
                 </div>
             </div>

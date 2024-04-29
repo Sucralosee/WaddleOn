@@ -1,55 +1,53 @@
-.settingsPosition {
+.faqContainer {
     width: 430px;
     height: 932px;
-    position: absolute;
-    animation: fadeIn 0.2s;
-    z-index: 1000;
-    overflow: hidden;
-}
-
-.settingsContainer {
-    width: 211px;
-    height: 932px;
-    background-color: var(--seashell);
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 1000;
-    right: 0;
-    filter: drop-shadow(0 0.2rem 0.2rem var(--arathi-highlands));
+    margin-top: auto;
+    overflow: hidden;
+    animation: fadeIn 0.2s;
 }
 
-.option {
-    width: 193px;
-    height: 37px;
-    border-radius: var(--card-curve-small);
-    background: var(--flush-orange);
-    color: var(--seashell);
+.faqContent {
+    width: 430px;
+    height: 500px;
     display: flex;
-    justify-content:center ;
-    align-items: center;
-    margin: 0.5rem;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    margin-top: auto;
+    background-color: var(--seashell);
+    filter: drop-shadow(0 1rem 5rem var(--arathi-highlands));
+    border-radius: 20px 20px 0 0;
 }
 
+.faqContent *{
+    margin: 0.8rem;
+}
 
+/*Exit Button*/
 .exit {
     position: absolute;
     bottom: 2rem;
     right: 0;
-    margin: 0 0 0 auto;
     width: 87px;
     height: 38px;
     border-radius: 8px 0px 0px 8px;
     background-color: var(--arathi-highlands);
     color: var(--seashell);
     text-align: left;
-    text-indent: 1rem;
-
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: left;
 }
+
+.exit h4 {
+    margin: 0 0 0 1rem;
+}
+
 
 @keyframes fadeIn {
     0% {
