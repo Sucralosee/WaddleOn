@@ -17,7 +17,7 @@ export default function Mallard() {
                 <House/>
             </div>
             <div className={styles.infoContainer}>
-                <div className={styles.duck}><Image src="/images/Ducks/DuckMallard.png" width={512.62} height={545.42} alt="Mallard duck"/></div>
+                <div className={styles.duck}><Image src="/images/Ducks/Duck1.svg" width={512.62} height={545.42} alt="Mallard duck"/></div>
                     <div className={styles.duckInfo}>
                             <h4 className={styles.features}>Defining<br></br>features</h4>
                                 <ul className={styles.featuresList}>

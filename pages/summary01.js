@@ -45,7 +45,7 @@ export default function Summary() {
     let score = 0;
     answers.forEach((answer) => {
       if (answer === "Fatigued" || answer === "Barely" || answer === "Unsatisfactory" || answer === "Slow and Frustrated") {
-        score += 1;
+        score                                                                                                              += 1;
       } else if (answer === "Neutral" || answer === "Somewhat" || answer === "Decent" || answer === "Steady and Manageable") {
         score += 2;
       } else if (answer === "Energized" || answer === "Fully" || answer === "Refreshing" || answer === "Effecient and Productive") {
