@@ -4,6 +4,7 @@ import NavBar from "@/components/Navbar/NavBar"
 import Weather from "@/components/Weather/Weather"
 import Pomodoro from "@/components/Pomodoro/Pomodoro"
 import DucksAnim from "@/components/DucksAnim/DucksAnim"
+import Head from "next/head"
 
 export default function TimerPage() {
 
@@ -34,6 +35,12 @@ export default function TimerPage() {
 
     return (
         <>
+              <Head>
+                <title>Timer Page</title>
+                <meta name="description" content="Waddle On the Pomodoro Timer" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/logoDuck.ico" />
+            </Head>
             <main className={`${styles.main}`}>
                 <div className={styles.phoneContainer}>
                     {(typeof data.main != 'undefined') ? (
