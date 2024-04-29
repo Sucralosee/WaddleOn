@@ -11,7 +11,7 @@ export default function pomStats() {
         <title>Pomodoro stats</title>
         <meta name="description" content="Stats from the Saint Mary's University, Philippines " />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logoDuck.ico" />
       </Head>
       <main className={`${styles.main}`}>
           <div>

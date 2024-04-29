@@ -1,17 +1,24 @@
+.navBarPosition {
+    height: 932px;
+    position: absolute;
+}
+
 .navBarContainer {
-    margin: auto auto 0;
     display: flex;
     align-items: center;
-    z-index: 5;
+    z-index: 0;
     grid-row: 4/5;
+    bottom: 0;
+    width: 430px;
+    margin-top: auto;
+    position: absolute;
 }
 
 .navBarItems {
     display: flex;
     align-items: center;
     justify-content: end;
-    width: 414px;
-    height: 69px;
+    width: 100vw;
     border-radius: 0.5rem 0.5rem 0 0;
     background-color: var(--arathi-highlands);
     color: var(--seashell);

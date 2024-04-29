@@ -3,6 +3,8 @@ import styles from "./Pomodoro.module.css"
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Tasks from "../Tasks/Tasks";
+import CycleComplete from "../CycleComplete/CycleComplete";
+import Link from "next/link";
 
 //Pomodoro timer base conceived from: https://www.youtube.com/watch?v=9z1qBcFwdXg
 export default function Pomodoro() {
@@ -12,6 +14,8 @@ export default function Pomodoro() {
     const [startButton, setStartButton] = useState(false)
     const [cycleNumber, setCycleNumber] = useState(0)
     const [playState, setPlayState] = useState(false)
+    const [breakSession, setBreakSession] = useState(false)
+    const nextPage = "a"
 
     useEffect(() => {
         let interval;
@@ -25,12 +29,13 @@ export default function Pomodoro() {
                         setSeconds(59);
                         setMinutes(minutes - 1);
                     } else {
-                        let minutes = displayMessage ? 24 : 4; //24 = Start of Studying, dont show message //4 = Start of break, show message
+                        let minutes = breakSession ? 24 : 4; //24 = Start of Studying, dont show message //4 = Start of break, show message
                         let seconds = 59;
 
                         setSeconds(seconds);
                         setMinutes(minutes);
                         setDisplayMessage(!displayMessage)
+                        setBreakSession(!breakSession)
                         setCycleNumber(cycleNumber + 1)
                     }
                 } else {
@@ -59,26 +64,40 @@ export default function Pomodoro() {
         toggleTimer
     }
 
+    const endTimer = () => {
+        setMinutes(0)
+        setSeconds(0)
+    }
+
     return (
         <>
-            <div className={styles.pomodoroContainer}>
-                <div className={styles.pomodoro}>
-                    <div className={styles.highlight}></div>
-                    <div>
-                        <div className={styles.message}>
-                            {displayMessage && <div>Break time! New session starts in:</div>}
+            <div className={styles.pomodoroPosition}>
+                <div className={styles.pomodoroContainer}>
+                    <div className={styles.pomodoro}>
+                        <div className={styles.highlight}></div>
+                        <div>
+                            <div className={styles.message}>
+                            </div>
+                            <div className={styles.timer}>{timerMinutes}:{timerSeconds}</div>
                         </div>
-                        <div className={styles.timer}>{timerMinutes}:{timerSeconds}</div>
+                    </div>
+                    {breakSession && <CycleComplete />}
+                    {!breakSession && <Tasks />}
+                    <p className={styles.cycleButton} onClick={endTimer} tabIndex={5}>
+                        End Timer
+                        <Image src="/images/Flag.svg" width={20} height={20} />
+                    </p>
+                    <Link className={styles.cycleButton} href={nextPage} tabIndex={6}>
+                        Finish Session
+                        <Image src="/images/Flag.svg" width={20} height={20} />
+                    </Link>
+
+                    <div className={styles.playButton} onClick={toggleTimer} tabIndex={7}>
+                        {!playState && <Image src="/images/paused.png" width={93} height={93} alt="paused" onClick={handlePlayButton} className={styles.button} />}
+                        {playState && <Image src="/images/play.png" width={93} height={93} alt="play" onClick={handlePlayButton} className={styles.button} />}
                     </div>
                 </div>
-                <Tasks />
             </div>
-            <div className={styles.playButton} onClick={toggleTimer}>
-                {!playState && <Image src="/images/paused.png" width={93} height={93} alt="paused" onClick={handlePlayButton} className={styles.button} />}
-                {playState && <Image src="/images/play.png" width={93} height={93} alt="play" onClick={handlePlayButton} className={styles.button} />}
-            </div>
-            {/* <p>Number of Ducks: {cycleNumber}</p> */}
-
         </>
     )
 }

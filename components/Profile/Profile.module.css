@@ -1,49 +1,76 @@
  .profileContainer {
-     width: 400px;
-     height: 882px;
-     background-color: var(--seashell);
+     width: 430px;
+     height: 932px;
      position: absolute;
      display: flex;
      flex-direction: column;
      align-items: center;
      z-index: 1000;
-     filter: drop-shadow(0 0 0.5rem var(--gray5));
-     border-radius: var(--card-curve-small);
-     margin: 1rem;
-
+     margin-top: auto;
+     overflow: hidden;
      animation: fadeIn 0.2s;
  }
 
  .profileContent {
-     display: grid;
-     grid-template-rows: repeat(6, auto);
-
+     width: 430px;
+     height: 500px;
+     display: flex;
+     flex-direction: column;
+     align-items: left;
+     justify-content: flex-start;
+     margin-top: auto;
+     background-color: var(--seashell);
+     filter: drop-shadow(0 1rem 5rem var(--arathi-highlands));
+     border-radius: 20px 20px 0 0;
  }
 
+ .profileName {
+     margin: 0.8rem;
+     text-align: left;
+ }
+
+ .breakLine {
+     height: 2px;
+     width: 400px;
+     background-color: var(--gray5);
+     border-radius: var(--card-curve-small);
+ }
+
+ .profileHeading {
+    width: 300px;
+    margin: 0.8rem;
+ }
+
+ .profileNumber{
+    margin: 0.8rem;
+ }
  .exit {
-    position: absolute;
-    bottom: 2rem;
-    right: 0;
-    width: 87px;
-    height: 38px;
-    border-radius: 8px 0px 0px 8px;
-    background-color: var(--arathi-highlands);
-    color: var(--seashell);
-    text-align: left;
-    display: flex;
-    align-items: center;
-    justify-content: left;
+     position: absolute;
+     bottom: 2rem;
+     right: 0;
+     width: 87px;
+     height: 38px;
+     border-radius: 8px 0px 0px 8px;
+     background-color: var(--arathi-highlands);
+     color: var(--seashell);
+     text-align: left;
+     display: flex;
+     align-items: center;
+     justify-content: left;
  }
 
  .exit h4 {
-    margin: 0 0 0 1rem;
+     margin: 0 0 0 1rem;
  }
+
  @keyframes fadeIn {
-     from {
-         opacity: 0
+     0% {
+         opacity: 0;
+         transform: translateY(100px);
      }
 
-     to {
-         opacity: 1
+     100% {
+         opacity: 1;
+         transform: translateY(0px);
      }
  }
