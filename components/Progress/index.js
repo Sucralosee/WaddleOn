@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from 'next/link';
 
 import Tasks from '../Tasks/Tasks';
+import DucksAnim from '../DucksAnim/DucksAnim';
 
 export default function Progress() {
     const [stepNum, setStepNum] = useState(1);
@@ -125,32 +126,46 @@ export default function Progress() {
                 )}
                 
                 {clickCount == 2 || clickCount == 3 ? (
-                    <div onClick={clickCount}>
+                    <div>
                         <Tasks/>
                     </div>
                 ):(
                     <div></div>
                 )}
 
+
                 {clickCount == 4 ? (
-                    <div className={styles.WaddleContainer}>
-                        <h5>What is Waddle four?</h5>
-                        <p>WaddleOn boosts productivity by breaking tasks into 25-minute intervals followed by short breaks, <span className={styles.wadBold}>preventing burnout and maintaining focus.</span> </p>
-                        <p>We help <span className={styles.wadBold}>optimize work or study sessions,</span> helping you achieve more in less time.</p>
+                <div className={styles.floatContainer}>
+                    <div className={styles.floatHole}>
+                        <view className={`${styles.WaddleContainer} ${styles.ducksFloat}`}>
+                            <DucksAnim/>
+                        </view>
                     </div>
+                </div>
                 ):(
                     <div></div>
                 )}
 
-                {clickCount < 5 ? (
-                    <div></div>
-                ) : (
+                {clickCount == 5 ? (
                     <Image
-                    className={styles.placeholder}
-                    src={`/images/placeholder.png`}
-                    width={100}
-                    height={100}
+                    className={styles.waddleBreak}
+                    src={`/images/WaddleBreak.png`}
+                    width={308}
+                    height={220}
                     />
+                ) : (
+                    <div></div>
+                )}
+
+                {clickCount == 6 ? (
+                    <Image
+                    className={styles.waddleBreak}
+                    src={`/images/fourWaddles.png`}
+                    width={308}
+                    height={220}
+                    />
+                ) : (
+                    <div></div>
                 )}
             </div>
             

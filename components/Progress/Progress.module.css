@@ -55,8 +55,42 @@
     text-align: center;
 }
 
+.ducksFloat{
+    height: 180px;
+}
+
 .wadBold{
     font-weight: bold;
+}
+
+.floatContainer {
+    margin-top: 2rem;
+    position: relative;
+    width: 308px;
+    height: 180px;
+    background-color: #ccc;
+  }
+  
+.floatHole {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    clip-path: polygon(0% 22px, 100% 22px, 100% calc(100% - 22px), 78px 100%, 22px 100%, 0% calc(100% - 22px));
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    transform: translate(-50%, -50%);
+}
+
+.waddleBreak{
+    margin-top: 2rem;
+    /* width: 308px;
+    height: 220px; */
 }
 
 .placeholder{
