@@ -26,14 +26,25 @@
   height: 100vh;
 }
 
+[data-theme="dark"] {
+  --seashell: #0E0D0D;
+  --gray5: #FEFBF9;
+  --arathi-highlands: #FEFBF9;
+  --flush-orange: #FEFBF9;
+  --button-blue: #FEFBF9;
+
+
+  color: var(--gray5);
+}
+
 p {
   font-family: var(--paragraph-style);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--header-style);
+  color: var(--gray5);
 }
-
 
 h1 {
   font-size: var(--h1);

@@ -3,6 +3,11 @@
     position: absolute;
 }
 
+.navbarLogo {
+    text-decoration: none;
+    color: var(--seashell);
+}
+
 .navBarContainer {
     display: flex;
     align-items: center;
