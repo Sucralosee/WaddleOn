@@ -1,6 +1,9 @@
 .navBarPosition {
-    height: 932px;
+    margin-top: auto;
     position: absolute;
+    width: 430px;
+    height: 100vh;
+    z-index: 0;
 }
 
 .navbarLogo {
@@ -12,11 +15,10 @@
     display: flex;
     align-items: center;
     z-index: 0;
-    grid-row: 4/5;
-    bottom: 0;
     width: 430px;
-    margin-top: auto;
     position: absolute;
+    margin-top: auto;
+    bottom: 0;
 }
 
 .navBarItems {
@@ -27,6 +29,7 @@
     border-radius: 0.5rem 0.5rem 0 0;
     background-color: var(--arathi-highlands);
     color: var(--seashell);
+    margin-top: auto;
 }
 
 .navBarItems * {

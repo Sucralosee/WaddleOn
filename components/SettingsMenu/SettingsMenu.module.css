@@ -1,6 +1,6 @@
 .settingsPosition {
     width: 430px;
-    height: 932px;
+    height: 100vh;
     position: absolute;
     animation: fadeIn 0.2s;
     z-index: 1000;
@@ -9,7 +9,7 @@
 
 .settingsContainer {
     width: 211px;
-    height: 932px;
+    height: 100vh;
     background-color: var(--seashell);
     position: absolute;
     display: flex;
@@ -32,6 +32,8 @@
     margin: 0.5rem;
 
     cursor: pointer;
+    font-family: var(--paragraph-style);
+    text-decoration: none;
 }
 
 
@@ -51,6 +53,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.exit h4 {
+    color: var(--seashell);
 }
 
 @keyframes fadeIn {

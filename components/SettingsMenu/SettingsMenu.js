@@ -1,5 +1,6 @@
 import styles from './SettingsMenu.module.css'
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 //Possible Reference for sliders https://codesandbox.io/p/sandbox/volume-slider-o44gf?file=%2Fsrc%2Findex.js%3A26%2C18-36%2C38
 export default function SettingsMenu({
@@ -45,6 +46,9 @@ export default function SettingsMenu({
                     <div className={styles.option}>
                         <p>Text Size: {textSize}</p>
                     </div>
+                    <Link className={styles.option} href="summary01">
+                        Go To Quiz
+                    </Link>
                     <div className={styles.exit} onClick={() => childParent(data)}>
                         <h4>X</h4>
                     </div>

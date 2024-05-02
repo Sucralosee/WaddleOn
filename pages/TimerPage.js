@@ -7,7 +7,6 @@ import DucksAnim from "@/components/DucksAnim/DucksAnim"
 import SettingsMenu from "@/components/SettingsMenu/SettingsMenu"
 import ReactAudioPlayer from 'react-audio-player';
 
-
 export default function TimerPage() {
 
     //API Integration: free code camp guide
@@ -16,7 +15,7 @@ export default function TimerPage() {
     const [data, setData] = useState([false]);
     const [isDark, setIsDark] = useState(false)
     const [audio, setAudio] = useState(false)
-    const [settings, setSettings] = useState(true)
+    const [settings, setSettings] = useState(false)
 
     var apiKeyInfo = process.env.NEXT_PUBLIC_API_KEY;
     var url = `https://api.openweathermap.org/data/2.5/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${apiKeyInfo}`
@@ -52,15 +51,15 @@ export default function TimerPage() {
     //settings
     useEffect(() => {
         const settingsIcon = document.querySelector(".fa-cog");
-    
+
         const handleSettings = () => {
             setSettings(!settings);
         };
-    
+
         if (settingsIcon) {
             settingsIcon.addEventListener("click", handleSettings);
         }
-    
+
         return () => {
             if (settingsIcon) {
                 settingsIcon.removeEventListener("click", handleSettings);

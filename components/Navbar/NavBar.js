@@ -17,16 +17,12 @@ export default function NavBar() {
     }
 
     const toggleFAQ = () => {
-        setFAQState(!settingsState)
+        setFAQState(!faqState)
         console.log("faq")
     }
 
     const closeProfile = () => {
         setProfileState(false);
-    };
-
-    const closeSettings = () => {
-        setSettingsState(false);
     };
 
     const closeFAQ = () => {
@@ -54,7 +50,6 @@ export default function NavBar() {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }

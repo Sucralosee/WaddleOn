@@ -1,6 +1,6 @@
  .profileContainer {
      width: 430px;
-     height: 932px;
+     height: 100vh;
      position: absolute;
      display: flex;
      flex-direction: column;
@@ -16,7 +16,6 @@
      height: 500px;
      display: flex;
      flex-direction: column;
-     align-items: left;
      justify-content: flex-start;
      margin-top: auto;
      background-color: var(--seashell);

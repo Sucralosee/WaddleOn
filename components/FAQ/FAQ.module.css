@@ -1,6 +1,6 @@
 .faqContainer {
     width: 430px;
-    height: 932px;
+    height: 100vh;
     position: absolute;
     display: flex;
     flex-direction: column;
