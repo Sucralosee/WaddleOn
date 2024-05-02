@@ -11,7 +11,7 @@ export default function Tasks() {
     const [text, setText] = useState('')
     const [chips, setChips] = useState(false)
     const [chipStatus, setChipStatus] = useState('none')
-    var [data, setData] = useState();
+    var [data, setData] = useState(recommendedTasks);
 
     //task management
     function addTask(text) {
@@ -43,21 +43,28 @@ export default function Tasks() {
         switch (category) {
             case "All":
                 setData(recommendedTasks);
-                console.log("All")
+                console.log("All", recommendedTasks);
                 break;
             case "Simple":
-                let simple = recommendedTasks.subject.filter(subject => subjects.subject.includes('Simple'));
-                console.log("Simple")
+                let simple = recommendedTasks.subjects.filter(task => task.category.includes("Simple"));
+                setData({ subjects: simple })
+                console.log("Simple", simple);
                 break;
             case "Activities":
-                console.log("Actv")
+                let activities = recommendedTasks.subjects.filter(task => task.category.includes("Activities"));
+                setData({ subjects: activities })
+                console.log("Activities", activities);
                 break;
             case "Homework":
-                console.log("Hwk")
+                let homework = recommendedTasks.subjects.filter(task => task.category.includes("Homework"));
+                setData({ subjects: homework })
+                console.log("Homework", homework);
+                break;
+            default:
+                console.log("Default");
                 break;
         }
     }
-
     //Key handler
     const onKeyPressHandler = e => {
         e.preventDefault();
@@ -73,17 +80,24 @@ export default function Tasks() {
             {chips &&
                 <div className={styles.chipContainer}>
                     <div className={styles.chipsMenu}>
-                        <h5>Categories</h5>
-                        <button onClick={() => addingData("All")}>Simple Tasks</button>
-                        <button onClick={() => addingData("Simple")}>Simple Tasks</button>
-                        <button onClick={() => addingData("Activities")}>Activities</button>
-                        <button onClick={() => addingData("Homework")}>Homework</button>
+                        <h5>Filter</h5>
+                        <div className={styles.chipFilterContainer}>
+                            <button onClick={() => addingData("All")} className={styles.chipFilter}>All</button>
+                            <button onClick={() => addingData("Simple")} className={styles.chipFilter}>Simple Tasks</button>
+                            <button onClick={() => addingData("Activities")} className={styles.chipFilter}>Activities</button>
+                            <button onClick={() => addingData("Homework")} className={styles.chipFilter}>Homework</button>
+                        </div>
                         <h5>Add a Premade Task</h5>
                         <div className={styles.chipChoices}>
-                            <button onClick={() => addTask("cool")} className={styles.chip}>Cool</button>
-
-                            <button onClick={() => setChips(false)}>Close</button>
+                            {data.subjects.map((b, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => addTask(b.subject)}
+                                    className={styles.chip}
+                                >{b.subject}</button>
+                            ))}
                         </div>
+                        <button onClick={() => setChips(false)}>Close</button>
                     </div>
                 </div>
             }

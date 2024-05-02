@@ -54,9 +54,10 @@
     text-decoration: none;
     font-family: var(--header-style);
     transition: transform 0.5s, background-color 0.5s;
+    z-index: 5;
 }
 
-.cycleButton:active {
+.cycleButton:active, .cycleButton:hover {
     transform: scale(110%);
     background-color: var(--flush-orange);
 }

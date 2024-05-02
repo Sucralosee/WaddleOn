@@ -11,11 +11,12 @@
 .tasksContainer {
     width: 300px;
     max-height: 240px;
-    background-color: var(--seashell);
+    background-color: var(--button-blue);
     border-radius: var(--card-curve-small);
     overflow-y: scroll;
     overflow-x: hidden;
     box-shadow: 0px 1px 4.4px 0px var(--arathi-highlands);
+    color: var(--seashell);
 }
 
 .tasksContainer::-webkit-scrollbar {
@@ -42,6 +43,11 @@
 
 .taskFilter {
     margin-left: 1rem;
+    cursor: pointer;
+}
+
+.taskFilter:hover {
+    transform: scale(110%);
 }
 
 .input {
@@ -78,10 +84,10 @@
     align-items: center;
     justify-content: end;
     filter: drop-shadow(0 0.2rem 0.05rem var(--gray5));
-    transition: transform 1s, background-color 0.1s;
+    transition: transform 0.2s, background-color 0.1s;
 }
 
-.tasksAdding:active {
+.tasksAdding:active, .tasksAdding:hover  {
     width: 96.095px;
     height: 48.523px;
     border: none;
@@ -92,7 +98,7 @@
     align-items: center;
     justify-content: end;
     filter: drop-shadow(0 0.2rem 0.05rem var(--gray5));
-    transform: scale(120%);
+    transform: scale(110%);
 }
 
 .taskListHeader {
@@ -108,7 +114,6 @@
     justify-content: center;
     width: 430px;
 }
-
 
 .chipsMenu {
     width: 308px;
@@ -126,19 +131,60 @@
     margin: 0;
 }
 
+.chipFilterContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.chipFilter {
+    display: flex;
+    width: 123px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--seashell);
+    border-radius: var(--card-curve-small);
+    border: none;
+    margin: 0.3rem;
+
+    font-family: var(--header-style);
+    font-weight: bold;
+    color: var(--gray5);
+    transition: background-color 0.2s;
+    filter: drop-shadow(0 0.2rem 0.05rem var(--gray5));
+}
+
+.chipFilter:active, .chipFilter:hover {
+    background-color: var(--flush-orange);
+    color: var(--seashell);
+}
+
+.chipChoices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .chip {
     display: flex;
     width: 123px;
     height: 30px;
-    padding: 5px 33px;
+    padding: 5px 20px;
     justify-content: center;
     align-items: center;
     background-color: var(--arathi-highlands);
     border-radius: var(--card-curve-small);
     border: none;
+    margin: 0.3rem;
 
     font-family: var(--paragraph-style);
     color: var(--seashell);
+    transition: background-color 0.2s;
+}
+
+.chip:active {
+    animation: click 0.2s;
+    background-color: var(--flush-orange);
+    color: var(--gray5);
 }
 
 /* Animation */
@@ -151,5 +197,11 @@
     100% {
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+
+@keyframes click {
+    from {
+        
     }
 }
