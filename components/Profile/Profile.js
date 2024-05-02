@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import styles from "./Profile.module.css"
-import data from "../../data/inventory/inventory.js"
+import data from "../../data/inventory/index.js"
 
 //Logic: pass profile visibility from navbar -> true and set visibility -> false from profileExit
 export default function Profile({

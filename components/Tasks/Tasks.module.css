@@ -101,3 +101,55 @@
     font-weight: bold;
     font-size: var(--h5);
 }
+
+/*Chips*/
+.chipContainer {
+    display: flex;
+    justify-content: center;
+    width: 430px;
+}
+
+
+.chipsMenu {
+    width: 308px;
+    height: 379px;
+    background-color: var(--seashell);
+    border-radius: var(--card-curve-small);
+    z-index: 1000;
+    filter: drop-shadow(0 0.2rem 0.5rem var(--arathi-highlands));
+    position: absolute;
+    animation: fadeIn 0.2s;
+    padding: 1rem;
+}
+
+.chipsMenu h5 {
+    margin: 0;
+}
+
+.chip {
+    display: flex;
+    width: 123px;
+    height: 30px;
+    padding: 5px 33px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--arathi-highlands);
+    border-radius: var(--card-curve-small);
+    border: none;
+
+    font-family: var(--paragraph-style);
+    color: var(--seashell);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
