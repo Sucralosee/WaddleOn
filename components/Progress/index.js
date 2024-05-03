@@ -109,6 +109,7 @@ export default function Progress() {
                     placeholder="Enter your name"
                     value={userName}
                     onChange={handleNameChange}
+                    tabindex="1"
                     />
                 </div>
             )}
@@ -127,7 +128,7 @@ export default function Progress() {
                 
                 {clickCount == 2 || clickCount == 3 ? (
                     <div>
-                        <Tasks/>
+                        <Tasks tabindex="2"/>
                     </div>
                 ):(
                     <div></div>
@@ -138,7 +139,7 @@ export default function Progress() {
                 <div className={styles.floatContainer}>
                     <div className={styles.floatHole}>
                         <view className={`${styles.WaddleContainer} ${styles.ducksFloat}`}>
-                            <DucksAnim/>
+                            <DucksAnim tabindex="3"/>
                         </view>
                     </div>
                 </div>
@@ -170,11 +171,11 @@ export default function Progress() {
             </div>
             
             {clickCount < 7 ? (
-                <button onClick={nextStep} className={styles.nextButton}>
+                <button onClick={nextStep} className={styles.nextButton} tabindex="4">
                     Continue
                 </button>
             ) : (
-                <Link href="./TimerPage">
+                <Link href="./doneOnboard" tabindex="4">
                     <button className={styles.nextButton}>
                          Continue
                     </button>
@@ -185,11 +186,11 @@ export default function Progress() {
             {clickCount < 2 ? (
                 <div className={styles.skipContainer}>
                     <button className={styles.skipButton}>
-                        <Link href="/TimerPage" className={styles.link}>Skip Tutorial</Link>
+                        <Link href="/TimerPage" className={styles.link} tabindex="5">Skip Tutorial</Link>
                     </button>
                 </div>
             ) : (
-                <button onClick={goBack} className={styles.backButton}>
+                <button onClick={goBack} className={styles.backButton} tabindex="6">
                     <i class="fa fa-arrow-left" aria-hidden="true"></i>
                 </button>
             )
