@@ -10,8 +10,10 @@ export default function SettingsMenu({
     textSize = "Normal",
     childParent
 }) {
-    const [isDark, setIsDark] = useState(false)
-    const [audioCheck, setAudioCheck] = useState(true)
+    const [isDark, setIsDark] = useState(false);
+    const [audioCheck, setAudioCheck] = useState(true);
+    const [button, setButton] = useState(true);
+    const [buttonStyle, setButtonStyle] = useState();
     const data = false
 
     useEffect(() => {
@@ -29,26 +31,34 @@ export default function SettingsMenu({
         console.log("audio!!")
     }
 
+    if (button) {
+
+    } else {
+
+    }
+
     return (
         <>
             <div className={styles.settingsPosition}>
                 <div className={styles.settingsContainer}>
                     <h2>Settings</h2>
-                    <div className={styles.option}>
+                    <button className={styles.option}>
                         <p>Language: {language}</p>
-                    </div>
+                    </button>
                     <button className={styles.option} id="theme">
                         <p>Theme: {theme}</p>
                     </button>
-                    <div className={styles.option} onClick={handleAudio}>
+                    <button className={styles.option} onClick={handleAudio}>
                         <p>Sound: {sound}</p>
-                    </div>
-                    <div className={styles.option}>
+                    </button>
+                    <button className={styles.option}>
                         <p>Text Size: {textSize}</p>
+                    </button>
+                    <div className={styles.link}>
+                        <Link className={styles.option} href="summary01">
+                            Go To Quiz
+                        </Link>
                     </div>
-                    <Link className={styles.option} href="summary01">
-                        Go To Quiz
-                    </Link>
                     <div className={styles.exit} onClick={() => childParent(data)}>
                         <h4>X</h4>
                     </div>

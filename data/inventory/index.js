@@ -16,31 +16,31 @@ export const recommendedTasks = {
     //Not sure how to make it apply to the physical list though
     subjects: [
         {
-            subject: "Math",
+            subject: "Finish Math",
             category: "Homework"
         },
         {
-            subject: "Science",
+            subject: "Finish Science",
             category: "Homework"
         },
         {
-            subject: "English",
+            subject: "Finish English",
             category: "Homework"
         },
         {
-            subject: "Art",
+            subject: "Finish Art",
             category: "Homework"
         },
         {
-            subject: "Cleaning",
+            subject: "Finish Cleaning",
             category: "Simple"
         },
         {
-            subject: "Reading",
+            subject: "Finish Reading",
             category: "Simple"
         },
         {
-            subject: "Gaming",
+            subject: "Gaming for 20 Minutes",
             category: "Activities"
         },
     ]

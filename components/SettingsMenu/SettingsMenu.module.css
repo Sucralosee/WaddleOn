@@ -17,12 +17,13 @@
     align-items: center;
     z-index: 1000;
     right: 0;
-    filter: drop-shadow(0 0.2rem 0.2rem var(--arathi-highlands));
+    filter: drop-shadow(0 0.2rem 20rem var(--arathi-highlands));
 }
 
 .option {
     width: 193px;
     height: 37px;
+    border: none;
     border-radius: var(--card-curve-small);
     background: var(--flush-orange);
     color: var(--seashell);
@@ -34,14 +35,21 @@
     cursor: pointer;
     font-family: var(--paragraph-style);
     text-decoration: none;
+    font-weight: bold;
 }
 
+.option:active, .option:hover {
+    background-color: var(--button-blue);
+}
+
+.link {
+    margin-top: auto;
+}
 
 .exit {
-    position: absolute;
     bottom: 2rem;
     right: 0;
-    margin: 0 0 0 auto;
+    margin: 1rem 0 1rem auto;
     width: 87px;
     height: 38px;
     border-radius: 8px 0px 0px 8px;

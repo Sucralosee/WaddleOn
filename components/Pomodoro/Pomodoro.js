@@ -15,7 +15,13 @@ export default function Pomodoro() {
     const [cycleNumber, setCycleNumber] = useState(0)
     const [playState, setPlayState] = useState(false)
     const [breakSession, setBreakSession] = useState(false)
-    const nextPage = "a"
+    const [timerStyle, setTimerStyle] = useState()
+
+    const progressCalculation = breakSession ? minutes / 5 : minutes / 25 //calculates the ratio between the state
+    const [progress, setProgress] = useState(progressCalculation)
+    const [progressStyle, setProgressStyle] = useState()
+
+    const nextPage = "summary01"
 
     useEffect(() => {
         let interval;
@@ -69,20 +75,36 @@ export default function Pomodoro() {
         setSeconds(0)
     }
 
+    useEffect(() => {
+        if (breakSession) {
+            setTimerStyle({ color: "var(--gray5)", backgroundColor: "var(--button-blue)" });
+        } else {
+            setTimerStyle({ color: "var(--seashell)", backgroundColor: "var(--flush-orange)" })
+        }
+    })
+
+    //Progress Calc.
+    useEffect(() => {
+        setProgressStyle({ width: `${progressCalculation * 10}rem`, height: "0.5rem", backgroundColor: "var(--button-blue)", transition: "width 1s" })
+    }, [progressCalculation])
+
     return (
         <>
             <div className={styles.pomodoroPosition}>
-                <div className={styles.pomodoroContainer}>
-                    <div className={styles.pomodoro}>
+                <div className={styles.pomodoroContainer} >
+                    <div className={styles.pomodoro} style={timerStyle}>
                         <div className={styles.highlight}></div>
+                        <div className={styles.highlightTwo}></div>
+                        <div className={styles.shadow}></div>
                         <div>
-                            <div className={styles.message}>
-                            </div>
-                            <div className={styles.timer}>{timerMinutes}:{timerSeconds}</div>
+                            <div className={styles.timer} style={timerStyle}>{timerMinutes}:{timerSeconds}</div>
+                        </div>
+                        <div className={styles.progressBar}>
+                            <div className={styles.dynamicProgress} style={progressStyle}></div>
                         </div>
                     </div>
                     {breakSession && <CycleComplete />}
-                    {!breakSession && <Tasks />}
+                    <Tasks number={cycleNumber} coloring={timerStyle} />
                     <p className={styles.cycleButton} onClick={endTimer} tabIndex={5}>
                         End Timer
                         <Image src="/images/Flag.svg" width={20} height={20} />

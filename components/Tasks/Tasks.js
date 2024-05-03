@@ -1,19 +1,21 @@
 import styles from "./Tasks.module.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import TaskItem from "../TaskItem/TaskItem"
 import Image from "next/image"
 import { recommendedTasks } from "@/data/inventory"
 
 
 //https://medium.com/@worachote/building-a-todo-list-app-with-reactjs-a-step-by-step-guide-2c58b9b6c0f5
-export default function Tasks() {
+export default function Tasks({
+    number = {cycleNumber},
+    coloring
+}) {
     const [tasks, setTasks] = useState([])
     const [text, setText] = useState('')
     const [chips, setChips] = useState(false)
     const [chipStatus, setChipStatus] = useState('none')
     var [data, setData] = useState(recommendedTasks);
 
-    //task management
     function addTask(text) {
         const newTask = {
             id: Date.now(),
@@ -77,6 +79,7 @@ export default function Tasks() {
 
     return (
         <>
+
             {chips &&
                 <div className={styles.chipContainer}>
                     <div className={styles.chipsMenu}>
@@ -97,12 +100,15 @@ export default function Tasks() {
                                 >{b.subject}</button>
                             ))}
                         </div>
-                        <button onClick={() => setChips(false)}>Close</button>
+                        <button onClick={() => setChips(false)} className={styles.exit}>
+                            <h4>
+                                X
+                            </h4>
+                        </button>
                     </div>
                 </div>
             }
             <div className={styles.tasks}>
-
                 <div className={styles.taskInput}>
                     <input
                         value={text}
@@ -113,12 +119,16 @@ export default function Tasks() {
                         tabIndex={1}
                         pattern="[a-z]+"
                     />
-                    <Image src="/images/Filter.svg" width={25} height={25} className={styles.taskFilter} tabIndex={2} onClick={() => setChips(true)} />
+                    <Image src="/images/Add.svg" width={25} height={25} className={styles.taskFilter} tabIndex={2} onClick={() => addTask(text)} />
                 </div>
-                <button className={styles.tasksAdding} onClick={() => addTask(text)} tabIndex={3}>
-                    <Image src="/images/Add.svg" width={30} height={30} />
-                </button>
-                <div className={styles.tasksContainer}>
+                <div className={styles.trackerFilter}>
+                    <div className={styles.tracker}>Cycles: {Math.ceil(number/2)}</div>
+                    <button className={styles.tasksAdding} onClick={() => setChips(true)} tabIndex={3}>
+                        <p className={styles.filterAdd}>Quick Add Tasks +</p>
+                    </button>
+                </div>
+
+                <div className={styles.tasksContainer} style={coloring}>
                     <p className={styles.taskListHeader}>Current Tasks:</p>
                     {tasks.map(task => (
                         <TaskItem

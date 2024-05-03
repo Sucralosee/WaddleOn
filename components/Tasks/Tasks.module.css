@@ -44,7 +44,17 @@
 .taskFilter {
     margin-left: 1rem;
     cursor: pointer;
+    padding: 0.2rem;
+
+    border-radius: var(--card-curve-small);
+    background-color: var(--seashell);
+    filter: drop-shadow(0 0.2rem 0.05rem var(--gray5));
 }
+
+.taskFilter:hover, .taskFilter:active {
+    background-color: var(--flush-orange);
+}
+
 
 .taskFilter:hover {
     transform: scale(110%);
@@ -87,7 +97,8 @@
     transition: transform 0.2s, background-color 0.1s;
 }
 
-.tasksAdding:active, .tasksAdding:hover  {
+.tasksAdding:active,
+.tasksAdding:hover {
     width: 96.095px;
     height: 48.523px;
     border: none;
@@ -101,6 +112,12 @@
     transform: scale(110%);
 }
 
+.filterAdd {
+    color: var(--seashell);
+    margin: auto;
+    font-family: var(--header-style);
+}
+
 .taskListHeader {
     margin: 1rem;
     width: 1rem;
@@ -108,27 +125,53 @@
     font-size: var(--h5);
 }
 
+.trackerFilter {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 308px;
+}
+
+.tracker { 
+    border: none;
+    background-color: var(--button-blue);
+    border-radius: var(--card-curve-small);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    transition: transform 0.2s, background-color 0.1s;
+    padding: 1rem 3rem;
+    margin: auto auto auto 0;
+    box-shadow: 0px 1px 4.4px 0px var(--arathi-highlands);
+
+    font-family: var(--header-style);
+    color: var(--seashell);
+}
+
 /*Chips*/
 .chipContainer {
+    position: absolute;
     display: flex;
     justify-content: center;
     width: 430px;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .chipsMenu {
     width: 308px;
-    height: 379px;
     background-color: var(--seashell);
     border-radius: var(--card-curve-small);
     z-index: 1000;
-    filter: drop-shadow(0 0.2rem 0.5rem var(--arathi-highlands));
+    filter: drop-shadow(0 0.2rem 20rem var(--arathi-highlands));
     position: absolute;
     animation: fadeIn 0.2s;
     padding: 1rem;
 }
 
 .chipsMenu h5 {
-    margin: 0;
+    margin: 0.5rem 0;
+    width: 11rem;
 }
 
 .chipFilterContainer {
@@ -145,7 +188,7 @@
     background-color: var(--seashell);
     border-radius: var(--card-curve-small);
     border: none;
-    margin: 0.3rem;
+    margin: 0.3rem auto;
 
     font-family: var(--header-style);
     font-weight: bold;
@@ -154,9 +197,11 @@
     filter: drop-shadow(0 0.2rem 0.05rem var(--gray5));
 }
 
-.chipFilter:active, .chipFilter:hover {
+.chipFilter:active,
+.chipFilter:hover {
     background-color: var(--flush-orange);
     color: var(--seashell);
+    box-shadow: inset 0 2px 2px var(--gray5);
 }
 
 .chipChoices {
@@ -168,24 +213,50 @@
     display: flex;
     width: 123px;
     height: 30px;
-    padding: 5px 20px;
+    padding: 1.2rem;
     justify-content: center;
     align-items: center;
     background-color: var(--arathi-highlands);
     border-radius: var(--card-curve-small);
     border: none;
-    margin: 0.3rem;
+    margin: 0.3rem auto;
 
     font-family: var(--paragraph-style);
+    font-weight: bold;
     color: var(--seashell);
     transition: background-color 0.2s;
 }
 
-.chip:active {
+.chip:active,
+.chip:hover {
     animation: click 0.2s;
     background-color: var(--flush-orange);
     color: var(--gray5);
+    cursor: pointer;
 }
+
+.exit {
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    width: 87px;
+    height: 38px;
+    border-radius: 8px 0px 0px 8px;
+    background-color: var(--arathi-highlands);
+    color: var(--seashell);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border: none;
+    cursor: pointer;
+}
+
+.exit h4 {
+    margin: 0 0 0 1rem;
+    color: var(--seashell);
+}
+
 
 /* Animation */
 @keyframes fadeIn {
@@ -201,7 +272,5 @@
 }
 
 @keyframes click {
-    from {
-        
-    }
+    from {}
 }

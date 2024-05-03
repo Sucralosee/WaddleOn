@@ -19,7 +19,7 @@
      justify-content: flex-start;
      margin-top: auto;
      background-color: var(--seashell);
-     filter: drop-shadow(0 1rem 5rem var(--arathi-highlands));
+     filter: drop-shadow(0 0.2rem 20rem var(--arathi-highlands));
      border-radius: 20px 20px 0 0;
  }
 
