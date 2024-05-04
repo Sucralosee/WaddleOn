@@ -2,7 +2,6 @@ import styles from './SettingsMenu.module.css'
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-//Possible Reference for sliders https://codesandbox.io/p/sandbox/volume-slider-o44gf?file=%2Fsrc%2Findex.js%3A26%2C18-36%2C38
 export default function SettingsMenu({
     childParent
 }) {
@@ -44,6 +43,10 @@ export default function SettingsMenu({
 
     }
 
+    useEffect(() => {
+        localStorage.setItem("language", JSON.stringify(lang));
+    }, [lang]);
+
     //Theme
     const handleTheme = () => {
         setThemeCheck(!themeCheck)
@@ -54,8 +57,12 @@ export default function SettingsMenu({
         var theme = "Dark"
     } else {
         var theme = "Light"
-
     }
+
+    useEffect(() => {
+        localStorage.setItem("theme", JSON.stringify(theme));
+    }, [theme]);
+
     //audio
     const handleAudio = () => {
         setAudioCheck(!audioCheck)
@@ -66,10 +73,11 @@ export default function SettingsMenu({
         var audio = "Off"
     } else {
         var audio = "On"
-
     }
-
-
+    
+    useEffect(() => {
+        localStorage.setItem("audio", JSON.stringify(audio));
+    }, [audio]);
 
 
     return (
