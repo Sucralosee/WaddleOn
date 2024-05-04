@@ -123,7 +123,7 @@ export default function Tasks({
                     <Image src="/images/Add.svg" width={25} height={25} className={styles.taskFilter} tabIndex={2} onClick={() => {addTask(text); notification()}} />
                 </div>
                 <div className={styles.trackerFilter}>
-                    <div className={styles.tracker}>Cycles: {Math.ceil(number / 2)}</div>
+                    <div className={styles.tracker}>Completed Cycles: {Math.ceil(number / 2)}</div>
                     <button className={styles.tasksAdding} onClick={() => setChips(true)} tabIndex={3}>
                         <p className={styles.filterAdd}>Quick Add Tasks +</p>
                     </button>
