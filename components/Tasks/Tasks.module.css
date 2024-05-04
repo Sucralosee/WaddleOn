@@ -51,7 +51,8 @@
     filter: drop-shadow(0 0.2rem 0.05rem var(--gray5));
 }
 
-.taskFilter:hover, .taskFilter:active {
+.taskFilter:hover,
+.taskFilter:active {
     background-color: var(--flush-orange);
 }
 
@@ -114,8 +115,9 @@
 
 .filterAdd {
     color: var(--seashell);
-    margin: auto;
+    margin: auto auto auto 5px;
     font-family: var(--header-style);
+    text-align: left;
 }
 
 .taskListHeader {
@@ -132,7 +134,7 @@
     width: 308px;
 }
 
-.tracker { 
+.tracker {
     border: none;
     background-color: var(--button-blue);
     border-radius: var(--card-curve-small);
@@ -158,11 +160,28 @@
     overflow: hidden;
 }
 
+.chipsNotification {
+    width: 308px;
+    height: 1rem;
+    background-color: var(--button-blue);
+    border-radius: var(--card-curve-small);
+    color: var(--seashell);
+    z-index: 20;
+    animation: fadeIn 0.2s;
+    padding: 1rem;
+    position: absolute;
+    left: 11%;
+    bottom: 0;
+    filter: drop-shadow(0 0 3rem  var(--button-blue));
+    font-family: var(--header-style);
+    animation: notify 2s forwards;
+}
+
 .chipsMenu {
     width: 308px;
     background-color: var(--seashell);
     border-radius: var(--card-curve-small);
-    z-index: 1000;
+    z-index: 20;
     filter: drop-shadow(0 0.2rem 20rem var(--arathi-highlands));
     position: absolute;
     animation: fadeIn 0.2s;
@@ -273,4 +292,41 @@
 
 @keyframes click {
     from {}
+}
+
+@keyframes notify {
+    0% {
+        transform: translateY(300px);
+        opacity: 0;
+    }
+
+    20% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 1920px) and (min-width:431px) {
+    .tasks {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        margin: 5rem auto;
+        z-index: 10;
+    }
 }

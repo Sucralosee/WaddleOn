@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeInAndOut 2s forwards;
+    animation: fadeInAndOut 4s forwards;
     overflow: hidden;
 }
 

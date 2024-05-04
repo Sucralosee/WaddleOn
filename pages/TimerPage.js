@@ -95,8 +95,6 @@ export default function TimerPage() {
                             position: "relative",
                             top: "-200px",
                             marginBottom: "-200px",
-                            width: "430px",
-                            height: "470px",
                             borderRadius: "0 0 8px 8px"
                         }} />
                         <Pomodoro />

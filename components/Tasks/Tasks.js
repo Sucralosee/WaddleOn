@@ -7,7 +7,7 @@ import { recommendedTasks } from "@/data/inventory"
 
 //https://medium.com/@worachote/building-a-todo-list-app-with-reactjs-a-step-by-step-guide-2c58b9b6c0f5
 export default function Tasks({
-    number = {cycleNumber},
+    number = { cycleNumber },
     coloring
 }) {
     const [tasks, setTasks] = useState([])
@@ -15,6 +15,7 @@ export default function Tasks({
     const [chips, setChips] = useState(false)
     const [chipStatus, setChipStatus] = useState('none')
     var [data, setData] = useState(recommendedTasks);
+    var [taskNotify, setTaskNotify] = useState()
 
     function addTask(text) {
         const newTask = {
@@ -67,19 +68,17 @@ export default function Tasks({
                 break;
         }
     }
-    //Key handler
-    const onKeyPressHandler = e => {
-        e.preventDefault();
-        if (e.key === 'Enter') {
-            addTask(text)
-        }
-    };
 
     //State mngmt
+    const notification = () => {
+        setTaskNotify(true)
+        setTimeout(() => {
+            setTaskNotify(false);
+        }, 2000);
+    }
 
     return (
         <>
-
             {chips &&
                 <div className={styles.chipContainer}>
                     <div className={styles.chipsMenu}>
@@ -95,7 +94,7 @@ export default function Tasks({
                             {data.subjects.map((b, index) => (
                                 <button
                                     key={index}
-                                    onClick={() => addTask(b.subject)}
+                                    onClick={() => { addTask(b.subject); notification() }}
                                     className={styles.chip}
                                 >{b.subject}</button>
                             ))}
@@ -108,21 +107,23 @@ export default function Tasks({
                     </div>
                 </div>
             }
+            {taskNotify &&
+                <div className={styles.chipsNotification}>Task Added!</div>
+            }
             <div className={styles.tasks}>
                 <div className={styles.taskInput}>
                     <input
                         value={text}
                         onChange={e => setText(e.target.value)}
-                        // onKeyDown={onKeyPressHandler}
                         className={styles.input}
                         placeholder="Write A New Task"
                         tabIndex={1}
                         pattern="[a-z]+"
                     />
-                    <Image src="/images/Add.svg" width={25} height={25} className={styles.taskFilter} tabIndex={2} onClick={() => addTask(text)} />
+                    <Image src="/images/Add.svg" width={25} height={25} className={styles.taskFilter} tabIndex={2} onClick={() => {addTask(text); notification()}} />
                 </div>
                 <div className={styles.trackerFilter}>
-                    <div className={styles.tracker}>Cycles: {Math.ceil(number/2)}</div>
+                    <div className={styles.tracker}>Cycles: {Math.ceil(number / 2)}</div>
                     <button className={styles.tasksAdding} onClick={() => setChips(true)} tabIndex={3}>
                         <p className={styles.filterAdd}>Quick Add Tasks +</p>
                     </button>

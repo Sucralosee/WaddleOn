@@ -30,18 +30,19 @@
 
  .breakLine {
      height: 2px;
-     width: 400px;
+     width: 430px;
      background-color: var(--gray5);
      border-radius: var(--card-curve-small);
  }
 
  .profileHeading {
     width: 300px;
-    margin: 0.8rem;
+    text-align: center;
+    margin: 3rem auto;
  }
 
  .profileNumber{
-    margin: 0.8rem;
+    margin: 1rem auto;
  }
  .exit {
      position: absolute;
@@ -60,6 +61,7 @@
 
  .exit h4 {
      margin: 0 0 0 1rem;
+     color: var(--seashell);
  }
 
  @keyframes fadeIn {

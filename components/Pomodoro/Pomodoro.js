@@ -88,8 +88,14 @@ export default function Pomodoro() {
         setProgressStyle({ width: `${progressCalculation * 10}rem`, height: "0.5rem", backgroundColor: "var(--button-blue)", transition: "width 1s" })
     }, [progressCalculation])
 
+    //local storage
+    useEffect(() => {
+        localStorage.setItem("cycleNumber", JSON.stringify(cycleNumber));
+      }, [cycleNumber]);
+
     return (
         <>
+            {breakSession && <CycleComplete />}
             <div className={styles.pomodoroPosition}>
                 <div className={styles.pomodoroContainer} >
                     <div className={styles.pomodoro} style={timerStyle}>
@@ -103,7 +109,6 @@ export default function Pomodoro() {
                             <div className={styles.dynamicProgress} style={progressStyle}></div>
                         </div>
                     </div>
-                    {breakSession && <CycleComplete />}
                     <Tasks number={cycleNumber} coloring={timerStyle} />
                     <p className={styles.cycleButton} onClick={endTimer} tabIndex={5}>
                         End Timer
@@ -111,14 +116,14 @@ export default function Pomodoro() {
                     </p>
                     <Link className={styles.cycleButton} href={nextPage} tabIndex={6}>
                         Finish Session
-                        <Image src="/images/Flag.svg" width={20} height={20} />
+                        <Image src="/images/Clock.svg" width={20} height={20}/>
                     </Link>
-
+                </div>
                     <div className={styles.playButton} onClick={toggleTimer} tabIndex={7}>
                         {!playState && <Image src="/images/paused.png" width={93} height={93} alt="paused" onClick={handlePlayButton} className={styles.button} />}
                         {playState && <Image src="/images/play.png" width={93} height={93} alt="play" onClick={handlePlayButton} className={styles.button} />}
                     </div>
-                </div>
+
             </div>
         </>
     )
