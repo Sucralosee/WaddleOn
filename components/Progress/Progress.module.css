@@ -180,9 +180,9 @@
     height: 36px;
     width: 45px;
 
-    position: relative;
-    top: 134px;
-    right: 150px;
+    position: absolute;
+    bottom: 4rem;
+    left: 4rem;
 
     border: 2px solid var(--button-blue);
     background-color: var(--seashell);
@@ -197,4 +197,12 @@
     background-color: var(--button-blue);
     color: black;
     border: none;
+}
+
+/*Conditionallly Displayed Elements*/
+
+.tasksPosition {
+    overflow: hidden;
+    width: 430px;
+    height: 350px;
 }
