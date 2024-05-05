@@ -43,9 +43,9 @@ export default function Progress() {
             case 5:
                 setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 min break.');
                 break;
-            default:
-                setDuckInstructions('Click Continue to start your waddling journey!');
-                break;
+        //     default:
+        //         setDuckInstructions('Click Continue to start your waddling journey!');
+        //         break;
         }
     };
 
@@ -72,9 +72,9 @@ export default function Progress() {
                 case 5:
                     setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 min break.');
                     break;
-                default:
-                    setDuckInstructions('Click Continue to start your waddling journey!');
-                    break;
+                // default:
+                //     setDuckInstructions('Click Continue to start your waddling journey!');
+                //     break;
             }
         }
     };
@@ -170,7 +170,7 @@ export default function Progress() {
                 )}
             </div>
             
-            {clickCount < 7 ? (
+            {clickCount < 6 ? (
                 <button onClick={nextStep} className={styles.nextButton} tabindex="4">
                     Continue
                 </button>
