@@ -1,7 +1,9 @@
 import React from "react"
 import styles from "./TaskItem.module.css"
+import { useEffect } from "react";
 
 export default function TaskItem({ task, deleteTask, toggleCompleted }) {
+
     function handleChange() {
         toggleCompleted(task.id)
     }
@@ -15,7 +17,6 @@ export default function TaskItem({ task, deleteTask, toggleCompleted }) {
                     checked={task.completed}
                     onChange={handleChange}
                     className={styles.taskCheckBox}
-                    
                 />
                 <button onClick={() => deleteTask(task.id)} className={styles.deleteButton}>
                     X

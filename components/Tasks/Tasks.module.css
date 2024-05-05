@@ -5,16 +5,18 @@
     align-items: center;
     width: 300px;
     margin: 1rem auto;
+    z-index: 10;
 }
 
 .tasksContainer {
     width: 300px;
     max-height: 240px;
-    background-color: var(--seashell);
+    background-color: var(--button-blue);
     border-radius: var(--card-curve-small);
     overflow-y: scroll;
     overflow-x: hidden;
     box-shadow: 0px 1px 4.4px 0px var(--arathi-highlands);
+    color: var(--seashell);
 }
 
 .tasksContainer::-webkit-scrollbar {
@@ -41,6 +43,25 @@
 
 .taskFilter {
     margin-left: 1rem;
+    cursor: pointer;
+    padding: 0.2rem;
+
+    border-radius: var(--card-curve-small);
+    background-color: var(--seashell);
+    filter: drop-shadow(0 0.2rem 0.05rem var(--gray5));
+}
+
+.taskFilter [data-theme="Dark"] {
+    background-color: var((--gray5));
+}
+
+.taskFilter:hover,
+.taskFilter:active {
+    background-color: var(--flush-orange);
+}
+
+.taskFilter:hover {
+    transform: scale(110%);
 }
 
 .input {
@@ -58,6 +79,8 @@
     border: none;
     font-family: var(--paragraph-style);
     font-weight: bold;
+    color: var(--gray5);
+
 }
 
 .input::placeholder {
@@ -77,11 +100,11 @@
     align-items: center;
     justify-content: end;
     filter: drop-shadow(0 0.2rem 0.05rem var(--gray5));
-
-    transition: transform 1s, background-color 0.1s;
+    transition: transform 0.2s, background-color 0.1s;
 }
 
-.tasksAdding:active {
+.tasksAdding:active,
+.tasksAdding:hover {
     width: 96.095px;
     height: 48.523px;
     border: none;
@@ -92,7 +115,14 @@
     align-items: center;
     justify-content: end;
     filter: drop-shadow(0 0.2rem 0.05rem var(--gray5));
-    transform: scale(120%);
+    transform: scale(110%);
+}
+
+.filterAdd {
+    color: var(--seashell);
+    margin: auto auto auto 5px;
+    font-family: var(--header-style);
+    text-align: left;
 }
 
 .taskListHeader {
@@ -100,4 +130,207 @@
     width: 1rem;
     font-weight: bold;
     font-size: var(--h5);
+}
+
+.trackerFilter {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 308px;
+}
+
+.tracker {
+    border: none;
+    background-color: var(--button-blue);
+    border-radius: var(--card-curve-small);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    transition: transform 0.2s, background-color 0.1s;
+    margin: auto auto auto 0;
+    padding: 1rem;
+    box-shadow: 0px 1px 4.4px 0px var(--arathi-highlands);
+
+    font-family: var(--header-style);
+    color: var(--seashell);
+}
+
+/*Chips*/
+.chipContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 430px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.chipsNotification {
+    width: 308px;
+    height: 1rem;
+    background-color: var(--button-blue);
+    border-radius: var(--card-curve-small);
+    color: var(--seashell);
+    z-index: 20;
+    animation: fadeIn 0.2s;
+    padding: 1rem;
+    position: absolute;
+    left: 11%;
+    bottom: 0;
+    filter: drop-shadow(0 0 3rem  var(--button-blue));
+    font-family: var(--header-style);
+    animation: notify 2s forwards;
+}
+
+.chipsMenu {
+    width: 308px;
+    background-color: var(--seashell);
+    border-radius: var(--card-curve-small);
+    z-index: 20;
+    filter: drop-shadow(0 0.2rem 20rem var(--arathi-highlands));
+    position: absolute;
+    animation: fadeIn 0.2s;
+    padding: 1rem;
+}
+
+.chipsMenu h5 {
+    margin: 0.5rem 0;
+    width: 11rem;
+}
+
+.chipFilterContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.chipFilter {
+    display: flex;
+    width: 123px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--seashell);
+    border-radius: var(--card-curve-small);
+    border: none;
+    margin: 0.3rem auto;
+
+    font-family: var(--header-style);
+    font-weight: bold;
+    color: var(--gray5);
+    transition: background-color 0.2s;
+    filter: drop-shadow(0 0.2rem 0.05rem var(--gray5));
+}
+
+.chipFilter:active,
+.chipFilter:hover {
+    background-color: var(--flush-orange);
+    color: var(--seashell);
+    box-shadow: inset 0 2px 2px var(--gray5);
+}
+
+.chipChoices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.chip {
+    display: flex;
+    width: 123px;
+    height: 30px;
+    padding: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--arathi-highlands);
+    border-radius: var(--card-curve-small);
+    border: none;
+    margin: 0.3rem auto;
+
+    font-family: var(--paragraph-style);
+    font-weight: bold;
+    color: var(--seashell);
+    transition: background-color 0.2s;
+}
+
+.chip:active,
+.chip:hover {
+    animation: click 0.2s;
+    background-color: var(--flush-orange);
+    color: var(--gray5);
+    cursor: pointer;
+}
+
+.exit {
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    width: 87px;
+    height: 38px;
+    border-radius: 8px 0px 0px 8px;
+    background-color: var(--arathi-highlands);
+    color: var(--seashell);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border: none;
+    cursor: pointer;
+}
+
+.exit h4 {
+    margin: 0 0 0 1rem;
+    color: var(--seashell);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes click {
+    from {}
+}
+
+@keyframes notify {
+    0% {
+        transform: translateY(300px);
+        opacity: 0;
+    }
+
+    20% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 1920px) and (min-width:431px) {
+    .tasks {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        margin: 5rem auto;
+        z-index: 10;
+    }
 }

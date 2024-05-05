@@ -1,6 +1,6 @@
  .profileContainer {
      width: 430px;
-     height: 932px;
+     height: 100vh;
      position: absolute;
      display: flex;
      flex-direction: column;
@@ -16,11 +16,10 @@
      height: 500px;
      display: flex;
      flex-direction: column;
-     align-items: left;
      justify-content: flex-start;
      margin-top: auto;
      background-color: var(--seashell);
-     filter: drop-shadow(0 1rem 5rem var(--arathi-highlands));
+     filter: drop-shadow(0 0.2rem 20rem var(--arathi-highlands));
      border-radius: 20px 20px 0 0;
  }
 
@@ -31,18 +30,19 @@
 
  .breakLine {
      height: 2px;
-     width: 400px;
+     width: 430px;
      background-color: var(--gray5);
      border-radius: var(--card-curve-small);
  }
 
  .profileHeading {
     width: 300px;
-    margin: 0.8rem;
+    text-align: center;
+    margin: 3rem auto;
  }
 
  .profileNumber{
-    margin: 0.8rem;
+    margin: 1rem auto;
  }
  .exit {
      position: absolute;
@@ -61,6 +61,7 @@
 
  .exit h4 {
      margin: 0 0 0 1rem;
+     color: var(--seashell);
  }
 
  @keyframes fadeIn {
