@@ -17,22 +17,24 @@ export default function Landing() {
     return (
         <>
             <div>
-                {showLogo && 
+                {showLogo &&
                     <div className={styles.landLogo}>
-                        <Image
-                            className={styles.logo}
-                            src={`/images/waddleon.svg`}
-                            width={215}
-                            height={75}
-                        />
-                        <Link href="/TimerPage" className={`${styles.linkLand} ${styles.pomDesc}`}>Pomodoro Timer</Link>                        
-                        <p>Start your first activity now</p>
-                        <Link href="/TimerPage" className={`${styles.linkLand} ${styles.getStart}`}>Continue</Link>
+                        <div className={styles.landingLogoContainer}>
+                            <Image
+                                className={styles.logo}
+                                src={`/images/waddleon.svg`}
+                                width={215}
+                                height={75}
+                            />
+                            <Link href="/TimerPage" className={`${styles.linkLand} ${styles.pomDesc}`}>Pomodoro Timer</Link>
+                            <p>Start your first activity now</p>
+                            <Link href="/TimerPage" className={`${styles.linkLand} ${styles.getStart}`}>Continue</Link>
+                        </div>
                     </div>
                 }
-                <div className="videoBackground">
-                    <video autoPlay muted loop className="video" width="1920" height="1080" controls preload="none">
-                        <source src="video/Lake_2.mp4#t=4.5,20"/>
+                <div className={styles.videoBackground}>
+                    <video autoPlay muted loop className="video" width="1920" height="1080" preload="none">
+                        <source src="video/Lake_2.mp4#t=4.5,20" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
