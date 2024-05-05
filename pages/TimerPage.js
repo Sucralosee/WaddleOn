@@ -6,6 +6,7 @@ import Pomodoro from "@/components/Pomodoro/Pomodoro"
 import DucksAnim from "@/components/DucksAnim/DucksAnim"
 import SettingsMenu from "@/components/SettingsMenu/SettingsMenu"
 import Music from "@/components/Music/Music"
+import useLocalStorage from "use-local-storage"
 
 export default function TimerPage() {
 
@@ -15,7 +16,7 @@ export default function TimerPage() {
 
     const [data, setData] = useState([false]);
 
-    const [isDark, setIsDark] = useState();
+    const [isDark, setIsDark] = useLocalStorage("isDark",);
     const [theme, setTheme] = useState("");
 
     const [settings, setSettings] = useState(false);

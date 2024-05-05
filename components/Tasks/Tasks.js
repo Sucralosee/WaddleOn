@@ -16,6 +16,16 @@ export default function Tasks({
     const [chipStatus, setChipStatus] = useState('none')
     var [data, setData] = useState(recommendedTasks);
     var [taskNotify, setTaskNotify] = useState()
+    const [isDark, setIsDark] = useState(false)
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setIsDark(() => {
+                const saved = localStorage.getItem("isDark");
+                const initialValue = JSON.parse(saved);
+                return initialValue || "";
+            })
+        }
+    }, [])
 
     function addTask(text) {
         const newTask = {

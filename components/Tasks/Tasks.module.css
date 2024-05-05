@@ -51,11 +51,14 @@
     filter: drop-shadow(0 0.2rem 0.05rem var(--gray5));
 }
 
+.taskFilter [data-theme="Dark"] {
+    background-color: var((--gray5));
+}
+
 .taskFilter:hover,
 .taskFilter:active {
     background-color: var(--flush-orange);
 }
-
 
 .taskFilter:hover {
     transform: scale(110%);
@@ -76,6 +79,8 @@
     border: none;
     font-family: var(--paragraph-style);
     font-weight: bold;
+    color: var(--gray5);
+
 }
 
 .input::placeholder {
@@ -275,7 +280,6 @@
     margin: 0 0 0 1rem;
     color: var(--seashell);
 }
-
 
 /* Animation */
 @keyframes fadeIn {
