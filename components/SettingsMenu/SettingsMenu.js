@@ -8,7 +8,7 @@ export default function SettingsMenu({
     const [langCheck, setLangCheck] = useState(() => {
         const saved = localStorage.getItem("language");
         const initialValue = JSON.parse(saved);
-        return initialValue || "";
+        return initialValue;
     });
     var [lang, setLang] = useState("");
     const [langBool, setLangBool] = useState(true)
@@ -16,7 +16,7 @@ export default function SettingsMenu({
     const [themeCheck, setThemeCheck] = useState(() => {
         const saved = localStorage.getItem("theme");
         const initialValue = JSON.parse(saved);
-        return initialValue || "";
+        return initialValue;
     });
     var [theme, setTheme] = useState("");
     const [themeBool, setThemeBool] = useState(true)
@@ -24,7 +24,7 @@ export default function SettingsMenu({
     const [audioCheck, setAudioCheck] = useState(() => {
         const saved = localStorage.getItem("audio");
         const initialValue = JSON.parse(saved);
-        return initialValue || "";
+        return initialValue;
     });
     var [audio, setAudio] = useState("");
     const [audioBool, setAudioBool] = useState(true)
@@ -32,16 +32,6 @@ export default function SettingsMenu({
     const [button, setButton] = useState(true);
     const [buttonStyle, setButtonStyle] = useState();
     const data = false;
-
-    useEffect(() => {
-        const theme = document.getElementById("theme");
-
-        if (theme) {
-            theme.addEventListener("click", function handleTheme() {
-                setIsDark(!isDark)
-            })
-        }
-    }, []);
 
     //local storage https://blog.logrocket.com/using-localstorage-react-hooks/
     //Lang
@@ -89,10 +79,10 @@ export default function SettingsMenu({
     }
 
     useEffect(() => {
-        localStorage.setItem("audio", JSON.stringify(audio));
-    }, [audio]);
+        localStorage.setItem("audioBool", JSON.stringify(!audioBool));
+    }, [audio, audioBool]);
 
-    //
+    //https://community.wappler.io/t/have-local-storage-updates-sync-across-tabs-without-refresh/41880
     const reload = () => {
         window.location.reload();
     }
@@ -103,13 +93,13 @@ export default function SettingsMenu({
                 <div className={styles.settingsContainer}>
                     <h2>Settings</h2>
                     <button className={styles.option} onClick={handleLang}>
-                        <p>Language: {langCheck}</p>
+                        <p>Language: {lang}</p>
                     </button>
                     <button className={styles.option} onClick={handleTheme}>
-                        <p>Theme: {themeCheck}</p>
+                        <p>Theme: {theme}</p>
                     </button>
                     <button className={styles.option} onClick={handleAudio}>
-                        <p>Sound: {audioCheck}</p>
+                        <p>Sound: {audio}</p>
                     </button>
                     <button className={styles.option} onClick={reload}>
                         <p>Confirm Changes</p>

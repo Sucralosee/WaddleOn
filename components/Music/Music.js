@@ -2,7 +2,6 @@ import ReactAudioPlayer from 'react-audio-player';
 import { useState, useEffect } from 'react';
 
 export default function Music() {
-    const [audio, setAudio] = useState();
     const reference = true
     const [audioCheck, setAudioCheck] = useState();
 
@@ -10,7 +9,7 @@ export default function Music() {
         if (typeof window !== 'undefined') {
             console.log('You are on the browser')
             setAudioCheck(() => {
-                const saved = localStorage.getItem("Audio");
+                const saved = localStorage.getItem("audioBool");
                 const initialValue = JSON.parse(saved);
                 return initialValue || "";
             })
@@ -18,25 +17,14 @@ export default function Music() {
         }
     }, [])
 
-    useEffect(() => {
-
-        if(audioCheck === "On"){
-            setAudio(true)
-            console.log("audio on")
-        } else {
-            setAudio(false)
-            console.log("audio off")
-        }
-    })
-
     return (
         <>
             {
-                audio && <ReactAudioPlayer
+                audioCheck && <ReactAudioPlayer
                     src="/audio/waves.mp3"
                     autoPlay
                     loop
-                    volume={0.2}
+                    volume={0.5}
                     style={{ position: "absolute" }}
                 />
             }

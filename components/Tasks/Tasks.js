@@ -41,7 +41,7 @@ export default function Tasks({
         }));
     }
 
-    //chip filter
+    //chip filter (code based off of the bookstore assessment)
     const addingData = (category) => {
         switch (category) {
             case "All":
@@ -120,7 +120,7 @@ export default function Tasks({
                         tabIndex={1}
                         pattern="[a-z]+"
                     />
-                    <Image src="/images/Add.svg" width={25} height={25} className={styles.taskFilter} tabIndex={2} onClick={() => {addTask(text); notification()}} />
+                    <Image src="/images/Add.svg" width={25} height={25} className={styles.taskFilter} tabIndex={2} onClick={() => { addTask(text); notification() }} />
                 </div>
                 <div className={styles.trackerFilter}>
                     <div className={styles.tracker}>Completed Cycles: {Math.ceil(number / 2)}</div>
