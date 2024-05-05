@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import Quiz from "@/components/QuizFold";
 import Image from "next/image"
 import { useRouter } from 'next/router';
+import Link from "next/link";
 //useRouter redirects to another file https://nextjs.org/docs/app/building-your-application/routing/redirecting#userouter-hook
 
 export default function Summary() {
@@ -99,7 +100,7 @@ export default function Summary() {
     <main className={styles.summaryOne}>
       <div className={styles.summaryContainer}>
         <div className={styles.homeButton}>
-          <House />
+        <Link href="/TimerPage"><House/></Link>
         </div>
         <Image src="/images/ducksswim.png" width={430} height={450} />
         {renderCurrentPage()}
