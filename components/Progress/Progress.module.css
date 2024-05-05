@@ -55,8 +55,42 @@
     text-align: center;
 }
 
+.ducksFloat{
+    height: 180px;
+}
+
 .wadBold{
     font-weight: bold;
+}
+
+.floatContainer {
+    margin-top: 2rem;
+    position: relative;
+    width: 308px;
+    height: 180px;
+    background-color: #ccc;
+  }
+  
+.floatHole {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    clip-path: polygon(0% 22px, 100% 22px, 100% calc(100% - 22px), 78px 100%, 22px 100%, 0% calc(100% - 22px));
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    transform: translate(-50%, -50%);
+}
+
+.waddleBreak{
+    margin-top: 2rem;
+    /* width: 308px;
+    height: 220px; */
 }
 
 .placeholder{
@@ -101,28 +135,10 @@
     /* left: 79px; */
 }
 
-.skipButton{
-
-
-    width: 158px;
-    height: 30px;
-
-    /* display: flex;
-    justify-content: center;
-     */
-    margin-top: 20px;
-    margin-bottom: 1rem;
-
-    background-color: none;
-    border: 3px solid var(--arathi-highlands);
-    color: black;
-    border-radius: 30px;
-
-    text-decoration: none;
-}
-
 .skipButton .link:link { 
     text-decoration: none; 
+    color: var(--gray5);
+
   } 
   .skipButton .link:visited { 
     text-decoration: none; 
@@ -137,6 +153,27 @@
 
 .skipButton:hover{
     background-color: var(--arathi-highlands);
+}
+
+
+.skipButton{
+
+
+    width: 158px;
+    height: 30px;
+
+    /* display: flex;
+    justify-content: center;
+     */
+    margin-top: 20px;
+    margin-bottom: 1rem;
+
+    background-color: none;
+    border: 3px solid var(--arathi-highlands);
+    color: var(--gray5);
+    border-radius: 30px;
+
+    text-decoration: none;
 }
 
 .backButton{

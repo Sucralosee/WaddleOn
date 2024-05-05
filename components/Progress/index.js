@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from 'next/link';
 
 import Tasks from '../Tasks/Tasks';
+import DucksAnim from '../DucksAnim/DucksAnim';
 
 export default function Progress() {
     const [stepNum, setStepNum] = useState(1);
@@ -42,9 +43,9 @@ export default function Progress() {
             case 5:
                 setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 min break.');
                 break;
-            default:
-                setDuckInstructions('Click Continue to start your waddling journey!');
-                break;
+        //     default:
+        //         setDuckInstructions('Click Continue to start your waddling journey!');
+        //         break;
         }
     };
 
@@ -71,9 +72,9 @@ export default function Progress() {
                 case 5:
                     setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 min break.');
                     break;
-                default:
-                    setDuckInstructions('Click Continue to start your waddling journey!');
-                    break;
+                // default:
+                //     setDuckInstructions('Click Continue to start your waddling journey!');
+                //     break;
             }
         }
     };
@@ -108,6 +109,7 @@ export default function Progress() {
                     placeholder="Enter your name"
                     value={userName}
                     onChange={handleNameChange}
+                    tabindex="1"
                     />
                 </div>
             )}
@@ -125,41 +127,55 @@ export default function Progress() {
                 )}
                 
                 {clickCount == 2 || clickCount == 3 ? (
-                    <div onClick={clickCount}>
-                        <Tasks/>
+                    <div>
+                        <Tasks tabindex="2"/>
                     </div>
                 ):(
                     <div></div>
                 )}
+
 
                 {clickCount == 4 ? (
-                    <div className={styles.WaddleContainer}>
-                        <h5>What is Waddle four?</h5>
-                        <p>WaddleOn boosts productivity by breaking tasks into 25-minute intervals followed by short breaks, <span className={styles.wadBold}>preventing burnout and maintaining focus.</span> </p>
-                        <p>We help <span className={styles.wadBold}>optimize work or study sessions,</span> helping you achieve more in less time.</p>
+                <div className={styles.floatContainer}>
+                    <div className={styles.floatHole}>
+                        <view className={`${styles.WaddleContainer} ${styles.ducksFloat}`}>
+                            <DucksAnim tabindex="3"/>
+                        </view>
                     </div>
+                </div>
                 ):(
                     <div></div>
                 )}
 
-                {clickCount < 5 ? (
-                    <div></div>
-                ) : (
+                {clickCount == 5 ? (
                     <Image
-                    className={styles.placeholder}
-                    src={`/images/placeholder.png`}
-                    width={100}
-                    height={100}
+                    className={styles.waddleBreak}
+                    src={`/images/WaddleBreak.png`}
+                    width={308}
+                    height={220}
                     />
+                ) : (
+                    <div></div>
+                )}
+
+                {clickCount == 6 ? (
+                    <Image
+                    className={styles.waddleBreak}
+                    src={`/images/fourWaddles.png`}
+                    width={308}
+                    height={220}
+                    />
+                ) : (
+                    <div></div>
                 )}
             </div>
             
-            {clickCount < 7 ? (
-                <button onClick={nextStep} className={styles.nextButton}>
+            {clickCount < 6 ? (
+                <button onClick={nextStep} className={styles.nextButton} tabindex="4">
                     Continue
                 </button>
             ) : (
-                <Link href="./TimerPage">
+                <Link href="./doneOnboard" tabindex="4">
                     <button className={styles.nextButton}>
                          Continue
                     </button>
@@ -170,11 +186,11 @@ export default function Progress() {
             {clickCount < 2 ? (
                 <div className={styles.skipContainer}>
                     <button className={styles.skipButton}>
-                        <Link href="/TimerPage" className={styles.link}>Skip Tutorial</Link>
+                        <Link href="/TimerPage" className={styles.link} tabindex="5">Skip Tutorial</Link>
                     </button>
                 </div>
             ) : (
-                <button onClick={goBack} className={styles.backButton}>
+                <button onClick={goBack} className={styles.backButton} tabindex="6">
                     <i class="fa fa-arrow-left" aria-hidden="true"></i>
                 </button>
             )

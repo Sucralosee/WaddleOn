@@ -1,26 +1,44 @@
-import styles from "./Landing.module.css"
+import { useState, useEffect } from 'react';
+import styles from "./Landing.module.css";
+import Image from "next/image";
+import Link from 'next/link';
 
-import Image from "next/image"
+export default function Landing() {
+    const [showLogo, setShowLogo] = useState(false);
 
-export default function Landing () {
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowLogo(true);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
         <>
-            <div className={styles.landSpline}>
-                <div className={styles.landLogo}>
-                    <div>
+            <div>
+                {showLogo && 
+                    <div className={styles.landLogo}>
                         <Image
-                            src={'/images/logo.svg'}
-                            width={100}
-                            height={100}
+                            className={styles.logo}
+                            src={`/images/waddleon.svg`}
+                            width={215}
+                            height={75}
                         />
-                        <h1 class="logoHeader">Waddle<span class="logoHeaderGreen">On</span></h1>
+                        <Link href="/TimerPage" className={`${styles.linkLand} ${styles.pomDesc}`}>Pomodoro Timer</Link>                        
+                        <Link href="/onboard" className={`${styles.linkLand} ${styles.getStart}`}>Get Started
+                        </Link>
+                        <Link href="/TimerPage" className={`${styles.linkLand} ${styles.getOut}`}>Skip Tutorial
+                        </Link>
                     </div>
+                }
+                <div className="videoBackground">
+                    <video autoPlay muted loop className="video" width="1920" height="1080" controls preload="none">
+                        <source src="video/Lake_2.mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-                <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.80/build/spline-viewer.js"></script>
-                <spline-viewer url="https://prod.spline.design/8SejcthzSAQ4gB6O/scene.splinecode" ></spline-viewer>
             </div>
         </>
-    )
-
+    );
 }
