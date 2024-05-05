@@ -5,20 +5,33 @@ import Link from 'next/link';
 export default function SettingsMenu({
     childParent
 }) {
-    const [isDark, setIsDark] = useState(false);
+    const [langCheck, setLangCheck] = useState(() => {
+        const saved = localStorage.getItem("language");
+        const initialValue = JSON.parse(saved);
+        return initialValue || "";
+    });
+    var [lang, setLang] = useState("");
+    const [langBool, setLangBool] = useState(true)
 
-    const [langCheck, setLangCheck] = useState(false)
-    var [lang, setLang] = useState("")
+    const [themeCheck, setThemeCheck] = useState(() => {
+        const saved = localStorage.getItem("theme");
+        const initialValue = JSON.parse(saved);
+        return initialValue || "";
+    });
+    var [theme, setTheme] = useState("");
+    const [themeBool, setThemeBool] = useState(true)
 
-    const [themeCheck, setThemeCheck] = useState(false)
-    var [theme, setTheme] = useState("")
-
-    const [audioCheck, setAudioCheck] = useState(true);
-    var [audio, setAudio] = useState("")
+    const [audioCheck, setAudioCheck] = useState(() => {
+        const saved = localStorage.getItem("audio");
+        const initialValue = JSON.parse(saved);
+        return initialValue || "";
+    });
+    var [audio, setAudio] = useState("");
+    const [audioBool, setAudioBool] = useState(true)
 
     const [button, setButton] = useState(true);
     const [buttonStyle, setButtonStyle] = useState();
-    const data = false
+    const data = false;
 
     useEffect(() => {
         const theme = document.getElementById("theme");
@@ -30,17 +43,17 @@ export default function SettingsMenu({
         }
     }, []);
 
+    //local storage https://blog.logrocket.com/using-localstorage-react-hooks/
     //Lang
     const handleLang = () => {
-        setLangCheck(!langCheck)
+        setLangBool(!langBool)
         console.log("lang!!")
     }
 
-    if (langCheck) {
+    if (langBool === true) {
         var lang = "French"
     } else {
         var lang = "English"
-
     }
 
     useEffect(() => {
@@ -48,15 +61,15 @@ export default function SettingsMenu({
     }, [lang]);
 
     //Theme
-    const handleTheme = () => {
-        setThemeCheck(!themeCheck)
-        console.log("Theme!!")
+    const handleTheme = (e) => {
+        setThemeBool(!themeBool)
+        console.log("Theme!!", themeBool)
     }
 
-    if (themeCheck) {
-        var theme = "Dark"
-    } else {
+    if (themeBool === true) {
         var theme = "Light"
+    } else {
+        var theme = "Dark"
     }
 
     useEffect(() => {
@@ -65,34 +78,41 @@ export default function SettingsMenu({
 
     //audio
     const handleAudio = () => {
-        setAudioCheck(!audioCheck)
+        setAudioBool(!audioBool)
         console.log("audio!!")
     }
 
-    if (!audioCheck) {
+    if (audioBool === true) {
         var audio = "Off"
     } else {
         var audio = "On"
     }
-    
+
     useEffect(() => {
         localStorage.setItem("audio", JSON.stringify(audio));
     }, [audio]);
 
-
+    //
+    const reload = () => {
+        window.location.reload();
+    }
+    
     return (
         <>
             <div className={styles.settingsPosition}>
                 <div className={styles.settingsContainer}>
                     <h2>Settings</h2>
                     <button className={styles.option} onClick={handleLang}>
-                        <p>Language: {lang}</p>
+                        <p>Language: {langCheck}</p>
                     </button>
-                    <button className={styles.option} id="theme" onClick={handleTheme}>
-                        <p>Theme: {theme}</p>
+                    <button className={styles.option} onClick={handleTheme}>
+                        <p>Theme: {themeCheck}</p>
                     </button>
                     <button className={styles.option} onClick={handleAudio}>
-                        <p>Sound: {audio}</p>
+                        <p>Sound: {audioCheck}</p>
+                    </button>
+                    <button className={styles.option} onClick={reload}>
+                        <p>Confirm Changes</p>
                     </button>
                     <div className={styles.link}>
                         <Link className={styles.option} href="summary01">

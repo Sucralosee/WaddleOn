@@ -26,13 +26,12 @@
   height: 100vh;
 }
 
-[data-theme="dark"] {
-  --seashell: #0E0D0D;
-  --gray5: #FEFBF9;
-  --arathi-highlands: #FEFBF9;
+[data-theme="Dark"] {
+  --seashell: #393532;
+  --gray5: #F9F2EE;
+  --arathi-highlands: #335F77;
   --flush-orange: #FEFBF9;
-  --button-blue: #FEFBF9;
-
+  --button-blue: #A8D34D;
 
   color: var(--gray5);
 }

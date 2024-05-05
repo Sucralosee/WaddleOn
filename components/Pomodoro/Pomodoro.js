@@ -27,7 +27,7 @@ export default function Pomodoro() {
         let interval;
         if (startButton) {
             interval = setInterval(() => {
-                clearInterval(interval);
+                // clearInterval(interval);
 
                 if (seconds === 0) {
                     //Checking if seconds @ 0, if minutes are 0 (completed cycle)
@@ -81,7 +81,7 @@ export default function Pomodoro() {
         } else {
             setTimerStyle({ color: "var(--seashell)", backgroundColor: "var(--flush-orange)" })
         }
-    })
+    }, [breakSession])
 
     //Progress Calc.
     useEffect(() => {

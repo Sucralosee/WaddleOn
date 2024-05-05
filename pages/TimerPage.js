@@ -1,21 +1,24 @@
-import { useState, useEffect, createRef } from "react"
+import { useState, useEffect } from "react"
 import styles from "../styles/TimerPage.module.css"
 import NavBar from "@/components/Navbar/NavBar"
 import Weather from "@/components/Weather/Weather"
 import Pomodoro from "@/components/Pomodoro/Pomodoro"
 import DucksAnim from "@/components/DucksAnim/DucksAnim"
 import SettingsMenu from "@/components/SettingsMenu/SettingsMenu"
-import ReactAudioPlayer from 'react-audio-player';
+import Music from "@/components/Music/Music"
 
 export default function TimerPage() {
 
     //API Integration: free code camp guide
     const [lat, setLat] = useState([49.104431]);
     const [long, setLong] = useState([-122.801094]);
+
     const [data, setData] = useState([false]);
-    const [isDark, setIsDark] = useState(false)
-    const [audio, setAudio] = useState(false)
-    const [settings, setSettings] = useState(false)
+
+    const [isDark, setIsDark] = useState();
+    const [theme, setTheme] = useState("");
+
+    const [settings, setSettings] = useState(false);
 
     var apiKeyInfo = process.env.NEXT_PUBLIC_API_KEY;
     var url = `https://api.openweathermap.org/data/2.5/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${apiKeyInfo}`
@@ -37,17 +40,6 @@ export default function TimerPage() {
         fetchData();
     }, [lat, long])
 
-    //Theme doesn't work
-    useEffect(() => {
-        const theme = document.getElementById("theme");
-
-        if (theme) {
-            theme.addEventListener("click", function handleTheme() {
-                setIsDark(!isDark)
-            })
-        }
-    }, []);
-
     //settings
     useEffect(() => {
         const settingsIcon = document.querySelector(".fa-cog");
@@ -65,24 +57,43 @@ export default function TimerPage() {
                 settingsIcon.removeEventListener("click", handleSettings);
             }
         };
-    }, [settings]);
+    }, []);
 
     const childToParent = (childData) => {
-        setSettings(false)
-        console.log("test")
+        setSettings(false);
+        console.log("test");
     };
+
+    //theme
+
+    //fixing the undefined local storage
+    //https://stackoverflow.com/questions/74398955/how-to-fix-localstorage-is-not-defined-in-react-js-and-how-to-set-and-get-item-b
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            console.log('You are on the browser')
+            setTheme(() => {
+                const saved = localStorage.getItem("theme");
+                const initialValue = JSON.parse(saved);
+                return initialValue || "";
+            })
+            console.log('You are on the server')
+        }
+    }, [])
+
+    useEffect(() => {
+        if (theme === "Light") {
+            setIsDark(false);
+            console.log("light");
+        } else {
+            setIsDark(true);
+            console.log("dark");
+        }
+    })
 
     return (
         <>
-            <ReactAudioPlayer
-                src="/audio/waves.mp3"
-                autoPlay
-                controls
-                loop
-                muted={audio}
-                style={{ position: "absolute" }}
-            />
-            <main className={`${styles.main}`} data-theme={isDark ? "dark" : "light"}>
+            <Music />
+            <main className={`${styles.main}`} data-theme={isDark ? "Dark" : "Light"}>
                 <div className={styles.phoneContainer}>
                     {settings && <SettingsMenu childParent={childToParent} />}
                     {(typeof data.main != 'undefined') ? (
