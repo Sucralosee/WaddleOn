@@ -7,6 +7,7 @@ import DucksAnim from "@/components/DucksAnim/DucksAnim"
 import SettingsMenu from "@/components/SettingsMenu/SettingsMenu"
 import Music from "@/components/Music/Music"
 import useLocalStorage from "use-local-storage"
+import Head from "next/head"
 
 export default function TimerPage() {
 
@@ -93,8 +94,14 @@ export default function TimerPage() {
 
     return (
         <>
-            <Music />
-            <main className={`${styles.main}`} data-theme={isDark ? "Dark" : "Light"}>
+            <Head>
+                <title>Timer Page</title>
+                <meta name="description" content="Waddle On the Pomodoro Timer" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/logoDuck.ico" />
+            </Head>
+              <main className={`${styles.main}`} data-theme={isDark ? "Dark" : "Light"}>
+              <Music />
                 <div className={styles.phoneContainer}>
                     {settings && <SettingsMenu childParent={childToParent} />}
                     {(typeof data.main != 'undefined') ? (
