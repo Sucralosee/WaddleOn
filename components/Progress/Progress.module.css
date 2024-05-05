@@ -127,12 +127,17 @@
     background-color: var(--flush-orange);
 }
 
+.buttonsContainer {
+    height: 10vh;
+    width: 430px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+}
+
 .skipContainer{
     text-decoration: none;
-
-    position: relative;
-    top: 100px;
-    /* left: 79px; */
 }
 
 .skipButton .link:link { 
@@ -157,17 +162,13 @@
 
 
 .skipButton{
-
-
     width: 158px;
     height: 30px;
 
     /* display: flex;
     justify-content: center;
      */
-    margin-top: 20px;
-    margin-bottom: 1rem;
-
+    margin: auto;
     background-color: none;
     border: 3px solid var(--arathi-highlands);
     color: var(--gray5);
@@ -180,16 +181,13 @@
     height: 36px;
     width: 45px;
 
-    position: absolute;
-    bottom: 4rem;
-    left: 4rem;
-
+    margin: 0 16rem 0 0;
     border: 2px solid var(--button-blue);
     background-color: var(--seashell);
     border-radius: 8px;
 
     box-shadow: 1px 3px 5px 1px grey;
-    
+
     color: var(--button-blue);
 }
 
@@ -205,4 +203,10 @@
     overflow: hidden;
     width: 430px;
     height: 350px;
+}
+
+@media screen and (min-width: 431px) {
+    .buttonsContainer {
+        bottom: 16rem;
+    }
 }

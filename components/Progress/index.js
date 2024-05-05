@@ -177,26 +177,29 @@ export default function Progress() {
                 </button>
             ) : (
                 <Link href="./doneOnboard" tabindex="4">
-                        <button className={styles.nextButton}>
-                            Continue
-                        </button>
+                    <button className={styles.nextButton}>
+                        Continue
+                    </button>
                 </Link>
 
             )}
 
-            {clickCount < 2 ? (
-                <div className={styles.skipContainer}>
-                    <button className={styles.skipButton}>
-                        <Link href="/TimerPage" className={styles.link} tabindex="5">Skip Tutorial</Link>
-                    </button>
-                </div>
-            ) : (
-                <button onClick={goBack} className={styles.backButton} tabindex="6">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                </button>
-            )
-            }
+            <div className={styles.buttonsContainer}>
+                {clickCount < 2 ? (
+                    <div className={styles.skipContainer}>
+                        <button className={styles.skipButton}>
+                            <Link href="/TimerPage" className={styles.link} tabindex="5">Skip Tutorial</Link>
+                        </button>
+                    </div>
+                ) : (
+                        <button onClick={goBack} className={styles.backButton} tabindex="6">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        </button>
+                )
+                }
 
+            </div>
         </div>
+
     );
 }
