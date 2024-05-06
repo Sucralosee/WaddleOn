@@ -80,7 +80,7 @@ export default function Summary() {
               {renderProgressIndicator()}
             </div>
           </div>
-
+        
         </>
 
       );
