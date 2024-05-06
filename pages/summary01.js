@@ -1,6 +1,6 @@
 import styles from "@/styles/Summary.module.css";
 import House from "@/components/HomeButton";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Quiz from "@/components/QuizFold";
 import Image from "next/image"
 import NavBar from "@/components/Navbar/NavBar";
@@ -30,7 +30,7 @@ export default function Summary() {
       options: ["Slow and Frustrated", "Steady and Manageable", "Effecient and Productive"]
     },
   ];
-  //setting up array to use for the quiz component nnshiiiii
+  //setting up array to use for the quiz component
 
   const [answers, setAnswers] = useState([]);
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -88,6 +88,7 @@ export default function Summary() {
       }
     }
   };
+
 
   return (
     <main className={styles.summaryOne}>
