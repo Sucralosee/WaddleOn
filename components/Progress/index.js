@@ -2,9 +2,11 @@ import { useState } from 'react';
 import styles from "./Progress.module.css";
 import Image from "next/image";
 import Link from 'next/link';
+import useLocalStorage from 'use-local-storage';
 
 import TasksOnBoard from '../TasksOnboard/TasksOnboard';
 import DucksAnim from '../DucksAnim/DucksAnim';
+import CycleComplete from '../CycleComplete/CycleComplete';
 
 export default function Progress() {
     const [stepNum, setStepNum] = useState(1);
@@ -12,10 +14,12 @@ export default function Progress() {
     const [clickCount, setClickCount] = useState(0);
     const [duckInstructions, setDuckInstructions] = useState('Hey Waddler, What\'s your name?');
     const [userName, setUserName] = useState('');
+    const [name, setName] = useLocalStorage("name", userName)
     const cycleNumber = 0;
 
     const handleNameChange = (e) => {
         setUserName(e.target.value);
+        setName(e.target.value);
     };
 
     const nextStep = () => {
@@ -36,13 +40,13 @@ export default function Progress() {
                 setDuckInstructions('By pressing on the task you can begin waddling!');
                 break;
             case 3:
-                setDuckInstructions('Well done!\n This will begin the first 25 min timer');
+                setDuckInstructions('Well done!\n This will begin the first 25 minute timer');
                 break;
             case 4:
                 setDuckInstructions('Once the cycle is done, take a waddling break or continue working!');
                 break;
             case 5:
-                setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 min break.');
+                setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 minute break.');
                 break;
             //     default:
             //         setDuckInstructions('Click Continue to start your waddling journey!');
@@ -65,13 +69,13 @@ export default function Progress() {
                     setDuckInstructions('By pressing on the task you can begin waddling!');
                     break;
                 case 3:
-                    setDuckInstructions('Well done!\n This will begin the first 25 min timer');
+                    setDuckInstructions('Well done!\n This will begin the first 25 minute timer');
                     break;
                 case 4:
                     setDuckInstructions('Once the cycle is done, take a waddling break or continue working!');
                     break;
                 case 5:
-                    setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 min break.');
+                    setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 minute break.');
                     break;
                 // default:
                 //     setDuckInstructions('Click Continue to start your waddling journey!');
@@ -110,6 +114,7 @@ export default function Progress() {
                         placeholder="Enter your name"
                         value={userName}
                         onChange={handleNameChange}
+                        onKeyDown={handleNameChange}
                         tabindex="1"
                     />
                 </div>
@@ -149,12 +154,18 @@ export default function Progress() {
                 )}
 
                 {clickCount == 5 ? (
-                    <Image
-                        className={styles.waddleBreak}
-                        src={`/images/WaddleBreak.png`}
-                        width={308}
-                        height={220}
-                    />
+                    <div className={styles.floatContainer}>
+                        <div className={styles.cycleCompleteContainer}>
+                            <h4 className={styles.cycleCompleteHeader}>
+                                Waddle Cycle Complete!
+                            </h4>
+                            <p>Take a Break!</p>
+                            <div className={styles.ducksAnim}>
+                                <Image src="/images/render_card.png" width={268} height={90} className={styles.ducksRender}
+                                />
+                            </div>
+                        </div>
+                    </div>
                 ) : (
                     <div></div>
                 )}
@@ -192,9 +203,9 @@ export default function Progress() {
                         </button>
                     </div>
                 ) : (
-                        <button onClick={goBack} className={styles.backButton} tabindex="6">
-                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                        </button>
+                    <button onClick={goBack} className={styles.backButton} tabindex="6">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    </button>
                 )
                 }
 

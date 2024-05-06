@@ -4,7 +4,6 @@ import TaskItem from "../TaskItem/TaskItem"
 import Image from "next/image"
 import { recommendedTasks } from "@/data/inventory"
 
-
 //https://medium.com/@worachote/building-a-todo-list-app-with-reactjs-a-step-by-step-guide-2c58b9b6c0f5
 export default function Tasks({
     number = { cycleNumber },

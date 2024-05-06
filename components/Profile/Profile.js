@@ -7,7 +7,11 @@ import data from "../../data/inventory/index.js"
 export default function Profile({
     closeProfile
 }) {
-    const [name, setName] = useState("Allan")
+    const [name, setName] = useState(() => {
+        const saved = localStorage.getItem("name");
+        const initialValue = JSON.parse(saved);
+        return initialValue || "";
+      });
     const [cycleNumber, setCycleNumber] = useState(() => {
         const saved = localStorage.getItem("cycleNumber");
         const initialValue = JSON.parse(saved);

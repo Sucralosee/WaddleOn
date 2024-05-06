@@ -65,32 +65,22 @@
 
 .floatContainer {
     margin-top: 2rem;
-    position: relative;
     width: 308px;
     height: 180px;
     background-color: #ccc;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: var(--card-curve-small);
   }
   
 .floatHole {
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
     background-color: transparent;
-    clip-path: polygon(0% 22px, 100% 22px, 100% calc(100% - 22px), 78px 100%, 22px 100%, 0% calc(100% - 22px));
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 22px;
-    border-bottom-right-radius: 22px;
-    transform: translate(-50%, -50%);
+    margin-top: -130px;
 }
 
-.waddleBreak{
-    margin-top: 2rem;
-    /* width: 308px;
-    height: 220px; */
+.breakPopup{
+    left: -200px;
 }
 
 .placeholder{
@@ -203,6 +193,31 @@
     overflow: hidden;
     width: 430px;
     height: 350px;
+}
+
+.cycleCompleteContainer {
+    width: 308px;
+    background-color: var(--seashell);
+    box-shadow: 0px 1px 4.4px 0px var(--arathi-highlands);
+    border-radius: var(--card-curve-small);
+    padding: 1rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+}
+
+.cycleCompleteHeader {
+    margin: 0;
+    text-align: center;
+}
+
+.ducksAnim {
+    overflow: hidden;
+    margin: auto;
 }
 
 @media screen and (min-width: 431px) {
