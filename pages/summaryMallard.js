@@ -1,7 +1,8 @@
 import styles from "@/styles/Mallard.module.css";
 import Next from "@/components/NextButton";
 import House from "@/components/HomeButton";
-import Image from "next/image"
+import NavBar from "@/components/Navbar/NavBar";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Mallard() {
@@ -14,8 +15,8 @@ export default function Mallard() {
             <h2 className={styles.duckName}>Mallard!</h2>
     </div>
             <div className={styles.homeButton}>
-            <Link href='/'><House/></Link>
-            </div>
+            <Link href="/TimerPage"><House/></Link>
+            </div>                    
             <div className={styles.infoContainer}>
                 <div className={styles.duck}><Image src="/images/Ducks/Duck1.svg" width={512.62} height={545.42} alt="Mallard duck"/></div>
                     <div className={styles.duckInfo}>

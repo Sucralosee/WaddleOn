@@ -1,10 +1,12 @@
 import styles from "@/styles/Summary.module.css";
-import Back from "@/components/BackButton";
 import House from "@/components/HomeButton";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Quiz from "@/components/QuizFold";
-import Image from "next/image"
+import NavBar from "@/components/Navbar/NavBar";
+import DucksAnim from "@/components/DucksAnim/DucksAnim";
 import { useRouter } from 'next/router';
+import Link from "next/link";
+import SettingsMenu from "@/components/SettingsMenu/SettingsMenu";
 //useRouter redirects to another file https://nextjs.org/docs/app/building-your-application/routing/redirecting#userouter-hook
 
 export default function Summary() {
@@ -16,7 +18,7 @@ export default function Summary() {
       options: ["Fatigued", "Neutral", "Energized"]
     },
     {
-      question: "How much did you enjoy the work in the cycle?",
+      question: "Did you enjoy the work in your cycle?",
       options: ["Barely", "Somewhat", "Fully"]
     },
     {
@@ -28,11 +30,11 @@ export default function Summary() {
       options: ["Slow and Frustrated", "Steady and Manageable", "Effecient and Productive"]
     },
   ];
-  //setting up array to use for the quiz component nnshiiiii
+  //setting up array to use for the quiz component
 
   const [answers, setAnswers] = useState([]);
   const [questionIndex, setQuestionIndex] = useState(0);
-
+  const [settings, setSettings] = useState(false);
 
   const handleNextQuestion = (answer) => {
     const newAnswers = [...answers];
@@ -45,7 +47,7 @@ export default function Summary() {
     let score = 0;
     answers.forEach((answer) => {
       if (answer === "Fatigued" || answer === "Barely" || answer === "Unsatisfactory" || answer === "Slow and Frustrated") {
-        score                                                                                                              += 1;
+        score += 1;
       } else if (answer === "Neutral" || answer === "Somewhat" || answer === "Decent" || answer === "Steady and Manageable") {
         score += 2;
       } else if (answer === "Energized" || answer === "Fully" || answer === "Refreshing" || answer === "Effecient and Productive") {
@@ -72,38 +74,68 @@ export default function Summary() {
             currentQuestion={questionIndex}
             answers={answers}
             onAnswer={handleNextQuestion} />
-          <div className={styles.quizProgress}>
-            <div className={styles.buttonCont}>
-            </div>
-            <div className={styles.progressContainer}>
-              {renderProgressIndicator()}
-            </div>
-          </div>
-
         </>
 
       );
     } else {
       const score = calculateScore();
       if (score >= 9) {
-        router.push('/summaryMallard');
+        router.push('/summaryRuddy');
       } else if (score >= 5) {
         router.push('/summaryBlueBill');
       } else {
-        router.push('/summaryRuddy');
+        router.push('/summaryMallard');
       }
     }
   };
 
+      //settings
+      useEffect(() => {
+        const settingsIcon = document.querySelector(".fa-cog");
+
+        const handleSettings = () => {
+            setSettings(!settings);
+        };
+
+        if (settingsIcon) {
+            settingsIcon.addEventListener("click", handleSettings);
+        }
+
+        return () => {
+            if (settingsIcon) {
+                settingsIcon.removeEventListener("click", handleSettings);
+            }
+        };
+    }, []);
+
+    const childToParent = (childData) => {
+        setSettings(false);
+        console.log("test");
+    };
+
+
   return (
     <main className={styles.summaryOne}>
+      {settings && <SettingsMenu childParent={childToParent} />}
       <div className={styles.summaryContainer}>
         <div className={styles.homeButton}>
-          <House />
+          <Link href="/TimerPage"><House /></Link>
         </div>
-        <Image src="/images/ducksswim.png" width={430} height={450} />
+        <DucksAnim inlineSizing={{
+          position: "relative",
+          top: "-180px",
+          marginBottom: "-200px",
+          width: "430px",
+          height: "470px",
+          borderRadius: "0 0 19px 19px"
+        }} />
+        <div className={styles.progressContainer}>
+          {renderProgressIndicator()}
+        </div>
         {renderCurrentPage()}
-        <div className={styles.buttonContainer}></div>
+      </div>
+      <div className={styles.navPosition}>
+        <NavBar />
       </div>
     </main>
   );

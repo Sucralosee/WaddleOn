@@ -17,7 +17,6 @@
     width: 430px;
     height: 932px;
     min-height: 100vh;
-    border: 1px solid black;
     overflow: hidden;
 }
 
@@ -42,10 +41,11 @@
     height:17px;
 }
 
-.homeButton{
+.homeButton {
     z-index: 1;
-    margin: 20px auto 0 20px;
-}
+    position: relative;
+    margin: 1rem 20rem 0 0;
+  }
 
 
 .duckInfo{
@@ -71,7 +71,18 @@
     list-style: none;
     text-align: left;
     margin-top: 5px;
-    padding: 0; 
+    padding: 0;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .titleContainer{
@@ -95,3 +106,25 @@
     margin:5px;
     font-weight: 500;
 }
+
+.titleContainer, .duckName, .features, .duck img {
+    opacity:0;
+    animation: bounceUp 1s ease-in-out forwards;
+}
+
+@keyframes bounceUp {
+    0% {
+        opacity:0;
+        transform:translateY(20px);
+    }
+    50% {
+        opacity:1;
+        transform:translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* www.geeksforgeeks.org/how-to-create-fade-in-effect-on-page-load-using-css
+*/
