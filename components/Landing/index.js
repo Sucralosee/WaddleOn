@@ -22,7 +22,7 @@ export default function Landing() {
                         <div className={styles.landingLogoContainer}>
                             <Image
                                 className={styles.logo}
-                                src={`/images/waddleon.svg`}
+                                src="/images/WaddleOn.svg"
                                 width={215}
                                 height={75}
                             />
