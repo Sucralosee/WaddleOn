@@ -133,7 +133,6 @@
 .skipButton .link:link { 
     text-decoration: none; 
     color: var(--gray5);
-
   } 
   .skipButton .link:visited { 
     text-decoration: none; 

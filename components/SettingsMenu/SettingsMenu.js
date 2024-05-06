@@ -1,6 +1,9 @@
 import styles from './SettingsMenu.module.css'
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+// import { settingTextInv } from '../../data/inventory.js'
+import { settingTextInv } from '../../data/inventory/index.js'
+
 
 export default function SettingsMenu({
     childParent
@@ -10,8 +13,8 @@ export default function SettingsMenu({
         const initialValue = JSON.parse(saved);
         return initialValue;
     });
-    var [lang, setLang] = useState("");
-    const [langBool, setLangBool] = useState(true)
+    const [lang, setLang] = useState("English"); 
+    const [langBool, setLangBool] = useState(true);
 
     const [themeCheck, setThemeCheck] = useState(() => {
         const saved = localStorage.getItem("theme");
@@ -33,22 +36,7 @@ export default function SettingsMenu({
     const [buttonStyle, setButtonStyle] = useState();
     const data = false;
 
-    //local storage https://blog.logrocket.com/using-localstorage-react-hooks/
-    //Lang
-    const handleLang = () => {
-        setLangBool(!langBool)
-        console.log("lang!!")
-    }
 
-    if (langBool === true) {
-        var lang = "French"
-    } else {
-        var lang = "English"
-    }
-
-    useEffect(() => {
-        localStorage.setItem("language", JSON.stringify(lang));
-    }, [lang]);
 
     //Theme
     const handleTheme = (e) => {
@@ -86,31 +74,52 @@ export default function SettingsMenu({
     const reload = () => {
         window.location.reload();
     }
-    
+
+    //local storage https://blog.logrocket.com/using-localstorage-react-hooks/
+    //Lang
+
+    useEffect(() => {
+        localStorage.setItem("language", JSON.stringify(lang));
+    }, [lang]);
+
+    // toggler
+    const handleLang = () => {
+        setLangBool(!langBool);
+        setLang(langBool ? "French" : "English");
+    };
+
+    // gets the key and the lang and returns it for when called upon
+    const settingText = (key) => {
+        const language = lang; // Use the lang state variable
+        if (settingTextInv[language] && settingTextInv[language][0][key]) {
+            return settingTextInv[language][0][key];
+        } else {
+            console.error(`Setting text not found for language "${language}" and key "${key}"`);
+            return 'no translation found';
+        }
+    };
+
     return (
         <>
             <div className={styles.settingsPosition}>
                 <div className={styles.settingsContainer}>
-                    <h2>Settings</h2>
+                    <h2>{settingText(6)}</h2>
                     <button className={styles.option} onClick={handleLang}>
-                        <p>Language: {lang}</p>
+                        <p className={styles.textButton}>{settingText(1)}: {lang}</p>
                     </button>
-                    <button className={styles.option} onClick={handleTheme}>
-                        <p>Theme: {theme}</p>
-                    </button>
-                    <button className={styles.option} onClick={handleAudio}>
-                        <p>Sound: {audio}</p>
+                    <button className={styles.option}>
+                        <p className={styles.textButton}>{settingText(2)}: {theme}</p>
                     </button>
                     <button className={styles.option} onClick={reload}>
-                        <p>Confirm Changes</p>
+                        <p>{settingText(3)}</p>
                     </button>
                     <div className={styles.link}>
                         <Link className={styles.option} href="summary01">
-                            Go To Quiz
+                            {settingText(4)}
                         </Link>
-                        <Link className={styles.option} href="http://localhost:3000">Main Menu</Link>
+                        <Link className={styles.option} href="http://localhost:3000">{settingText(5)}</Link>
                     </div>
-                    <div className={styles.exit} onClick={() => childParent(data)}>
+                    <div className={styles.exit} onClick={() => childParent(false)}>
                         <h4>X</h4>
                     </div>
                 </div>
