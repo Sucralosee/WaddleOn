@@ -4,6 +4,7 @@
     align-items: center;
 
     width: 430px;
+    height: 100vh;
 }
 
 .pondImage {
@@ -22,7 +23,9 @@
 }
 
 .duckInstructions{
-    width: 150px;
+    width: 168px;
+    font-size: var(--body-copy);
+    text-align: center;
 }
 
 .nameContainer{
@@ -40,12 +43,30 @@
     border-radius: 8px;
     margin-bottom: 8rem;
 }
+
 .nameInput{
     width: 222.723px;
     height: 33px;
     border-radius: 8px;
     background: var(--Wireframe-White, #FFFDFA);
 }
+
+.proceed{
+    width: 40px;
+    height: 40px;
+
+    margin-left: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--arathi-highlands);
+    border-radius: 8px;
+}
+
+
+
 .instructionContainer{
     /* margin-bottom: 4rem; */
 }
@@ -63,10 +84,18 @@
     font-weight: bold;
 }
 
+.statsLink{
+    font-family: var(--paragraph-style);
+    
+    text-decoration: none;
+    color: var(--flush-orange);
+
+}
+
 .floatContainer {
     margin-top: 2rem;
     width: 308px;
-    height: 180px;
+    height: 250px;
     background-color: #ccc;
     overflow: hidden;
     display: flex;
@@ -76,7 +105,7 @@
   
 .floatHole {
     background-color: transparent;
-    margin-top: -130px;
+    margin-top: -70px;
 }
 
 .breakPopup{
@@ -88,16 +117,25 @@
     height: 220px;
 }
 
+.continueButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 430px;
+    height: 6rem;
+}
+
 .nextButton {
     position: absolute;
-    top: 743px;
-    bottom: 132px;
+    /* top: 743px; */
+    /* bottom: 132px; */
 
     display: flex;
     justify-content: center;
     align-items: center;
     width: 203px;
-    height: 37px;
+    height: 58px;
     padding: none;
     font-size: var(--h4);
     background-color: var(--arathi-highlands);
@@ -108,9 +146,13 @@
     transition: 0.3s ease;
 
     text-decoration: none;
-}
-.nextButton{
+
     box-shadow: 1px 3px 5px grey;
+}
+
+.linkss{
+    text-decoration: none;
+    color: var(--seashell);
 }
 
 .nextButton:hover {
@@ -118,9 +160,8 @@
 }
 
 .buttonsContainer {
-    height: 10vh;
     width: 430px;
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     bottom: 0;
@@ -130,41 +171,35 @@
     text-decoration: none;
 }
 
+.skipButton{
+    width: 158px;
+    height: 30px;
+    margin: auto;
+    background-color: transparent;
+    border: 3px solid var(--arathi-highlands);
+    color: black;
+    border-radius: 30px;
+
+    text-decoration: none;
+}
+
+.link{
+    color: var(--seashell);
+}
+
+
 .skipButton .link:link { 
     text-decoration: none; 
-    color: var(--gray5);
   } 
-  .skipButton .link:visited { 
-    text-decoration: none; 
+  .skipButton :visited { 
+    color: black;
   } 
-  .skipButton .link:hover { 
-    text-decoration: none; 
-  } 
-  .skipButton .link:active { 
-    text-decoration: none; 
-  }
-
 
 .skipButton:hover{
     background-color: var(--arathi-highlands);
 }
 
 
-.skipButton{
-    width: 158px;
-    height: 30px;
-
-    /* display: flex;
-    justify-content: center;
-     */
-    margin: auto;
-    background-color: none;
-    border: 3px solid var(--arathi-highlands);
-    color: var(--gray5);
-    border-radius: 30px;
-
-    text-decoration: none;
-}
 
 .backButton{
     height: 36px;
@@ -182,7 +217,6 @@
 
 .backButton:hover{
     background-color: var(--button-blue);
-    color: black;
     border: none;
 }
 
@@ -191,7 +225,12 @@
 .tasksPosition {
     overflow: hidden;
     width: 430px;
-    height: 350px;
+    height: 250px;
+    padding-top: 2rem;
+}
+
+.tasksonBoard{
+    margin-top: 0;
 }
 
 .cycleCompleteContainer {
@@ -207,6 +246,8 @@
     justify-content: center;
     position: absolute;
 
+    margin-bottom: 4rem;
+
 }
 
 .cycleCompleteHeader {
@@ -219,8 +260,9 @@
     margin: auto;
 }
 
+
 @media screen and (min-width: 431px) {
     .buttonsContainer {
-        bottom: 16rem;
+        /* bottom: 13rem; */
     }
 }

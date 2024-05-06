@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from "./Progress.module.css";
 import Image from "next/image";
 import Link from 'next/link';
@@ -12,7 +12,7 @@ export default function Progress() {
     const [stepNum, setStepNum] = useState(1);
     const [stepDuck, setStepDuck] = useState(1);
     const [clickCount, setClickCount] = useState(0);
-    const [duckInstructions, setDuckInstructions] = useState('Hey Waddler, What\'s your name?');
+    const [duckInstructions, setDuckInstructions] = useState('Hey Waddler,\nWhat\'s your name?');
     const [userName, setUserName] = useState('');
     const [name, setName] = useLocalStorage("name", userName)
     const cycleNumber = 0;
@@ -84,6 +84,13 @@ export default function Progress() {
         }
     };
 
+    const [showArrow, setshowArrow] = useState(false);
+
+    // useEffect(() => {
+    //         setshowArrow(true);
+    //     },);
+
+
     return (
         <div className={styles.progressContainer}>
             <div>
@@ -116,7 +123,13 @@ export default function Progress() {
                         onChange={handleNameChange}
                         onKeyDown={handleNameChange}
                         tabindex="1"
+                        onClick={showArrow}
                     />
+                    {setshowArrow && 
+                        <div className={styles.proceed} onClick={nextStep}>  
+                            <i class="fa fa-arrow-right" aria-hidden="true" className={styles.arrow}></i>
+                        </div>
+                    }
                 </div>
             )}
 
@@ -127,6 +140,7 @@ export default function Progress() {
                         <h5>What is WaddleOn?</h5>
                         <p>WaddleOn boosts productivity by breaking tasks into 25-minute intervals followed by short breaks, <span className={styles.wadBold}>preventing burnout and maintaining focus.</span> </p>
                         <p>We help <span className={styles.wadBold}>optimize work or study sessions,</span> helping you achieve more in less time.</p>
+                        <Link href="/stats" className={styles.statsLink}>Learn more</Link>
                     </div>
                 ) : (
                     <div></div>
@@ -171,29 +185,30 @@ export default function Progress() {
                 )}
 
                 {clickCount == 6 ? (
-                    <Image
-                        className={styles.waddleBreak}
-                        src={`/images/fourWaddles.png`}
-                        width={308}
-                        height={220}
-                    />
+                    <div className={styles.floatContainer}>
+                      <div className={styles.floatHole}>
+                          <view className={`${styles.WaddleContainer} ${styles.ducksFloat}`}>
+                              <DucksAnim tabindex="3" />
+                          </view>
+                      </div>
+                  </div>
                 ) : (
                     <div></div>
                 )}
             </div>
 
-            {clickCount < 6 ? (
-                <button onClick={nextStep} className={styles.nextButton} tabindex="4">
-                    Continue
-                </button>
-            ) : (
-                <Link href="./doneOnboard" tabindex="4">
-                    <button className={styles.nextButton}>
+            <div className={styles.continueButton}>
+                {clickCount < 6 ? (
+                    <button onClick={nextStep} className={styles.nextButton} tabindex="4">
                         Continue
                     </button>
-                </Link>
+                ) : (
+                    <button className={styles.nextButton}>
+                        <Link href="./doneOnboard" tabindex="4" className={styles.linkss}>Continue</Link>
+                    </button>
+                )}
+            </div>
 
-            )}
 
             <div className={styles.buttonsContainer}>
                 {clickCount < 2 ? (

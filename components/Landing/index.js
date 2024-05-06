@@ -9,7 +9,7 @@ export default function Landing() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowLogo(true);
-        }, 1000);
+        }, 10000);
 
         return () => clearTimeout(timer);
     }, []);

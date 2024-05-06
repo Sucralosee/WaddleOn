@@ -95,7 +95,7 @@
     border: none;
     background-color: var(--flush-orange);
     border-radius: var(--card-curve-small);
-    margin: 1rem 0 2rem auto;
+    margin: 1rem 0 1rem auto;
     display: flex;
     align-items: center;
     justify-content: end;
