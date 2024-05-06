@@ -41,10 +41,11 @@
     height:17px;
 }
 
-.homeButton{
+.homeButton {
     z-index: 1;
-    margin: 20px auto 0 20px;
-}
+    position: relative;
+    margin: 1rem 20rem 0 0;
+  }
 
 
 .duckInfo{

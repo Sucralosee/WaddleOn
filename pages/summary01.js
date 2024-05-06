@@ -80,11 +80,11 @@ export default function Summary() {
     } else {
       const score = calculateScore();
       if (score >= 9) {
-        router.push('/summaryMallard');
+        router.push('/summaryRuddy');
       } else if (score >= 5) {
         router.push('/summaryBlueBill');
       } else {
-        router.push('/summaryRuddy');
+        router.push('/summaryMallard');
       }
     }
   };
@@ -123,7 +123,7 @@ export default function Summary() {
         </div>
         <DucksAnim inlineSizing={{
           position: "relative",
-          top: "-200px",
+          top: "-180px",
           marginBottom: "-200px",
           width: "430px",
           height: "470px",
