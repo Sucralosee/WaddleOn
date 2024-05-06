@@ -1,9 +1,10 @@
 import styles from "@/styles/Summary.module.css";
-import Back from "@/components/BackButton";
 import House from "@/components/HomeButton";
 import React, { useState } from 'react';
 import Quiz from "@/components/QuizFold";
 import Image from "next/image"
+import NavBar from "@/components/Navbar/NavBar";
+import DucksAnim from "@/components/DucksAnim/DucksAnim";
 import { useRouter } from 'next/router';
 import Link from "next/link";
 //useRouter redirects to another file https://nextjs.org/docs/app/building-your-application/routing/redirecting#userouter-hook
@@ -73,14 +74,6 @@ export default function Summary() {
             currentQuestion={questionIndex}
             answers={answers}
             onAnswer={handleNextQuestion} />
-          <div className={styles.quizProgress}>
-            <div className={styles.buttonCont}>
-            </div>
-            <div className={styles.progressContainer}>
-              {renderProgressIndicator()}
-            </div>
-          </div>
-        
         </>
 
       );
@@ -100,11 +93,23 @@ export default function Summary() {
     <main className={styles.summaryOne}>
       <div className={styles.summaryContainer}>
         <div className={styles.homeButton}>
-        <Link href="/TimerPage"><House/></Link>
+          <Link href="/TimerPage"><House/></Link>
         </div>
-        <Image src="/images/ducksswim.png" width={430} height={450} />
+        <DucksAnim inlineSizing={{
+                            position: "relative",
+                            top: "-200px",
+                            marginBottom: "-200px",
+                            width: "430px",
+                            height: "470px",
+                            borderRadius: "0 0 8px 8px"
+                        }} />        
+          <div className={styles.buttonCont}>
+            <NavBar />
+          </div>
+          <div className={styles.progressContainer}>
+              {renderProgressIndicator()}
+            </div> 
         {renderCurrentPage()}
-        <div className={styles.buttonContainer}></div>
       </div>
     </main>
   );

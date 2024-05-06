@@ -5,6 +5,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 .summaryContainer {
@@ -15,6 +16,7 @@
   height: 932px;
   min-height: 100vh;
   background: linear-gradient(var(--arathi-highlands)10%, var(--seashell)90%);
+  position:relative;
 }
 
 .duckImage {
@@ -36,20 +38,15 @@
   z-index: 1;
   position: absolute;
   margin: 1rem 20rem 0 0;
-  /*Temporary Fix, Fix the nesting of the button*/
 }
 
 .buttonCont {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  margin-top: 0px;
-  position: relative;
-
-  display: flex;
-  flex-direction: row;
   margin-right: auto;
+  position: relative;
 }
+
 
 .progressIndicator {
   font-family: 'lexend';
@@ -59,11 +56,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom:9rem;
+  padding-top:10px;
 }
 
-.quizProgress {
-  display: flex;
-  flex-direction: column;
-  margin: auto 0 1rem 0;
-}
