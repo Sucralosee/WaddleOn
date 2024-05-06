@@ -117,7 +117,7 @@ export default function SettingsMenu({
                         <Link className={styles.option} href="summary01">
                             {settingText(4)}
                         </Link>
-                        <Link className={styles.option} href="http://localhost:3000">{settingText(5)}</Link>
+                        <Link className={styles.option} href="/">{settingText(5)}</Link>
                     </div>
                     <div className={styles.exit} onClick={() => childParent(false)}>
                         <h4>X</h4>

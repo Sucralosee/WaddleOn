@@ -86,9 +86,9 @@ export default function Progress() {
 
     const [showArrow, setshowArrow] = useState(false);
 
-    useEffect(() => {
-            setshowArrow(true);
-        },);
+    // useEffect(() => {
+    //         setshowArrow(true);
+    //     },);
 
 
     return (
@@ -125,7 +125,7 @@ export default function Progress() {
                         tabindex="1"
                         onClick={showArrow}
                     />
-                    {showArrow && 
+                    {setshowArrow && 
                         <div className={styles.proceed} onClick={nextStep}>  
                             <i class="fa fa-arrow-right" aria-hidden="true" className={styles.arrow}></i>
                         </div>
@@ -140,7 +140,7 @@ export default function Progress() {
                         <h5>What is WaddleOn?</h5>
                         <p>WaddleOn boosts productivity by breaking tasks into 25-minute intervals followed by short breaks, <span className={styles.wadBold}>preventing burnout and maintaining focus.</span> </p>
                         <p>We help <span className={styles.wadBold}>optimize work or study sessions,</span> helping you achieve more in less time.</p>
-                        <Link href="/stats">Learn more</Link>
+                        <Link href="/stats" className={styles.statsLink}>Learn more</Link>
                     </div>
                 ) : (
                     <div></div>

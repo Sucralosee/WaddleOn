@@ -84,6 +84,14 @@
     font-weight: bold;
 }
 
+.statsLink{
+    font-family: var(--paragraph-style);
+    
+    text-decoration: none;
+    color: var(--flush-orange);
+
+}
+
 .floatContainer {
     margin-top: 2rem;
     width: 308px;
@@ -140,7 +148,11 @@
     text-decoration: none;
 
     box-shadow: 1px 3px 5px grey;
+}
 
+.linkss{
+    text-decoration: none;
+    color: var(--seashell);
 }
 
 .nextButton:hover {
@@ -165,26 +177,28 @@
     margin: auto;
     background-color: transparent;
     border: 3px solid var(--arathi-highlands);
-    color: var(--gray5);
+    color: black;
     border-radius: 30px;
 
     text-decoration: none;
 }
 
+.link{
+    color: var(--seashell);
+}
+
+
 .skipButton .link:link { 
     text-decoration: none; 
   } 
   .skipButton :visited { 
-    color: var(--gray5);
+    color: black;
   } 
 
 .skipButton:hover{
     background-color: var(--arathi-highlands);
 }
 
-.link{
-    color: var(--seashell);
-}
 
 
 .backButton{
@@ -213,6 +227,10 @@
     width: 430px;
     height: 250px;
     padding-top: 2rem;
+}
+
+.tasksonBoard{
+    margin-top: 0;
 }
 
 .cycleCompleteContainer {
