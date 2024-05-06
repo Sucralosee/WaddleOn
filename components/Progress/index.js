@@ -140,7 +140,7 @@ export default function Progress() {
                         <h5>What is WaddleOn?</h5>
                         <p>WaddleOn boosts productivity by breaking tasks into 25-minute intervals followed by short breaks, <span className={styles.wadBold}>preventing burnout and maintaining focus.</span> </p>
                         <p>We help <span className={styles.wadBold}>optimize work or study sessions,</span> helping you achieve more in less time.</p>
-                        <Link href="/stats" className={styles.statsLink}>Learn more</Link>
+                        <Link href="/pomStats" className={styles.statsLink}>Learn more</Link>
                     </div>
                 ) : (
                     <div></div>
