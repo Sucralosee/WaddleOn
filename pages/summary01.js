@@ -18,7 +18,7 @@ export default function Summary() {
       options: ["Fatigued", "Neutral", "Energized"]
     },
     {
-      question: "How much did you enjoy the work in the cycle?",
+      question: "Did you enjoy the work in your cycle?",
       options: ["Barely", "Somewhat", "Fully"]
     },
     {
