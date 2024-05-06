@@ -2,8 +2,11 @@ import { useState } from 'react';
 import styles from "./Progress.module.css";
 import Image from "next/image";
 import Link from 'next/link';
+import useLocalStorage from 'use-local-storage';
 
-import Tasks from '../Tasks/Tasks';
+import TasksOnBoard from '../TasksOnboard/TasksOnboard';
+import DucksAnim from '../DucksAnim/DucksAnim';
+import CycleComplete from '../CycleComplete/CycleComplete';
 
 export default function Progress() {
     const [stepNum, setStepNum] = useState(1);
@@ -11,9 +14,12 @@ export default function Progress() {
     const [clickCount, setClickCount] = useState(0);
     const [duckInstructions, setDuckInstructions] = useState('Hey Waddler, What\'s your name?');
     const [userName, setUserName] = useState('');
+    const [name, setName] = useLocalStorage("name", userName)
+    const cycleNumber = 0;
 
     const handleNameChange = (e) => {
         setUserName(e.target.value);
+        setName(e.target.value);
     };
 
     const nextStep = () => {
@@ -34,17 +40,17 @@ export default function Progress() {
                 setDuckInstructions('By pressing on the task you can begin waddling!');
                 break;
             case 3:
-                setDuckInstructions('Well done!\n This will begin the first 25 min timer');
+                setDuckInstructions('Well done!\n This will begin the first 25 minute timer');
                 break;
             case 4:
                 setDuckInstructions('Once the cycle is done, take a waddling break or continue working!');
                 break;
             case 5:
-                setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 min break.');
+                setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 minute break.');
                 break;
-            default:
-                setDuckInstructions('Click Continue to start your waddling journey!');
-                break;
+            //     default:
+            //         setDuckInstructions('Click Continue to start your waddling journey!');
+            //         break;
         }
     };
 
@@ -63,30 +69,30 @@ export default function Progress() {
                     setDuckInstructions('By pressing on the task you can begin waddling!');
                     break;
                 case 3:
-                    setDuckInstructions('Well done!\n This will begin the first 25 min timer');
+                    setDuckInstructions('Well done!\n This will begin the first 25 minute timer');
                     break;
                 case 4:
                     setDuckInstructions('Once the cycle is done, take a waddling break or continue working!');
                     break;
                 case 5:
-                    setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 min break.');
+                    setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 minute break.');
                     break;
-                default:
-                    setDuckInstructions('Click Continue to start your waddling journey!');
-                    break;
+                // default:
+                //     setDuckInstructions('Click Continue to start your waddling journey!');
+                //     break;
             }
         }
     };
-    
+
     return (
         <div className={styles.progressContainer}>
             <div>
-                <Image 
+                <Image
                     className={styles.pondImage}
                     src={`/images/Steps/step${stepNum}.svg`}
                     width={430}
                     height={400}
-                    alt={`pond indicating step ${stepNum}`}                
+                    alt={`pond indicating step ${stepNum}`}
                 />
             </div>
 
@@ -102,84 +108,109 @@ export default function Progress() {
 
             {clickCount === 0 && (
                 <div className={styles.nameContainer}>
-                    <input 
-                    className={styles.nameInput}
-                    type="text" 
-                    placeholder="Enter your name"
-                    value={userName}
-                    onChange={handleNameChange}
+                    <input
+                        className={styles.nameInput}
+                        type="text"
+                        placeholder="Enter your name"
+                        value={userName}
+                        onChange={handleNameChange}
+                        onKeyDown={handleNameChange}
+                        tabindex="1"
                     />
                 </div>
             )}
-            
+
             <div className={styles.instructionContainer}>
-                
+
                 {clickCount == 1 ? (
                     <div className={styles.WaddleContainer}>
                         <h5>What is WaddleOn?</h5>
                         <p>WaddleOn boosts productivity by breaking tasks into 25-minute intervals followed by short breaks, <span className={styles.wadBold}>preventing burnout and maintaining focus.</span> </p>
                         <p>We help <span className={styles.wadBold}>optimize work or study sessions,</span> helping you achieve more in less time.</p>
                     </div>
-                ):(
+                ) : (
                     <div></div>
                 )}
-                
+
                 {clickCount == 2 || clickCount == 3 ? (
-                    <div onClick={clickCount}>
-                        <Tasks/>
+                    <div className={styles.tasksPosition}>
+                        <TasksOnBoard tabindex="2" number={cycleNumber} />
                     </div>
-                ):(
+                ) : (
                     <div></div>
                 )}
+
 
                 {clickCount == 4 ? (
-                    <div className={styles.WaddleContainer}>
-                        <h5>What is Waddle four?</h5>
-                        <p>WaddleOn boosts productivity by breaking tasks into 25-minute intervals followed by short breaks, <span className={styles.wadBold}>preventing burnout and maintaining focus.</span> </p>
-                        <p>We help <span className={styles.wadBold}>optimize work or study sessions,</span> helping you achieve more in less time.</p>
+                    <div className={styles.floatContainer}>
+                        <div className={styles.floatHole}>
+                            <view className={`${styles.WaddleContainer} ${styles.ducksFloat}`}>
+                                <DucksAnim tabindex="3" />
+                            </view>
+                        </div>
                     </div>
-                ):(
+                ) : (
                     <div></div>
                 )}
 
-                {clickCount < 5 ? (
-                    <div></div>
+                {clickCount == 5 ? (
+                    <div className={styles.floatContainer}>
+                        <div className={styles.cycleCompleteContainer}>
+                            <h4 className={styles.cycleCompleteHeader}>
+                                Waddle Cycle Complete!
+                            </h4>
+                            <p>Take a Break!</p>
+                            <div className={styles.ducksAnim}>
+                                <Image src="/images/render_card.png" width={268} height={90} className={styles.ducksRender}
+                                />
+                            </div>
+                        </div>
+                    </div>
                 ) : (
+                    <div></div>
+                )}
+
+                {clickCount == 6 ? (
                     <Image
-                    className={styles.placeholder}
-                    src={`/images/placeholder.png`}
-                    width={100}
-                    height={100}
+                        className={styles.waddleBreak}
+                        src={`/images/fourWaddles.png`}
+                        width={308}
+                        height={220}
                     />
+                ) : (
+                    <div></div>
                 )}
             </div>
-            
-            {clickCount < 7 ? (
-                <button onClick={nextStep} className={styles.nextButton}>
+
+            {clickCount < 6 ? (
+                <button onClick={nextStep} className={styles.nextButton} tabindex="4">
                     Continue
                 </button>
             ) : (
-                <Link href="./TimerPage">
+                <Link href="./doneOnboard" tabindex="4">
                     <button className={styles.nextButton}>
-                         Continue
+                        Continue
                     </button>
                 </Link>
-                
+
             )}
 
-            {clickCount < 2 ? (
-                <div className={styles.skipContainer}>
-                    <button className={styles.skipButton}>
-                        <Link href="/TimerPage" className={styles.link}>Skip Tutorial</Link>
+            <div className={styles.buttonsContainer}>
+                {clickCount < 2 ? (
+                    <div className={styles.skipContainer}>
+                        <button className={styles.skipButton}>
+                            <Link href="/TimerPage" className={styles.link} tabindex="5">Skip Tutorial</Link>
+                        </button>
+                    </div>
+                ) : (
+                    <button onClick={goBack} className={styles.backButton} tabindex="6">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
                     </button>
-                </div>
-            ) : (
-                <button onClick={goBack} className={styles.backButton}>
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                </button>
-            )
-            }
+                )
+                }
 
+            </div>
         </div>
+
     );
 }

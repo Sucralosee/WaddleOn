@@ -55,8 +55,32 @@
     text-align: center;
 }
 
+.ducksFloat{
+    height: 180px;
+}
+
 .wadBold{
     font-weight: bold;
+}
+
+.floatContainer {
+    margin-top: 2rem;
+    width: 308px;
+    height: 180px;
+    background-color: #ccc;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: var(--card-curve-small);
+  }
+  
+.floatHole {
+    background-color: transparent;
+    margin-top: -130px;
+}
+
+.breakPopup{
+    left: -200px;
 }
 
 .placeholder{
@@ -93,36 +117,22 @@
     background-color: var(--flush-orange);
 }
 
-.skipContainer{
-    text-decoration: none;
-
-    position: relative;
-    top: 100px;
-    /* left: 79px; */
+.buttonsContainer {
+    height: 10vh;
+    width: 430px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
 }
 
-.skipButton{
-
-
-    width: 158px;
-    height: 30px;
-
-    /* display: flex;
-    justify-content: center;
-     */
-    margin-top: 20px;
-    margin-bottom: 1rem;
-
-    background-color: none;
-    border: 3px solid var(--arathi-highlands);
-    color: black;
-    border-radius: 30px;
-
+.skipContainer{
     text-decoration: none;
 }
 
 .skipButton .link:link { 
     text-decoration: none; 
+    color: var(--gray5);
   } 
   .skipButton .link:visited { 
     text-decoration: none; 
@@ -139,20 +149,34 @@
     background-color: var(--arathi-highlands);
 }
 
+
+.skipButton{
+    width: 158px;
+    height: 30px;
+
+    /* display: flex;
+    justify-content: center;
+     */
+    margin: auto;
+    background-color: none;
+    border: 3px solid var(--arathi-highlands);
+    color: var(--gray5);
+    border-radius: 30px;
+
+    text-decoration: none;
+}
+
 .backButton{
     height: 36px;
     width: 45px;
 
-    position: relative;
-    top: 134px;
-    right: 150px;
-
+    margin: 0 16rem 0 0;
     border: 2px solid var(--button-blue);
     background-color: var(--seashell);
     border-radius: 8px;
 
     box-shadow: 1px 3px 5px 1px grey;
-    
+
     color: var(--button-blue);
 }
 
@@ -160,4 +184,43 @@
     background-color: var(--button-blue);
     color: black;
     border: none;
+}
+
+/*Conditionallly Displayed Elements*/
+
+.tasksPosition {
+    overflow: hidden;
+    width: 430px;
+    height: 350px;
+}
+
+.cycleCompleteContainer {
+    width: 308px;
+    background-color: var(--seashell);
+    box-shadow: 0px 1px 4.4px 0px var(--arathi-highlands);
+    border-radius: var(--card-curve-small);
+    padding: 1rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+}
+
+.cycleCompleteHeader {
+    margin: 0;
+    text-align: center;
+}
+
+.ducksAnim {
+    overflow: hidden;
+    margin: auto;
+}
+
+@media screen and (min-width: 431px) {
+    .buttonsContainer {
+        bottom: 16rem;
+    }
 }

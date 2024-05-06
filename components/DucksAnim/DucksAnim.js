@@ -3,7 +3,7 @@ import styles from "./DucksAnim.module.css"
 import lottie from "lottie-web"
 
 export default function DucksAnim({
-    inlineSizing = { }
+    inlineSizing = {}
 }) {
     let animationContainer = createRef();
 
