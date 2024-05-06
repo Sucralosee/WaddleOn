@@ -107,8 +107,11 @@ export default function SettingsMenu({
                     <button className={styles.option} onClick={handleLang}>
                         <p className={styles.textButton}>{settingText(1)}: {lang}</p>
                     </button>
-                    <button className={styles.option}>
+                    <button className={styles.option} onClick={handleTheme}>
                         <p className={styles.textButton}>{settingText(2)}: {theme}</p>
+                    </button>
+                    <button className={styles.option} onClick={handleAudio}>
+                        <p className={styles.textButton}>{settingText(7)}: {audio}</p>
                     </button>
                     <button className={styles.option} onClick={reload}>
                         <p>{settingText(3)}</p>

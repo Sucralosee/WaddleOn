@@ -117,7 +117,8 @@ export const settingTextInv = {
             3: "Confirm Changes",
             4: "Go To Quiz",
             5: "Main Menu",
-            6: "Settings"
+            6: "Settings",
+            7: "Music"
         }
     ],
     French: [
@@ -127,7 +128,8 @@ export const settingTextInv = {
             3: "Confirmer Les Modifications",
             4: "Aller au quiz",
             5: "Menu principal",
-            6: "Paramètres"
+            6: "Paramètres",
+            7: "Musique"
         }
     ]
 }

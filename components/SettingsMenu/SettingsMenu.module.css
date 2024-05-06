@@ -8,7 +8,7 @@
 }
 
 .settingsContainer {
-    width: 211px;
+    padding: 10px;
     height: 100vh;
     background-color: var(--seashell);
     position: absolute;
@@ -36,11 +36,13 @@
     text-decoration: none; 
 }
 
-
-
 .textButton{
     display: flex;
     align-items: center;
+}
+
+.link {
+    margin-top: auto;
 }
 
 .exit {
