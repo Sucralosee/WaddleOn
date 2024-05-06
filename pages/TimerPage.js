@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, createRef } from "react"
 import styles from "../styles/TimerPage.module.css"
 import NavBar from "@/components/Navbar/NavBar"
 import Weather from "@/components/Weather/Weather"
