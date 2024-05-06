@@ -1,8 +1,7 @@
 import styles from "@/styles/Summary.module.css";
 import House from "@/components/HomeButton";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Quiz from "@/components/QuizFold";
-import Image from "next/image"
 import NavBar from "@/components/Navbar/NavBar";
 import DucksAnim from "@/components/DucksAnim/DucksAnim";
 import { useRouter } from 'next/router';
@@ -102,7 +101,7 @@ export default function Summary() {
                             marginBottom: "-200px",
                             width: "430px",
                             height: "470px",
-                            borderRadius: "0 0 8px 8px"
+                            borderRadius: "0 0 13px 13px"
                         }} />        
           <div className={styles.buttonCont}>
             <NavBar />
