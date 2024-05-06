@@ -1,11 +1,12 @@
 import styles from "@/styles/Summary.module.css";
 import House from "@/components/HomeButton";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Quiz from "@/components/QuizFold";
 import NavBar from "@/components/Navbar/NavBar";
 import DucksAnim from "@/components/DucksAnim/DucksAnim";
 import { useRouter } from 'next/router';
 import Link from "next/link";
+import SettingsMenu from "@/components/SettingsMenu/SettingsMenu";
 //useRouter redirects to another file https://nextjs.org/docs/app/building-your-application/routing/redirecting#userouter-hook
 
 export default function Summary() {
@@ -33,7 +34,7 @@ export default function Summary() {
 
   const [answers, setAnswers] = useState([]);
   const [questionIndex, setQuestionIndex] = useState(0);
-
+  const [settings, setSettings] = useState(false);
 
   const handleNextQuestion = (answer) => {
     const newAnswers = [...answers];
@@ -46,7 +47,7 @@ export default function Summary() {
     let score = 0;
     answers.forEach((answer) => {
       if (answer === "Fatigued" || answer === "Barely" || answer === "Unsatisfactory" || answer === "Slow and Frustrated") {
-        score                                                                                                              += 1;
+        score += 1;
       } else if (answer === "Neutral" || answer === "Somewhat" || answer === "Decent" || answer === "Steady and Manageable") {
         score += 2;
       } else if (answer === "Energized" || answer === "Fully" || answer === "Refreshing" || answer === "Effecient and Productive") {
@@ -88,30 +89,54 @@ export default function Summary() {
     }
   };
 
+      //settings
+      useEffect(() => {
+        const settingsIcon = document.querySelector(".fa-cog");
+
+        const handleSettings = () => {
+            setSettings(!settings);
+        };
+
+        if (settingsIcon) {
+            settingsIcon.addEventListener("click", handleSettings);
+        }
+
+        return () => {
+            if (settingsIcon) {
+                settingsIcon.removeEventListener("click", handleSettings);
+            }
+        };
+    }, []);
+
+    const childToParent = (childData) => {
+        setSettings(false);
+        console.log("test");
+    };
+
 
   return (
     <main className={styles.summaryOne}>
+      {settings && <SettingsMenu childParent={childToParent} />}
       <div className={styles.summaryContainer}>
         <div className={styles.homeButton}>
-          <Link href="/TimerPage"><House/></Link>
+          <Link href="/TimerPage"><House /></Link>
         </div>
         <DucksAnim inlineSizing={{
-                            position: "relative",
-                            top: "-200px",
-                            marginBottom: "-200px",
-                            width: "430px",
-                            height: "470px",
-                            borderRadius: "0 0 19px 19px"
-                        }} />        
-          <div className={styles.progressContainer}>
-              {renderProgressIndicator()}
-            </div> 
+          position: "relative",
+          top: "-200px",
+          marginBottom: "-200px",
+          width: "430px",
+          height: "470px",
+          borderRadius: "0 0 19px 19px"
+        }} />
+        <div className={styles.progressContainer}>
+          {renderProgressIndicator()}
+        </div>
         {renderCurrentPage()}
       </div>
       <div className={styles.navPosition}>
-        
+        <NavBar />
       </div>
-      <NavBar />
     </main>
   );
 }
