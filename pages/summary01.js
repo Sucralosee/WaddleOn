@@ -101,16 +101,17 @@ export default function Summary() {
                             marginBottom: "-200px",
                             width: "430px",
                             height: "470px",
-                            borderRadius: "0 0 13px 13px"
+                            borderRadius: "0 0 19px 19px"
                         }} />        
-          <div className={styles.buttonCont}>
-            <NavBar />
-          </div>
           <div className={styles.progressContainer}>
               {renderProgressIndicator()}
             </div> 
         {renderCurrentPage()}
       </div>
+      <div className={styles.navPosition}>
+        
+      </div>
+      <NavBar />
     </main>
   );
 }
