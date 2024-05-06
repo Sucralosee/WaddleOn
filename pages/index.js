@@ -16,7 +16,6 @@ export default function Home() {
       </Head>
       <main className={`${styles.main}`}>
       <Link href="/summary01">Summary1</Link>
-      <Link href="/summary02">Testing</Link>
       <Link href="/summaryMallard">Mallard</Link>
       <Link href="/summaryRuddy">Ruddy</Link>
       <Link href="/summaryBlueBill">Blue-billed</Link>
