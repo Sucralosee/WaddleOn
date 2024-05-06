@@ -1,3 +1,4 @@
 .animationContainer {
   overflow: hidden;
+  z-index: 0;
 }

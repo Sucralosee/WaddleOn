@@ -1,17 +1,29 @@
+.cycleCompletePosition {
+    height: 70vh;
+    width: 430px;
+    z-index: 20;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInAndOut 4s forwards;
+    overflow: hidden;
+}
+
 .cycleCompleteContainer {
     width: 308px;
-    height: 193px;
     background-color: var(--seashell);
     box-shadow: 0px 1px 4.4px 0px var(--arathi-highlands);
     border-radius: var(--card-curve-small);
+    padding: 1rem 0;
+    filter: drop-shadow(0 1rem 20rem var(--arathi-highlands));
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 2rem auto;
+    position: absolute;
 
-    animation: fadeIn 0.5s;
 }
 
 .cycleCompleteHeader {
@@ -20,19 +32,29 @@
 }
 
 .ducksAnim {
-
     overflow: hidden;
     margin: auto;
 }
 
-@keyframes fadeIn {
-    from {
+@keyframes fadeInAndOut {
+    0% {
         opacity: 0;
         transform: translateY(1000px);
     }
 
-    to {
+    10% {
         opacity: 1;
-        transform: translateY(0px);
+        transform: translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+        transform: translateY(-1000px);
     }
 }

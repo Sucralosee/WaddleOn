@@ -39,26 +39,6 @@
   /*Temporary Fix, Fix the nesting of the button*/
 }
 
-.navBarDummy {
-  position: sticky;
-  border: 1px solid black;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  width: 414px;
-  height: 69px;
-  bottom: 0;
-}
-
-.playButt {
-  width: 93px;
-  height: 93px;
-  border: 1px solid black;
-  border-radius: 50%;
-  position: absolute;
-  left: 160px;
-  bottom: 23px;
-}
-
 .buttonCont {
   display: flex;
   flex-direction: row;
@@ -72,13 +52,14 @@
 }
 
 .progressIndicator {
-  font-family: fredoka;
+  font-family: 'lexend';
   font-size: var(--h6);
   color: var(--gray5);
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom:9rem;
 }
 
 .quizProgress {

@@ -18,3 +18,5 @@ wow factor based on the extra reasources
 ## Packages Installed
 - react-moment
 - lottie-web
+- use-local-storage
+- react-audio-player

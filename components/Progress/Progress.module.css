@@ -65,32 +65,22 @@
 
 .floatContainer {
     margin-top: 2rem;
-    position: relative;
     width: 308px;
     height: 180px;
     background-color: #ccc;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: var(--card-curve-small);
   }
   
 .floatHole {
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
     background-color: transparent;
-    clip-path: polygon(0% 22px, 100% 22px, 100% calc(100% - 22px), 78px 100%, 22px 100%, 0% calc(100% - 22px));
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 22px;
-    border-bottom-right-radius: 22px;
-    transform: translate(-50%, -50%);
+    margin-top: -130px;
 }
 
-.waddleBreak{
-    margin-top: 2rem;
-    /* width: 308px;
-    height: 220px; */
+.breakPopup{
+    left: -200px;
 }
 
 .placeholder{
@@ -127,12 +117,17 @@
     background-color: var(--flush-orange);
 }
 
+.buttonsContainer {
+    height: 10vh;
+    width: 430px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+}
+
 .skipContainer{
     text-decoration: none;
-
-    position: relative;
-    top: 100px;
-    /* left: 79px; */
 }
 
 .skipButton .link:link { 
@@ -156,17 +151,13 @@
 
 
 .skipButton{
-
-
     width: 158px;
     height: 30px;
 
     /* display: flex;
     justify-content: center;
      */
-    margin-top: 20px;
-    margin-bottom: 1rem;
-
+    margin: auto;
     background-color: none;
     border: 3px solid var(--arathi-highlands);
     color: var(--gray5);
@@ -179,16 +170,13 @@
     height: 36px;
     width: 45px;
 
-    position: relative;
-    top: 134px;
-    right: 150px;
-
+    margin: 0 16rem 0 0;
     border: 2px solid var(--button-blue);
     background-color: var(--seashell);
     border-radius: 8px;
 
     box-shadow: 1px 3px 5px 1px grey;
-    
+
     color: var(--button-blue);
 }
 
@@ -196,4 +184,43 @@
     background-color: var(--button-blue);
     color: black;
     border: none;
+}
+
+/*Conditionallly Displayed Elements*/
+
+.tasksPosition {
+    overflow: hidden;
+    width: 430px;
+    height: 350px;
+}
+
+.cycleCompleteContainer {
+    width: 308px;
+    background-color: var(--seashell);
+    box-shadow: 0px 1px 4.4px 0px var(--arathi-highlands);
+    border-radius: var(--card-curve-small);
+    padding: 1rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+}
+
+.cycleCompleteHeader {
+    margin: 0;
+    text-align: center;
+}
+
+.ducksAnim {
+    overflow: hidden;
+    margin: auto;
+}
+
+@media screen and (min-width: 431px) {
+    .buttonsContainer {
+        bottom: 16rem;
+    }
 }

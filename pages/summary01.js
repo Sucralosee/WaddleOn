@@ -45,7 +45,7 @@ export default function Summary() {
     let score = 0;
     answers.forEach((answer) => {
       if (answer === "Fatigued" || answer === "Barely" || answer === "Unsatisfactory" || answer === "Slow and Frustrated") {
-        score += 1;
+        score                                                                                                              += 1;
       } else if (answer === "Neutral" || answer === "Somewhat" || answer === "Decent" || answer === "Steady and Manageable") {
         score += 2;
       } else if (answer === "Energized" || answer === "Fully" || answer === "Refreshing" || answer === "Effecient and Productive") {
@@ -55,11 +55,6 @@ export default function Summary() {
     return score;
   }
   //had to put return score so itll calculate the result; it didnt work when i didnt put it idk...
-
-  const handlePreviousQuestion = () => {
-    setQuestionIndex(questionIndex - 1);
-  };
-  //back button still not functioning properly ** fix later
 
   const renderProgressIndicator = () => {
     return (
@@ -79,9 +74,6 @@ export default function Summary() {
             onAnswer={handleNextQuestion} />
           <div className={styles.quizProgress}>
             <div className={styles.buttonCont}>
-              {questionIndex > 0 && (
-                <Back className={styles.backButton} onClick={handlePreviousQuestion} />
-              )}
             </div>
             <div className={styles.progressContainer}>
               {renderProgressIndicator()}

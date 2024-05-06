@@ -16,25 +16,27 @@ export default function Landing() {
 
     return (
         <>
-            <div>
-                {showLogo && 
+            <div >
+                {showLogo &&
                     <div className={styles.landLogo}>
-                        <Image
-                            className={styles.logo}
-                            src={`/images/waddleon.svg`}
-                            width={215}
-                            height={75}
-                        />
-                        <Link href="/TimerPage" className={`${styles.linkLand} ${styles.pomDesc}`}>Pomodoro Timer</Link>                        
-                        <Link href="/onboard" className={`${styles.linkLand} ${styles.getStart}`}>Get Started
-                        </Link>
-                        <Link href="/TimerPage" className={`${styles.linkLand} ${styles.getOut}`}>Skip Tutorial
-                        </Link>
+                        <div className={styles.landingLogoContainer}>
+                            <Image
+                                className={styles.logo}
+                                src="/images/WaddleOn.svg"
+                                width={215}
+                                height={75}
+                            />
+                            <Link href="/TimerPage" className={`${styles.linkLand} ${styles.pomDesc}`}>Pomodoro Timer</Link>
+                            <Link href="/onboard" className={`${styles.linkLand} ${styles.getStart}`}>Get Started
+                            </Link>
+                            <Link href="/TimerPage" className={`${styles.linkLand} ${styles.getOut}`}>Skip Tutorial
+                            </Link>
+                        </div>
                     </div>
                 }
-                <div className="videoBackground">
-                    <video autoPlay muted loop className="video" width="1920" height="1080" controls preload="none">
-                        <source src="video/Lake_2.mp4"/>
+                <div className={styles.videoBackground}>
+                    <video autoPlay muted loop className="video" width="1920" height="1080" preload="none">
+                        <source src="video/Lake_2.mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>

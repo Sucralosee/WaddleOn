@@ -1,6 +1,6 @@
 .settingsPosition {
     width: 430px;
-    height: 932px;
+    height: 100vh;
     position: absolute;
     animation: fadeIn 0.2s;
     z-index: 1000;
@@ -9,7 +9,7 @@
 
 .settingsContainer {
     width: 211px;
-    height: 932px;
+    height: 100vh;
     background-color: var(--seashell);
     position: absolute;
     display: flex;
@@ -17,12 +17,13 @@
     align-items: center;
     z-index: 1000;
     right: 0;
-    filter: drop-shadow(0 0.2rem 0.2rem var(--arathi-highlands));
+    filter: drop-shadow(0 0.2rem 20rem var(--arathi-highlands));
 }
 
 .option {
     width: 193px;
     height: 37px;
+    border: none;
     border-radius: var(--card-curve-small);
     background: var(--flush-orange);
     color: var(--seashell);
@@ -43,10 +44,9 @@
 }
 
 .exit {
-    position: absolute;
     bottom: 2rem;
     right: 0;
-    margin: 0 0 0 auto;
+    margin: 1rem 0 1rem auto;
     width: 87px;
     height: 38px;
     border-radius: 8px 0px 0px 8px;
@@ -58,6 +58,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.exit h4 {
+    color: var(--seashell);
 }
 
 @keyframes fadeIn {
