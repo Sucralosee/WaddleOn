@@ -27,18 +27,19 @@
     border-radius: var(--card-curve-small);
     background: var(--flush-orange);
     color: var(--seashell);
-    font-family: var(--paragraph-style);
     display: flex;
     justify-content:center ;
     align-items: center;
     margin: 0.5rem;
 
-    text-decoration: none; 
+    cursor: pointer;
+    font-family: var(--paragraph-style);
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.textButton{
-    display: flex;
-    align-items: center;
+.option:active, .option:hover {
+    background-color: var(--button-blue);
 }
 
 .link {
