@@ -1,8 +1,8 @@
 import styles from './SettingsMenu.module.css'
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { settingTextInv } from '../../data/inventory.js'
-//import { settingTextInv } from '../../data/inventory/inventory.js'
+// import { settingTextInv } from '../../data/inventory.js'
+import { settingTextInv } from '../../data/inventory/index.js'
 
 
 export default function SettingsMenu({
