@@ -48,7 +48,7 @@ export const recommendedTasks = {
 
 export const appText = {
     //All text in the app stored here. Call it here so we can make it switch between Eng and Fr.
-    english: [
+    English: [
         {
             1: "Current Task",
             2: "Add New Tasks",
@@ -57,6 +57,17 @@ export const appText = {
             5: "End Break",
             6: "On Break",
             7: "Break Over"
+        }
+    ],
+    French: [
+        {
+            1: "Tâche actuelle",
+            2: "Ajouter de nouvelles tâches",
+            3: "Terminer la session",
+            4: "Continuer la pause",
+            5: "Fin de la pause",
+            6: "En pause",
+            7: "Fin de la pause"
         }
     ]
 }
@@ -95,5 +106,28 @@ export const duckType = {
             duckType: "Marbled Duck",
             description: ""
         },
+    ]
+}
+
+export const settingTextInv = {
+    English: [
+        {
+            1: "Language",
+            2: "Theme",
+            3: "Confirm Changes",
+            4: "Go To Quiz",
+            5: "Main Menu",
+            6: "Settings"
+        }
+    ],
+    French: [
+        {
+            1: "Langue",
+            2: "Thème",
+            3: "Confirmer Les Modifications",
+            4: "Aller au quiz",
+            5: "Menu principal",
+            6: "Paramètres"
+        }
     ]
 }

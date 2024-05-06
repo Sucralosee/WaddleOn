@@ -26,12 +26,21 @@
     border-radius: var(--card-curve-small);
     background: var(--flush-orange);
     color: var(--seashell);
+    font-family: var(--paragraph-style);
     display: flex;
     justify-content:center ;
     align-items: center;
     margin: 0.5rem;
+
+    text-decoration: none; 
 }
 
+
+
+.textButton{
+    display: flex;
+    align-items: center;
+}
 
 .exit {
     position: absolute;
