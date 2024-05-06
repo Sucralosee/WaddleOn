@@ -105,6 +105,7 @@ export default function Tasks({
                                     key={index}
                                     onClick={() => { addTask(b.subject); notification() }}
                                     className={styles.chip}
+                                    tabIndex={1}
                                 >{b.subject}</button>
                             ))}
                         </div>
