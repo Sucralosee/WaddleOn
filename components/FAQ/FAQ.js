@@ -1,4 +1,5 @@
 import styles from "./FAQ.module.css"
+import Link from "next/link"
 
 export default function FAQ({
     closeFAQ
@@ -19,6 +20,9 @@ export default function FAQ({
                         <li>Press + to add the task to the task list</li>
                         <li>Click on the play/pause button to start/stop the session</li>
                     </ol>
+                    <Link className={styles.teamLinks} href="team">
+                            Meet the Team
+                    </Link>
                 </div>
                 <div className={styles.exit} onClick={closeFAQ}>
                     <h4>X</h4>
