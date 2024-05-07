@@ -1,0 +1,33 @@
+.teamContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 432px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.teamHeader{
+    margin: 1rem;
+}
+
+.teamMember{
+    display: flex;
+    width: 432px;
+    height: 10rem;
+
+    margin: 1rem;
+}
+
+.teamName{
+    margin-top: 10px;
+}
+
+.teamMemInfo{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 1rem;
+}

@@ -58,6 +58,12 @@
     margin: 0 0 0 1rem;
 }
 
+.teamLinks{
+    font-family: var(--paragraph-style);
+    
+    text-decoration: none;
+    color: var(--flush-orange);
+}
 
 @keyframes fadeIn {
     0% {
