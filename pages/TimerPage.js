@@ -17,7 +17,7 @@ export default function TimerPage() {
 
     const [data, setData] = useState([false]);
 
-    const [isDark, setIsDark] = useLocalStorage("isDark",);
+    const [isDark, setIsDark] = useLocalStorage(false);
     const [theme, setTheme] = useState("");
 
     const [settings, setSettings] = useState(false);
@@ -86,7 +86,7 @@ export default function TimerPage() {
         if (theme === "Light") {
             setIsDark(false);
             console.log("light");
-        } else {
+        } else if (theme === "Dark") {
             setIsDark(true);
             console.log("dark");
         }

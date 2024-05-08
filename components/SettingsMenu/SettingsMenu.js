@@ -13,7 +13,7 @@ export default function SettingsMenu({
         const initialValue = JSON.parse(saved);
         return initialValue;
     });
-    const [lang, setLang] = useState("English"); 
+    const [lang, setLang] = useState("English");
     const [langBool, setLangBool] = useState(true);
 
     const [themeCheck, setThemeCheck] = useState(() => {
@@ -44,9 +44,9 @@ export default function SettingsMenu({
         console.log("Theme!!", themeBool)
     }
 
-    if (themeBool === true) {
+    if (themeBool == true) {
         var theme = "Light"
-    } else {
+    } else if (themeBool == false) {
         var theme = "Dark"
     }
 
