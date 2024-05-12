@@ -5,9 +5,13 @@ import Image from "next/image";
 import Tasks from "../Tasks/Tasks";
 import CycleComplete from "../CycleComplete/CycleComplete";
 import Link from "next/link";
+import useLocalStorage from "use-local-storage"
+
 
 //Pomodoro timer base conceived from: https://www.youtube.com/watch?v=9z1qBcFwdXg
-export default function Pomodoro() {
+export default function Pomodoro({
+    lang
+}) {
     const [minutes, setMinutes] = useState(25);
     const [seconds, setSeconds] = useState(0);
     const [displayMessage, setDisplayMessage] = useState(false)
@@ -16,6 +20,7 @@ export default function Pomodoro() {
     const [playState, setPlayState] = useState(false)
     const [breakSession, setBreakSession] = useState(false)
     const [timerStyle, setTimerStyle] = useState()
+    // const [lang, setLang] = useState(true); 
 
     const progressCalculation = breakSession ? minutes / 5 : minutes / 25 //calculates the ratio between the state
     const [progress, setProgress] = useState(progressCalculation)
@@ -109,7 +114,7 @@ export default function Pomodoro() {
                             <div className={styles.dynamicProgress} style={progressStyle}></div>
                         </div>
                     </div>
-                    <Tasks number={cycleNumber} coloring={timerStyle} />
+                    <Tasks number={cycleNumber} coloring={timerStyle} lang={lang}/>
                     <p className={styles.cycleButton} onClick={endTimer} tabIndex={5}>
                         End Timer
                         <Image src="/images/Flag.svg" width={20} height={20} />

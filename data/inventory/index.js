@@ -50,27 +50,36 @@ export const appText = {
     //All text in the app stored here. Call it here so we can make it switch between Eng and Fr.
     English: [
         {
-            1: "Current Task",
-            2: "Add New Tasks",
-            3: "Finish Session",
-            4: "Continue to Break",
-            5: "End Break",
-            6: "On Break",
-            7: "Break Over"
+            0: "Filter",
+            1: "All",
+            2: "Simple Tasks",
+            3: "Activities",
+            4: "Homework",
+            5: "Add a Premade Task",
+            6: "Task Added!",
+            7: "Write A New Task",
+            8: "Completed Cycles",
+            9: "Quick Add Tasks +",
+            10: "Current Tasks:"
         }
     ],
     French: [
         {
-            1: "Tâche actuelle",
-            2: "Ajouter de nouvelles tâches",
-            3: "Terminer la session",
-            4: "Continuer la pause",
-            5: "Fin de la pause",
-            6: "En pause",
-            7: "Fin de la pause"
+            0: "Filtre",
+            1: "Tout",
+            2: "Tâches simples",
+            3: "Activités",
+            4: "Devoirs",
+            5: "Ajouter une tâche prédéfinie",
+            6: "Tâche ajoutée!",
+            7: "Écrire une nouvelle tâche",
+            8: "Cycles complétés",
+            9: "Ajouter rapidement+",
+            10: "Tâches actuelles :"
         }
     ]
 }
+
 
 export const introDialogue = {
     //  English and french keys should match up to be the same phrase. 

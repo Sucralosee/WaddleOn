@@ -92,6 +92,12 @@ export default function TimerPage() {
         }
     })
 
+    const [lang, setLang] = useState("English");
+
+    const changeLanguage = (newLang) => {
+        setLang(newLang);
+    };
+
     return (
         <>
             <Head>
@@ -103,7 +109,7 @@ export default function TimerPage() {
               <main className={`${styles.main}`} data-theme={isDark ? "Dark" : "Light"}>
               <Music />
                 <div className={styles.phoneContainer}>
-                    {settings && <SettingsMenu childParent={childToParent} />}
+                    {settings && <SettingsMenu childParent={childToParent} changeLanguage={changeLanguage} />}
                     {(typeof data.main != 'undefined') ? (
                         <Weather weatherData={data} />
                     ) : (
@@ -116,7 +122,7 @@ export default function TimerPage() {
                             marginBottom: "-200px",
                             borderRadius: "0 0 8px 8px"
                         }} />
-                        <Pomodoro />
+                        <Pomodoro lang={lang} />
                     </div>
                     <NavBar />
                 </div>

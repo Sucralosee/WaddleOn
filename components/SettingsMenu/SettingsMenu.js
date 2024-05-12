@@ -6,7 +6,8 @@ import { settingTextInv } from '../../data/inventory/index.js'
 
 
 export default function SettingsMenu({
-    childParent
+    childParent,
+    changeLanguage
 }) {
     const [langCheck, setLangCheck] = useState(() => {
         const saved = localStorage.getItem("language");
@@ -70,34 +71,41 @@ export default function SettingsMenu({
         localStorage.setItem("audioBool", JSON.stringify(!audioBool));
     }, [audio, audioBool]);
 
-    //https://community.wappler.io/t/have-local-storage-updates-sync-across-tabs-without-refresh/41880
-    const reload = () => {
-        window.location.reload();
-    }
 
     //local storage https://blog.logrocket.com/using-localstorage-react-hooks/
     //Lang
 
-    useEffect(() => {
-        localStorage.setItem("language", JSON.stringify(lang));
-    }, [lang]);
 
     // toggler
     const handleLang = () => {
-        setLangBool(!langBool);
-        setLang(langBool ? "French" : "English");
+        setLangBool(!langBool)
+        console.log("lang", langBool)
+        const newLang = langBool ? "French" : "English";
+        setLang(newLang);
+        changeLanguage(langBool ? "French" : "English");
     };
 
     // gets the key and the lang and returns it for when called upon
     const settingText = (key) => {
         const language = lang; // Use the lang state variable
         if (settingTextInv[language] && settingTextInv[language][0][key]) {
+            // console.log("langie")
             return settingTextInv[language][0][key];
         } else {
             console.error(`Setting text not found for language "${language}" and key "${key}"`);
             return 'no translation found';
         }
     };
+
+    useEffect(() => {
+        localStorage.setItem("langBool", JSON.stringify(langBool));
+    }, [lang, langBool]);
+
+//https://community.wappler.io/t/have-local-storage-updates-sync-across-tabs-without-refresh/41880
+    const reload = () => {
+        window.location.reload();
+    }
+
 
     return (
         <>
