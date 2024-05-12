@@ -17,10 +17,20 @@ export default function Progress() {
     const [name, setName] = useLocalStorage("name", userName)
     const cycleNumber = 0;
 
+    const [showArrow, setshowArrow] = useState(false);
+
     const handleNameChange = (e) => {
-        setUserName(e.target.value);
-        setName(e.target.value);
+        const value = e.target.value;
+        setUserName(value);
+        setName(value);     
+
+        if (value.trim() !== '') {
+            setshowArrow(true);
+        } else {
+            setshowArrow(false);
+        }
     };
+
 
     const nextStep = () => {
         if (stepNum < 8) {
@@ -84,12 +94,6 @@ export default function Progress() {
         }
     };
 
-    const [showArrow, setshowArrow] = useState(false);
-
-    // useEffect(() => {
-    //         setshowArrow(true);
-    //     },);
-
 
     return (
         <div className={styles.progressContainer}>
@@ -123,12 +127,18 @@ export default function Progress() {
                         onChange={handleNameChange}
                         onKeyDown={handleNameChange}
                         tabindex="1"
-                        onClick={showArrow}
+                        onClick={() => {
+                            if (userName.trim() !== '') {
+                                setshowArrow(true);
+                            }
+                        }
+                    }                        
                     />
-                    {setshowArrow && 
+                    {showArrow && (
                         <div className={styles.proceed} onClick={nextStep}>  
                             <i class="fa fa-arrow-right" aria-hidden="true" className={styles.arrow}></i>
-                        </div>
+                        </div>           
+                        )
                     }
                 </div>
             )}
