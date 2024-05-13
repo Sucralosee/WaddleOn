@@ -39,7 +39,7 @@ export default function NavBar() {
             <div className={styles.navBarPosition}>
                 <div className={styles.navBarContainer}>
                     <div className={styles.navBarItems}>
-                        <Link className={styles.navbarLogo} href="http://localhost:3000">WaddleOn</Link>
+                        <Link className={styles.navbarLogo} href="/">WaddleOn</Link>
                         <div onClick={toggleFAQ} className={styles.profile} tabIndex={8}>
                             <i class="fa fa-question fa-2x" aria-hidden="true" ></i>
                         </div>

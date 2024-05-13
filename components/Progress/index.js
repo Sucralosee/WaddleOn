@@ -18,11 +18,18 @@ export default function Progress() {
     const cycleNumber = 0;
 
     const handleNameChange = (e) => {
-        const newName = e.target.value;
-        setUserName(newName);
-        setName(newName);
-        setShowArrow(true)
+        const value = e.target.value;
+        setUserName(value);
+        setName(value);     
+
+        if (value.trim() !== '') {
+            setshowArrow(true);
+        } else {
+            setshowArrow(false);
+        }
+
     };
+
 
     const nextStep = () => {
         if (stepNum < 8) {
@@ -87,6 +94,7 @@ export default function Progress() {
     //     addTaskButton.addEventListener("click", setClickCount(clickCount + 1))
     // }, [clickCount])
 
+
     return (
         <div className={styles.progressContainer}>
             <div>
@@ -120,12 +128,19 @@ export default function Progress() {
                         onChange={handleNameChange}
                         onKeyDown={handleNameChange}
                         tabindex="1"
-
+                        onClick={() => {
+                            if (userName.trim() !== '') {
+                                setshowArrow(true);
+                            }
+                        }
+                    }                        
                     />
-                    {showArrow &&
-                        <div className={styles.proceed} onClick={nextStep}>
+                    {showArrow && (
+                        <div className={styles.proceed} onClick={nextStep}>  
+
                             <i class="fa fa-arrow-right" aria-hidden="true" className={styles.arrow}></i>
-                        </div>
+                        </div>           
+                        )
                     }
                 </div>
             )}

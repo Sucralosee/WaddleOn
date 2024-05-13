@@ -3,11 +3,14 @@ import { useState, useEffect } from "react"
 import TaskItem from "../TaskItem/TaskItem"
 import Image from "next/image"
 import { recommendedTasks } from "@/data/inventory"
+import { appText } from '@/data/inventory/index.js'
 
 //https://medium.com/@worachote/building-a-todo-list-app-with-reactjs-a-step-by-step-guide-2c58b9b6c0f5
 export default function Tasks({
     number = { cycleNumber },
-    coloring
+    coloring,
+    lang,
+    language
 }) {
     const [tasks, setTasks] = useState([])
     const [text, setText] = useState('')
@@ -86,19 +89,30 @@ export default function Tasks({
         }, 2000);
     }
 
+    // Get text based on language
+    const getAppText = (key) => {
+        const language = lang;
+        if (appText[language] && appText[language][0][key]) {
+            return appText[language][0][key];
+        } else {
+            console.error(`Text not found for language "${lang}" and key "${key}"`);
+            return 'no translation found';
+        }
+    }
+
     return (
         <>
             {chips &&
                 <div className={styles.chipContainer}>
                     <div className={styles.chipsMenu}>
-                        <h5>Filter</h5>
+                        <h5>{getAppText(0)}</h5> 
                         <div className={styles.chipFilterContainer}>
-                            <button onClick={() => addingData("All")} className={styles.chipFilter}>All</button>
-                            <button onClick={() => addingData("Simple")} className={styles.chipFilter}>Simple Tasks</button>
-                            <button onClick={() => addingData("Activities")} className={styles.chipFilter}>Activities</button>
-                            <button onClick={() => addingData("Homework")} className={styles.chipFilter}>Homework</button>
+                            <button onClick={() => addingData("All")} className={styles.chipFilter}>{getAppText(1)}</button>
+                            <button onClick={() => addingData("Simple")} className={styles.chipFilter}>{getAppText(2)}</button>
+                            <button onClick={() => addingData("Activities")} className={styles.chipFilter}>{getAppText(3)}</button>
+                            <button onClick={() => addingData("Homework")} className={styles.chipFilter}>{getAppText(4)}</button>
                         </div>
-                        <h5>Add a Premade Task</h5>
+                        <h5>{getAppText(5)}</h5> 
                         <div className={styles.chipChoices}>
                             {data.subjects.map((b, index) => (
                                 <button
@@ -118,7 +132,7 @@ export default function Tasks({
                 </div>
             }
             {taskNotify &&
-                <div className={styles.chipsNotification}>Task Added!</div>
+                <div className={styles.chipsNotification}>{getAppText(6)}</div> 
             }
             <div className={styles.tasks}>
                 <div className={styles.taskInput}>
@@ -126,21 +140,21 @@ export default function Tasks({
                         value={text}
                         onChange={e => setText(e.target.value)}
                         className={styles.input}
-                        placeholder="Write A New Task"
+                        placeholder={getAppText(7)} 
                         tabIndex={1}
                         pattern="[a-z]+"
                     />
                     <Image src="/images/Add.svg" width={25} height={25} className={styles.taskFilter} tabIndex={2} onClick={() => { addTask(text); notification() }} />
                 </div>
                 <div className={styles.trackerFilter}>
-                    <div className={styles.tracker}>Completed Cycles: {Math.ceil(number / 2)}</div>
+                    <div className={styles.tracker}>{getAppText(8)}: {Math.ceil(number / 2)}</div> 
                     <button className={styles.tasksAdding} onClick={() => setChips(true)} tabIndex={3}>
-                        <p className={styles.filterAdd}>Quick Add Tasks +</p>
+                        <p className={styles.filterAdd}>{getAppText(9)}</p> 
                     </button>
                 </div>
 
                 <div className={styles.tasksContainer} style={coloring}>
-                    <p className={styles.taskListHeader}>Current Tasks:</p>
+                    <p className={styles.taskListHeader}>{getAppText(10)}</p> 
                     {tasks.map(task => (
                         <TaskItem
                             key={task.id}
