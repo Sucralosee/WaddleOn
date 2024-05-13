@@ -1,5 +1,4 @@
 import styles from "@/styles/Summary.module.css";
-import House from "@/components/HomeButton";
 import React, { useState, useEffect } from 'react';
 import Quiz from "@/components/QuizFold";
 import NavBar from "@/components/Navbar/NavBar";
@@ -89,38 +88,35 @@ export default function Summary() {
     }
   };
 
-      //settings
-      useEffect(() => {
-        const settingsIcon = document.querySelector(".fa-cog");
+  //settings
+  useEffect(() => {
+    const settingsIcon = document.querySelector(".fa-cog");
 
-        const handleSettings = () => {
-            setSettings(!settings);
-        };
-
-        if (settingsIcon) {
-            settingsIcon.addEventListener("click", handleSettings);
-        }
-
-        return () => {
-            if (settingsIcon) {
-                settingsIcon.removeEventListener("click", handleSettings);
-            }
-        };
-    }, []);
-
-    const childToParent = (childData) => {
-        setSettings(false);
-        console.log("test");
+    const handleSettings = () => {
+      setSettings(!settings);
     };
+
+    if (settingsIcon) {
+      settingsIcon.addEventListener("click", handleSettings);
+    }
+
+    return () => {
+      if (settingsIcon) {
+        settingsIcon.removeEventListener("click", handleSettings);
+      }
+    };
+  }, []);
+
+  const childToParent = (childData) => {
+    setSettings(false);
+    console.log("test");
+  };
 
 
   return (
     <main className={styles.summaryOne}>
       {settings && <SettingsMenu childParent={childToParent} />}
       <div className={styles.summaryContainer}>
-        <div className={styles.homeButton}>
-          <Link href="/TimerPage"><House /></Link>
-        </div>
         <DucksAnim inlineSizing={{
           position: "relative",
           top: "-180px",
