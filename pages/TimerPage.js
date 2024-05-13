@@ -100,8 +100,8 @@ export default function TimerPage() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/logoDuck.ico" />
             </Head>
-              <main className={`${styles.main}`} data-theme={isDark ? "Dark" : "Light"}>
-              <Music />
+            <main className={`${styles.main}`} data-theme={isDark ? "Dark" : "Light"}>
+                <Music />
                 <div className={styles.phoneContainer}>
                     {settings && <SettingsMenu childParent={childToParent} />}
                     {(typeof data.main != 'undefined') ? (
