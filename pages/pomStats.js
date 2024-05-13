@@ -15,11 +15,13 @@ export default function pomStats() {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous"></link>
       </Head>
       <main className={`${styles.main}`}>
-        <Link className={styles.return} href="/onboard">
-          <i class="fa fa-arrow-left" aria-hidden="true" className={styles.arrow}></i>
-        </Link>
-        <div className={styles.statsContainer}>
-          <StatsPie />
+        <div className={styles.pomContent}>
+          <Link className={styles.return} href="/onboard">
+            <i class="fa fa-arrow-left" aria-hidden="true" className={styles.arrow}></i>
+          </Link>
+          <div className={styles.statsContainer}>
+            <StatsPie />
+          </div>
         </div>
       </main>
     </>
