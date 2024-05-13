@@ -69,6 +69,7 @@
     width: 90vw;
     height: 0.3rem;
     background-color: var(--arathi-highlands);
+    border-radius: 8px;
 }
 
 .fadeIn {

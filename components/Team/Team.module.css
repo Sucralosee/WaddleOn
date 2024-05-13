@@ -1,14 +1,28 @@
-.teamContainer{
+.teamContainer {
+    width: 430px;
+    height: 100vh;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-
-    width: 432px;
-    height: 100vh;
+    z-index: 1100;
+    margin-top: auto;
     overflow: hidden;
+    animation: fadeIn 0.2s;
 }
 
+.teamContent {
+    width: 430px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    margin-top: auto;
+    background-color: var(--seashell);
+    filter: drop-shadow(0 0.2rem 20rem var(--arathi-highlands));
+    border-radius: 20px 20px 0 0;
+}
 .teamHeader{
     margin: 1rem;
 }
@@ -16,7 +30,7 @@
 .teamMember{
     display: flex;
     width: 432px;
-    height: 10rem;
+    height: 5rem;
 
     margin: 1rem;
 }
@@ -31,3 +45,60 @@
 
     margin-left: 1rem;
 }
+
+.exit {
+    position: absolute;
+    bottom: 2rem;
+    right: 0;
+    width: 87px;
+    height: 38px;
+    border-radius: 8px 0px 0px 8px;
+    background-color: var(--arathi-highlands);
+    color: var(--seashell);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.exit h4 {
+    margin: 0 0 0 1rem;
+}
+
+.lineContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+}
+
+.line{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 90vw;
+    height: 0.3rem;
+    background-color: var(--arathi-highlands);
+    border-radius: 8px;
+}
+
+@keyframes shiftin {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .teamMember {
+    opacity: 0; 
+    transform: translateX(-100%); 
+    animation: shiftin 0.6s ease forwards;
+  }
+  
+  .teamMember{
+    animation-delay: 0.1s; 
+  }

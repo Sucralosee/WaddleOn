@@ -1,11 +1,29 @@
 import styles from "./FAQ.module.css"
 import Link from "next/link"
+import { useState } from "react"
+import Team from "../Team"
+
 
 export default function FAQ({
     closeFAQ
 }) {
+    const [teamState, setTeamState] = useState(false)
+
+    const toggleTeam = () => {
+        setTeamState(!teamState)
+        console.log("team")
+    }
+
+    const closeTeam = () => {
+        setTeamState(false)
+        console.log("closed")
+    }
+
+
+
     return (
         <>
+            {teamState ? <Team TeamVisibility={teamState} closeTeam={closeTeam} tabIndex={1}/> : null}
             <div className={styles.faqContainer}>
                 <div className={styles.faqContent}>
                     <h5>What Is WaddleOn?</h5>
@@ -20,11 +38,14 @@ export default function FAQ({
                         <li>Press + to add the task to the task list</li>
                         <li>Click on the play/pause button to start/stop the session</li>
                     </ol>
-                    <Link className={styles.teamLinks} href="team">
+                    <div onClick={toggleTeam} className={styles.teamLinks} >
+                        Meet the Team
+                    </div>
+                    {/* <Link className={styles.teamLinks} href="team">
                             Meet the Team
-                    </Link>
+                    </Link> */}
                 </div>
-                <div className={styles.exit} onClick={closeFAQ}>
+                <div className={styles.exit} onClick={closeFAQ} tabIndex={2}>
                     <h4>X</h4>
                 </div>
             </div>

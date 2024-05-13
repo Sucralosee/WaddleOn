@@ -67,17 +67,17 @@ export default function StatsPie() {
             <p>The Pomodoro technique is a timed-based strategy used in fighting procrastination and found to increase academic performance. However, its effect on academic learning in a synchronous remote learning modality has yet to be investigated. The study used a mixed triangulation semi-experimental design using a whole sample (N=46), following all ethical equivalence procedures. The genetics concept mastery of the students was tested using a researcher-made test. ANCOVA results revealed that students taught using Pomodoro yielded significantly better concept mastery in genetics than the lecture method. This study contributes to the evaluation of one science teaching strategy compatible with remote learning modality.</p>
             <div className={styles.fadeIn}>
                 <div className={styles.pieInfo}>
-                <h4>Using Pomodoro Technique</h4>
-                <Pie data={chartData1} options={chartOptions} style={{ width: "300px", height: "150px" }} className={styles.pieActual}/>
-                <p className={styles.pieDesc}>Notice that all students performed in the Mastered, Approaching Mastery, and the Moving Towards Mastery categories.</p>
+                    <h4>Using Pomodoro Technique</h4>
+                    <Pie data={chartData1} options={chartOptions} style={{ width: "300px", height: "150px" }} className={styles.pieActual}/>
+                    <p className={styles.pieDesc}>Notice that all students performed in the Mastered, Approaching Mastery, and the Moving Towards Mastery categories.</p>
                 </div>
                 <div className={`${styles.lineContainer}`}>
-                <div className={styles.line}></div>
+                    <div className={styles.line}></div>
                 </div>
                 <div className={styles.pieInfo}>
-                <h4>Using Standard Lecture Techniques</h4>
-                <Pie data={chartData2} options={chartOptions} style={{ width: "320px", height: "160px" }} className={styles.pieActual}/>
-                <p className={`${styles.pieDesc} ${styles.botPieDes}`}>Notice that all students performed in the Mastered, Approaching Mastery, and the Moving Towards Mastery categories.</p>
+                    <h4>Using Standard Lecture Techniques</h4>
+                    <Pie data={chartData2} options={chartOptions} style={{ width: "320px", height: "160px" }} className={styles.pieActual}/>
+                    <p className={`${styles.pieDesc} ${styles.botPieDes}`}>Notice that all students performed in the Mastered, Approaching Mastery, and the Moving Towards Mastery categories.</p>
                 </div>
             </div>
         </div>
