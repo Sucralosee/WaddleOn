@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from "./Progress.module.css";
 import Image from "next/image";
 import Link from 'next/link';
@@ -6,7 +6,6 @@ import useLocalStorage from 'use-local-storage';
 
 import TasksOnBoard from '../TasksOnboard/TasksOnboard';
 import DucksAnim from '../DucksAnim/DucksAnim';
-import CycleComplete from '../CycleComplete/CycleComplete';
 
 export default function Progress() {
     const [stepNum, setStepNum] = useState(1);
@@ -15,16 +14,20 @@ export default function Progress() {
     const [duckInstructions, setDuckInstructions] = useState('Hey Waddler,\nWhat\'s your name?');
     const [userName, setUserName] = useState('');
     const [name, setName] = useLocalStorage("name", userName)
+    const [showArrow, setShowArrow] = useState(false);
     const cycleNumber = 0;
 
     const handleNameChange = (e) => {
-        setUserName(e.target.value);
-        setName(e.target.value);
+        const newName = e.target.value;
+        setUserName(newName);
+        setName(newName);
+        setShowArrow(true)
     };
 
     const nextStep = () => {
         if (stepNum < 8) {
             setStepNum(stepNum + 1);
+            console.log(stepNum)
         }
 
         setClickCount(clickCount + 1);
@@ -48,9 +51,6 @@ export default function Progress() {
             case 5:
                 setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 minute break.');
                 break;
-            //     default:
-            //         setDuckInstructions('Click Continue to start your waddling journey!');
-            //         break;
         }
     };
 
@@ -77,19 +77,15 @@ export default function Progress() {
                 case 5:
                     setDuckInstructions('This pattern will repeat 4 times, we believe in you! Then you’ll get a 25 minute break.');
                     break;
-                // default:
-                //     setDuckInstructions('Click Continue to start your waddling journey!');
-                //     break;
             }
         }
     };
 
-    const [showArrow, setshowArrow] = useState(false);
-
     // useEffect(() => {
-    //         setshowArrow(true);
-    //     },);
+    //     const addTaskButton = document.querySelector(".taskFilterOnboard")
 
+    //     addTaskButton.addEventListener("click", setClickCount(clickCount + 1))
+    // }, [clickCount])
 
     return (
         <div className={styles.progressContainer}>
@@ -109,6 +105,7 @@ export default function Progress() {
                     src={`/images/Ducks/Duck${stepDuck}.svg`}
                     width={175}
                     height={175}
+                    alt="a pond that will add more wheat to it the further down the onboarding you go"
                 />
                 <p className={styles.duckInstructions}>{duckInstructions}</p>
             </div>
@@ -123,10 +120,10 @@ export default function Progress() {
                         onChange={handleNameChange}
                         onKeyDown={handleNameChange}
                         tabindex="1"
-                        onClick={showArrow}
+
                     />
-                    {setshowArrow && 
-                        <div className={styles.proceed} onClick={nextStep}>  
+                    {showArrow &&
+                        <div className={styles.proceed} onClick={nextStep}>
                             <i class="fa fa-arrow-right" aria-hidden="true" className={styles.arrow}></i>
                         </div>
                     }
@@ -148,7 +145,7 @@ export default function Progress() {
 
                 {clickCount == 2 || clickCount == 3 ? (
                     <div className={styles.tasksPosition}>
-                        <TasksOnBoard tabindex="2" number={cycleNumber} />
+                        <TasksOnBoard tabindex="2" number={cycleNumber} click={clickCount} />
                     </div>
                 ) : (
                     <div></div>
@@ -157,9 +154,17 @@ export default function Progress() {
 
                 {clickCount == 4 ? (
                     <div className={styles.floatContainer}>
+                        <div className={styles.pomodoro}>
+                            <div className={styles.highlight}></div>
+                            <div className={styles.highlightTwo}></div>
+                            <div className={styles.shadow}></div>
+                            <div>
+                                <div className={styles.timer}>25:00</div>
+                            </div>
+                        </div>
                         <div className={styles.floatHole}>
                             <view className={`${styles.WaddleContainer} ${styles.ducksFloat}`}>
-                                <DucksAnim tabindex="3" />
+                                <DucksAnim tabindex="3" alt="animation of ducks in the water" />
                             </view>
                         </div>
                     </div>
@@ -175,7 +180,7 @@ export default function Progress() {
                             </h4>
                             <p>Take a Break!</p>
                             <div className={styles.ducksAnim}>
-                                <Image src="/images/render_card.png" width={268} height={90} className={styles.ducksRender}
+                                <Image src="/images/render_card.png" width={268} height={90} className={styles.ducksRender} alt="completed cycle"
                                 />
                             </div>
                         </div>
@@ -186,12 +191,20 @@ export default function Progress() {
 
                 {clickCount == 6 ? (
                     <div className={styles.floatContainer}>
-                      <div className={styles.floatHole}>
-                          <view className={`${styles.WaddleContainer} ${styles.ducksFloat}`}>
-                              <DucksAnim tabindex="3" />
-                          </view>
-                      </div>
-                  </div>
+                        <div className={styles.pomodoro}>
+                            <div className={styles.highlight}></div>
+                            <div className={styles.highlightTwo}></div>
+                            <div className={styles.shadow}></div>
+                            <div>
+                                <div className={styles.timer}>25:00</div>
+                            </div>
+                        </div>
+                        <div className={styles.floatHole}>
+                            <view className={`${styles.WaddleContainer} ${styles.ducksFloat}`}>
+                                <DucksAnim tabindex="3" alt="animation of ducks in the water" />
+                            </view>
+                        </div>
+                    </div>
                 ) : (
                     <div></div>
                 )}

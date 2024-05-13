@@ -3,8 +3,33 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   background-color: var(--seashell);
   margin: 0;
+
 }
 
+.return {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  padding: none;
+  font-size: var(--h4);
+  background-color: var(--arathi-highlands);
+  color: var(--seashell);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  text-decoration: none;
+  box-shadow: 1px 3px 5px grey;
+
+  bottom: 1rem;
+  left: 1rem;
+
+}

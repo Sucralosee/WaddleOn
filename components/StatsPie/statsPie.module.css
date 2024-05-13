@@ -3,9 +3,31 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width:100vw;
+    width: 100vw;
+    height: 100vh;
 }
-.stats{
-    width:430px;
 
+.stats {
+    width: 430px;
+    height: 100vh;
+
+    overflow: scroll;
+}
+
+.statsHeadline {
+    text-align: center;
+    font-size: var(--h1);
+}
+
+.stats p {
+    text-indent: 1rem;
+}
+
+.stats h4 {
+    text-align: center;
+}
+
+.stats p {
+    width: 400px;
+    margin: 1rem auto;
 }

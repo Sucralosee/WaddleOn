@@ -1,4 +1,8 @@
-.onboardContainer{
+.onboardContainer {
     display: flex;
     justify-content: center;
+    width: 430px;
+
+    overflow: hidden;
+    margin: auto;
 }
