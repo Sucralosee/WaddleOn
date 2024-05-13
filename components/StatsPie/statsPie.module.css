@@ -11,6 +11,7 @@
 
     overflow-y: scroll;
     overflow-x: hidden;
+
 }
 
 .statsHeadline {
@@ -30,3 +31,56 @@
     width: 400px;
     margin: 1rem auto;
 }
+
+.pieInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.pieDesc{
+    width: 200px;
+}
+
+.pieActual{
+    margin-left: 2rem;
+}
+
+/* canvas{
+    height: 250px;
+} */
+
+.botPieDes{
+    height: 10rem;
+    /* margin-bottom: 4rem; */
+}
+
+.lineContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    margin-top: 2rem;
+}
+
+.line{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 90vw;
+    height: 0.3rem;
+    background-color: var(--arathi-highlands);
+}
+
+.fadeIn {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease-in forwards;
+  }
+  
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
