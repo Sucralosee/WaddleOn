@@ -1,4 +1,4 @@
-import styles from "./TasksOnBoard.module.css"
+import styles from "./TasksonBoard.module.css"
 import { useState, useEffect } from "react"
 import TaskItem from "@/components/TaskItem/TaskItem"
 import Image from "next/image"
