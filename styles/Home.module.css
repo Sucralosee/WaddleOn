@@ -9,6 +9,11 @@
   width: 100vw;
 }
 
+.homeContent {
+  background-color: var(--onboardBG);
+  width: 430px;
+}
+
 .pomContent {
   width: 430px;
 

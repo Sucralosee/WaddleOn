@@ -2,12 +2,14 @@
     height: 70vh;
     width: 430px;
     z-index: 20;
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     animation: fadeInAndOut 4s forwards;
     overflow: hidden;
+
+    margin-bottom: 10rem;
 }
 
 .cycleCompleteContainer {
@@ -22,7 +24,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
 
 }
 

@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/logoDuck.ico" />
       </Head>
       <main className={`${styles.main}`}>
-          <div>
+          <div className={styles.homeContent}>
             <Landing/>
           </div>
       </main>
