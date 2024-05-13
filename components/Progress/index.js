@@ -17,8 +17,6 @@ export default function Progress() {
     const [showArrow, setShowArrow] = useState(false);
     const cycleNumber = 0;
 
-    const [showArrow, setshowArrow] = useState(false);
-
     const handleNameChange = (e) => {
         const value = e.target.value;
         setUserName(value);
