@@ -81,6 +81,18 @@ export const appText = {
 }
 
 
+export const pomText = {
+    English: {
+        endTimer: "End Timer",
+        finishSession: "Finish Session"
+    },
+    French: {
+        endTimer: "Arrêter le minuteur",
+        finishSession: "Terminer la session"
+    }
+};
+
+
 export const introDialogue = {
     //  English and french keys should match up to be the same phrase. 
     //  1 = Hello in both french & and english. There should be no disprepancies
