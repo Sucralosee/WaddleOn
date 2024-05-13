@@ -18,7 +18,7 @@ export default function TaskItem({ task, deleteTask, toggleCompleted }) {
                     onChange={handleChange}
                     className={styles.taskCheckBox}
                 />
-                <button onClick={() => deleteTask(task.id)} className={styles.deleteButton}>
+                <button onClick={() => deleteTask(task.id)} className={styles.deleteButton} tabIndex={5}>
                     X
                 </button>
             </div >

@@ -18,6 +18,10 @@
     box-shadow: 0px 1px 4.4px 0px var(--arathi-highlands);
     color: var(--seashell);
     margin-top: 1rem;
+
+    mask: linear-gradient(var(--gray5), var(--gray5), transparent);
+    backdrop-filter: blur(8px);
+
 }
 
 .tasksContainer::-webkit-scrollbar {
@@ -42,7 +46,7 @@
     justify-content: center;
 }
 
-.taskFilter {
+.taskFilterOnboard {
     margin-left: 1rem;
     cursor: pointer;
     padding: 0.2rem;
@@ -52,16 +56,16 @@
     filter: drop-shadow(0 0.2rem 0.05rem var(--gray5));
 }
 
-.taskFilter [data-theme="Dark"] {
+.taskFilterOnboard [data-theme="Dark"] {
     background-color: var((--gray5));
 }
 
-.taskFilter:hover,
-.taskFilter:active {
+.taskFilterOnboard:hover,
+.taskFilterOnboard:active {
     background-color: var(--flush-orange);
 }
 
-.taskFilter:hover {
+.taskFilterOnboard:hover {
     transform: scale(110%);
 }
 

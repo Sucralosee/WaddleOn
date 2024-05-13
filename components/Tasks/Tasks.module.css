@@ -175,11 +175,13 @@
     animation: fadeIn 0.2s;
     padding: 1rem;
     position: absolute;
-    left: 11%;
-    bottom: 0;
     filter: drop-shadow(0 0 3rem  var(--button-blue));
     font-family: var(--header-style);
     animation: notify 2s forwards;
+
+    position: fixed;
+
+    margin: 30rem 0 0 2.8rem;
 }
 
 .chipsMenu {

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "@/styles/onboard.module.css";
-import Landing from "@/components/Landing";
 import Progress from "@/components/Progress";
 
 export default function Onboard() {

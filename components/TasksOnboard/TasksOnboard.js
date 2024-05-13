@@ -1,4 +1,4 @@
-import styles from "./TasksonBoard.module.css"
+import styles from "./TasksOnBoard.module.css"
 import { useState, useEffect } from "react"
 import TaskItem from "@/components/TaskItem/TaskItem"
 import Image from "next/image"
@@ -6,24 +6,12 @@ import { recommendedTasks } from "@/data/inventory"
 
 //https://medium.com/@worachote/building-a-todo-list-app-with-reactjs-a-step-by-step-guide-2c58b9b6c0f5
 export default function TasksOnBoard({
-    coloring
+    coloring,
+    click = clickCount
 }) {
     const [tasks, setTasks] = useState([])
     const [text, setText] = useState('')
-    const [chips, setChips] = useState(false)
-    const [chipStatus, setChipStatus] = useState('none')
-    var [data, setData] = useState(recommendedTasks);
-    var [taskNotify, setTaskNotify] = useState()
-    const [isDark, setIsDark] = useState(false)
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            setIsDark(() => {
-                const saved = localStorage.getItem("isDark");
-                const initialValue = JSON.parse(saved);
-                return initialValue || "";
-            })
-        }
-    }, [])
+    const [taskVisibility, setTaskVisibility] = useState(false)
 
     function addTask(text) {
         const newTask = {
@@ -49,13 +37,6 @@ export default function TasksOnBoard({
         }));
     }
 
-    //State mngmt
-    const notification = () => {
-        setTaskNotify(true)
-        setTimeout(() => {
-            setTaskNotify(false);
-        }, 2000);
-    }
 
     return (
         <>
@@ -69,7 +50,7 @@ export default function TasksOnBoard({
                         tabIndex={1}
                         pattern="[a-z]+"
                     />
-                    <Image src="/images/Add.svg" width={25} height={25} className={styles.taskFilter} tabIndex={2} onClick={() => { addTask(text); notification() }} />
+                    <Image src="/images/Add.svg" width={25} height={25} className={styles.taskFilterOnboard} tabIndex={2} onClick={() => { addTask(text) }} alt="plus sign" />
                 </div>
                 <div className={styles.tasksContainer} style={coloring}>
                     <p className={styles.taskListHeader}>Current Tasks:</p>

@@ -3,8 +3,37 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   background-color: var(--seashell);
   margin: 0;
+  width: 100vw;
 }
 
+.pomContent {
+  width: 430px;
+
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.return {
+  position: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  font-size: var(--h4);
+  background-color: var(--arathi-highlands);
+  color: var(--seashell);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  text-decoration: none;
+  box-shadow: 1px 3px 5px var(--arathi-highlands);
+
+  margin: 1rem;
+}
