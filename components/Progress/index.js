@@ -18,16 +18,10 @@ export default function Progress() {
     const cycleNumber = 0;
 
     const handleNameChange = (e) => {
-        const value = e.target.value;
-        setUserName(value);
-        setName(value);     
-
-        if (value.trim() !== '') {
-            setshowArrow(true);
-        } else {
-            setshowArrow(false);
-        }
-
+        const newName = e.target.value;
+        setUserName(newName);
+        setName(newName);
+        setShowArrow(true)
     };
 
 
@@ -88,13 +82,6 @@ export default function Progress() {
         }
     };
 
-    // useEffect(() => {
-    //     const addTaskButton = document.querySelector(".taskFilterOnboard")
-
-    //     addTaskButton.addEventListener("click", setClickCount(clickCount + 1))
-    // }, [clickCount])
-
-
     return (
         <div className={styles.progressContainer}>
             <div>
@@ -128,19 +115,13 @@ export default function Progress() {
                         onChange={handleNameChange}
                         onKeyDown={handleNameChange}
                         tabindex="1"
-                        onClick={() => {
-                            if (userName.trim() !== '') {
-                                setshowArrow(true);
-                            }
-                        }
-                    }                        
                     />
                     {showArrow && (
-                        <div className={styles.proceed} onClick={nextStep}>  
+                        <div className={styles.proceed} onClick={nextStep}>
 
                             <i class="fa fa-arrow-right" aria-hidden="true" className={styles.arrow}></i>
-                        </div>           
-                        )
+                        </div>
+                    )
                     }
                 </div>
             )}
@@ -236,7 +217,6 @@ export default function Progress() {
                     </button>
                 )}
             </div>
-
 
             <div className={styles.buttonsContainer}>
                 {clickCount < 2 ? (
