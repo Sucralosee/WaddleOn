@@ -10,10 +10,13 @@ export default function Quiz({ questions, currentQuestion, answers, onAnswer }) 
         onAnswer(answer);
     };
 
+    //creating a variable to track the length of the progress from the prop of the quiz then shoving it into the width stylization to show user progress
+    var progress = ((currentQuestion + 1) / questions.length) * 100;
+
     return (
         <>
             <div className={styles.quiz}>
-                <div className={styles.line}></div>
+                <div className={styles.line}style={{ width: `${progress}%` }}></div>
                 <div className={styles.questionContainer}>
                     <h2 className={styles.question}>{questions[currentQuestion].question}</h2>
                     <div className={styles.options}>
