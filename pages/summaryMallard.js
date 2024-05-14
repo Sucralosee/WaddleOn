@@ -4,11 +4,18 @@ import House from "@/components/HomeButton";
 import NavBar from "@/components/Navbar/NavBar";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head"
 
 export default function Mallard() {
   return (
-
-    <main className={`${styles.summaryOne}`}>
+    <>
+        <Head>
+            <title>Waddle On | Mallard Duck</title>
+            <meta name="description" content="Waddle On the Pomodoro Timer" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" href="/logoDuck.ico" />
+        </Head>
+        <main className={`${styles.summaryOne}`}>
         <div className={styles.contentContainer}>
         <div className={styles.titleContainer}>
             <h2 className={styles.title}>You are a...</h2>
@@ -33,6 +40,8 @@ export default function Mallard() {
             </div> 
         </div>          
     </main>
+    </>
+    
     
   );
 }

@@ -8,7 +8,7 @@ export default function pomStats() {
   return (
     <>
       <Head>
-        <title>Pomodoro stats</title>
+        <title>Statistics on Pomodoro Techniques</title>
         <meta name="description" content="WaddleOn | Stats from the Saint Mary's University, Philippines " />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logoDuck.ico" />
