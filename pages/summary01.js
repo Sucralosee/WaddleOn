@@ -7,6 +7,8 @@ import { useRouter } from 'next/router';
 import Link from "next/link";
 import SettingsMenu from "@/components/SettingsMenu/SettingsMenu";
 //useRouter redirects to another file https://nextjs.org/docs/app/building-your-application/routing/redirecting#userouter-hook
+import Head from "next/head"
+
 
 export default function Summary() {
   const router = useRouter();
@@ -114,25 +116,34 @@ export default function Summary() {
 
 
   return (
-    <main className={styles.summaryOne}>
-      {settings && <SettingsMenu childParent={childToParent} />}
-      <div className={styles.summaryContainer}>
-        <DucksAnim inlineSizing={{
-          position: "relative",
-          top: "-180px",
-          marginBottom: "-200px",
-          width: "430px",
-          height: "470px",
-          borderRadius: "0 0 19px 19px"
-        }} />
-        <div className={styles.progressContainer}>
-          {renderProgressIndicator()}
+    <>
+      <Head>
+        <title>Waddle On | Quiz</title>
+        <meta name="description" content="Waddle On the Pomodoro Timer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/logoDuck.ico" />
+      </Head>
+      <main className={styles.summaryOne}>
+        {settings && <SettingsMenu childParent={childToParent} />}
+        <div className={styles.summaryContainer}>
+          <DucksAnim inlineSizing={{
+            position: "relative",
+            top: "-180px",
+            marginBottom: "-200px",
+            width: "430px",
+            height: "470px",
+            borderRadius: "0 0 19px 19px"
+          }} />
+          <div className={styles.progressContainer}>
+            {renderProgressIndicator()}
+          </div>
+          {renderCurrentPage()}
         </div>
-        {renderCurrentPage()}
-      </div>
-      <div className={styles.navPosition}>
-        <NavBar />
-      </div>
+        <div className={styles.navPosition}>
+          <NavBar />
+        </div>
     </main>
+    </>
+   
   );
 }
