@@ -37,7 +37,7 @@ export default function Landing() {
             }
             <div className={styles.videoBackground}>
                 <video autoPlay muted loop className="video" width="1920" height="1080" preload="none">
-                    <source src="video/Lake_2.mp4" />
+                    <source src="video/Lake_2_1.mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>

@@ -9,7 +9,7 @@ export default function pomStats() {
     <>
       <Head>
         <title>Pomodoro stats</title>
-        <meta name="description" content="Stats from the Saint Mary's University, Philippines " />
+        <meta name="description" content="WaddleOn | Stats from the Saint Mary's University, Philippines " />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logoDuck.ico" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous"></link>

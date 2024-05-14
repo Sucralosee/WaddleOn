@@ -127,7 +127,6 @@ export default function Progress() {
             )}
 
             <div className={styles.instructionContainer}>
-
                 {clickCount == 1 ? (
                     <div className={styles.WaddleContainer}>
                         <h5>What is WaddleOn?</h5>
@@ -146,7 +145,6 @@ export default function Progress() {
                 ) : (
                     <div></div>
                 )}
-
 
                 {clickCount == 4 ? (
                     <div className={styles.floatContainer}>
@@ -231,7 +229,6 @@ export default function Progress() {
                     </button>
                 )
                 }
-
             </div>
         </div>
 

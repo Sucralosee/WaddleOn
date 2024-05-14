@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Head>
         <title>Waddle On</title>
-        <meta name="description" content="Waddle On the Pomodoro Timer" />
+        <meta name="description" content="WaddleOn | Done Onboarding" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logoDuck.ico" />
       </Head>

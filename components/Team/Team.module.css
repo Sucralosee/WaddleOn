@@ -69,14 +69,14 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 100vw;
+    width: 430px;
 }
 
 .line{
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 90vw;
+    width: 390px;
     height: 0.3rem;
     background-color: var(--arathi-highlands);
     border-radius: 8px;

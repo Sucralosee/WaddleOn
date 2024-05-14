@@ -25,7 +25,8 @@ export default function Mallard() {
                             <li>Studious</li>
                             <li>Attentative</li>
                         </ul>
-                    </div></div>
+                    </div>
+                </div>
                 <div className={styles.buttonContainer}>
                     <Link href='/TimerPage'><Next /></Link>
                 </div>

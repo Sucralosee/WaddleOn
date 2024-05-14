@@ -1,7 +1,6 @@
 import styles from "./Next.module.css";
 import React, { useState } from 'react';
 
-
 export default function Next() {
     const [isPressed, setIsPressed] = useState(false);
 

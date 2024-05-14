@@ -1,7 +1,6 @@
 import styles from './SettingsMenu.module.css'
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-// import { settingTextInv } from '../../data/inventory.js'
 import { settingTextInv } from '../../data/inventory/index.js'
 
 
@@ -37,8 +36,6 @@ export default function SettingsMenu({
     const [buttonStyle, setButtonStyle] = useState();
     const data = false;
 
-
-
     //Theme
     const handleTheme = (e) => {
         setThemeBool(!themeBool)
@@ -73,9 +70,8 @@ export default function SettingsMenu({
 
 
     //local storage https://blog.logrocket.com/using-localstorage-react-hooks/
+    
     //Lang
-
-
     // toggler
     const handleLang = () => {
         setLangBool(!langBool)
@@ -101,7 +97,7 @@ export default function SettingsMenu({
         localStorage.setItem("langBool", JSON.stringify(langBool));
     }, [lang, langBool]);
 
-//https://community.wappler.io/t/have-local-storage-updates-sync-across-tabs-without-refresh/41880
+    //https://community.wappler.io/t/have-local-storage-updates-sync-across-tabs-without-refresh/41880
     const reload = () => {
         window.location.reload();
     }

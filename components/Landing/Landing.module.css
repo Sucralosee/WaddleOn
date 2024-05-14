@@ -85,7 +85,6 @@
     position: relative;
     width: 430px;
     height: 100vh;
-    /* Adjust the height as needed */
     overflow: hidden;
     z-index: 0;
     display: flex;

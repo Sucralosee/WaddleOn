@@ -1,6 +1,5 @@
 import { useState, useEffect, createRef } from 'react';
 import styles from "./Landed.module.css";
-import Image from "next/image";
 import Link from 'next/link';
 import lottie from "lottie-web"
 
@@ -25,7 +24,6 @@ export default function Landed() {
             autoplay: true,
             path: "/animations/logo.json"
         })
-
         return () => animation.destroy();
     }, [])
 

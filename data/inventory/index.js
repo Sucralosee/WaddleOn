@@ -47,7 +47,6 @@ export const recommendedTasks = {
 } 
 
 export const appText = {
-    //All text in the app stored here. Call it here so we can make it switch between Eng and Fr.
     English: [
         {
             0: "Filter",
@@ -94,8 +93,6 @@ export const pomText = {
 
 
 export const introDialogue = {
-    //  English and french keys should match up to be the same phrase. 
-    //  1 = Hello in both french & and english. There should be no disprepancies
     english: [
         {
             1: "Welcome!"
@@ -108,12 +105,7 @@ export const introDialogue = {
     ]
 }
 
-export const summaryPage = {
-    //This is where the quiz text should go
-}
-
 export const duckType = {
-    //Could be changed
     ducks: [
         {
             duckType: "Mallard",

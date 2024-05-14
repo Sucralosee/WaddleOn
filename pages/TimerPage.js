@@ -102,7 +102,7 @@ export default function TimerPage() {
         <>
             <Head>
                 <title>Timer Page</title>
-                <meta name="description" content="Waddle On the Pomodoro Timer" />
+                <meta name="description" content="WaddleOn | Timer Page" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/logoDuck.ico" />
             </Head>

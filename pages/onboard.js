@@ -7,7 +7,7 @@ export default function Onboard() {
         <>
             <Head>
                 <title>WaddleOn</title>
-                <meta name="description" content="Onboarding Process" />
+                <meta name="description" content="WaddleOn | Onboarding Process" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/logoDuck.ico" />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous"></link>

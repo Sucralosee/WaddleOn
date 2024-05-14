@@ -1,8 +1,6 @@
 import styles from "./FAQ.module.css"
-import Link from "next/link"
 import { useState } from "react"
 import Team from "../Team"
-
 
 export default function FAQ({
     closeFAQ
@@ -18,8 +16,6 @@ export default function FAQ({
         setTeamState(false)
         console.log("closed")
     }
-
-
 
     return (
         <>
@@ -41,9 +37,6 @@ export default function FAQ({
                     <div onClick={toggleTeam} className={styles.teamLinks} >
                         Meet the Team
                     </div>
-                    {/* <Link className={styles.teamLinks} href="team">
-                            Meet the Team
-                    </Link> */}
                 </div>
                 <div className={styles.exit} onClick={closeFAQ} tabIndex={2}>
                     <h4>X</h4>

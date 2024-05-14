@@ -102,7 +102,6 @@
 }
 
 /* Animation */
-
 @media only screen and (max-width: 1920px) and (min-width:431px) {
     .tasks {
         display: flex;

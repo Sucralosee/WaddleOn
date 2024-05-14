@@ -37,7 +37,6 @@ export default function TasksOnBoard({
         }));
     }
 
-
     return (
         <>
             <div className={styles.tasks}>

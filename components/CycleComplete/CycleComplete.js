@@ -1,5 +1,4 @@
 import styles from "./CycleComplete.module.css"
-import DucksAnim from "../DucksAnim/DucksAnim"
 import Image from "next/image"
 
 
